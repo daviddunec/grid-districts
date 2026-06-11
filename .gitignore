@@ -3,3 +3,4 @@ data/raw/
 out/
 *.log
 results.tsv
+*.zip
