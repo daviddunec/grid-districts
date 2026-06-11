@@ -89,12 +89,17 @@ function checkArm(ST, arm, meta, outDir) {
     }
   }
 
-  // Gate: ±1% pilot (from INTERFACES.md / ab-metrics)
-  const GATE = 1.0;
-  if (maxAbsDev > GATE) {
-    failures.push(
-      `  FAIL equality: district ${worstDistrict} |deviationPct| = ${maxAbsDev.toFixed(6)}% > ${GATE}%`
-    );
+  // Gate: ±1% pilot default; production passes --gate per the ab-metrics policy
+  // (CO 1%, national 2%) and --flag-not-fail for the hot-cell states (NY/CA/IL/NJ),
+  // whose breach is REPORTED as FLAGGED but does not fail the check (CC-2).
+  if (maxAbsDev > OPT_GATE) {
+    if (OPT_FLAG_NOT_FAIL) {
+      console.log(`  FLAGGED (not failed): district ${worstDistrict} |deviationPct| = ${maxAbsDev.toFixed(6)}% > ${OPT_GATE}% (hot-cell state policy)`);
+    } else {
+      failures.push(
+        `  FAIL equality: district ${worstDistrict} |deviationPct| = ${maxAbsDev.toFixed(6)}% > ${OPT_GATE}%`
+      );
+    }
   }
 
   // Check district range
@@ -230,6 +235,8 @@ function checkArmFromDir(outDir, arm, meta) {
 
 // --- MAIN ---
 const args = process.argv.slice(2);
+const OPT_GATE = args.includes('--gate') ? Number(args[args.indexOf('--gate') + 1]) : 1.0;
+const OPT_FLAG_NOT_FAIL = args.includes('--flag-not-fail');
 if (args.includes('--selftest')) {
   runSelftest();
   process.exit(0);
@@ -237,16 +244,21 @@ if (args.includes('--selftest')) {
 
 const ST = args[0];
 if (!ST) {
-  console.error('Usage: node check-population.js <ST> [--selftest]');
+  console.error('Usage: node check-population.js <ST> [--arm <arm>] [--gate <pct>] [--flag-not-fail] [--selftest]');
   process.exit(1);
 }
 
 const outDir = join(PROJECT_ROOT, 'out', ST);
 const meta = readJson(join(outDir, 'meta.json'));
 
+// Arm scoping (CC-2): without --arm, ALL arms present are audited (research artifacts
+// included) — correct for development, wrong for production status. The production
+// batch passes --arm splitline so research-arm artifacts can't fail the ship arm.
+const armFilter = args.includes('--arm') ? [args[args.indexOf('--arm') + 1]] : ARMS;
+
 let anyFound = false;
 let anyFail = false;
-for (const arm of ARMS) {
+for (const arm of armFilter) {
   const result = checkArm(ST, arm, meta, outDir);
   if (result !== null) anyFound = true;
   if (result === false) anyFail = true;

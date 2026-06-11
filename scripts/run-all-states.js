@@ -60,13 +60,18 @@ for (const abbr of states) {
       Object.assign(row, { status: 'done', eligible: true, maxDevPct: 0, irregular: 0, note: 'at-large: district = state polygon' });
     } else {
       const deadline = t0 + PER_STATE_TIMEOUT_MS;
+      // Verifiers are scoped to the PRODUCTION arm (CC-2): research-arm artifacts left in a
+      // state folder must never fail the ship arm's status. Gate policy per ab-metrics:
+      // CO ±1%, national ±2%, hot-cell states (NY/CA/IL/NJ) flagged-not-failed.
+      const gate = abbr === 'CO' ? '1.0' : '2.0';
+      const flagNotFail = ['NY', 'CA', 'IL', 'NJ'].includes(abbr) ? ['--flag-not-fail'] : [];
       const stages = [
         ['grid', 'cli.js', ['grid', '--state', abbr]],
         ['run', 'cli.js', ['run', '--state', abbr, '--arm', 'splitline']],
         ['score', 'cli.js', ['score', '--state', abbr]],
-        ['v-pop', 'scripts/verify/check-population.js', [abbr]],
-        ['v-cov', 'scripts/verify/check-coverage.js', [abbr]],
-        ['v-cont', 'scripts/verify/check-contiguity.js', [abbr]],
+        ['v-pop', 'scripts/verify/check-population.js', [abbr, '--arm', 'splitline', '--gate', gate, ...flagNotFail]],
+        ['v-cov', 'scripts/verify/check-coverage.js', [abbr, '--arm', 'splitline']],
+        ['v-cont', 'scripts/verify/check-contiguity.js', [abbr, '--arm', 'splitline']],
         ['render', 'src/render-leaflet.js', [path.join(ROOT, 'out', abbr), 'splitline']],
       ];
       const stageLog = [];

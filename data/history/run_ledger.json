@@ -256,5 +256,1781 @@
   "seats": 6,
   "coverage": 1,
   "ms": 40
+ },
+ "CT:1990": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 165
+ },
+ "CT:2000": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 50
+ },
+ "CT:2010": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 37
+ },
+ "DE:1950": {
+  "status": "done",
+  "atLarge": true
+ },
+ "DE:1960": {
+  "status": "done",
+  "atLarge": true
+ },
+ "DE:1970": {
+  "status": "done",
+  "atLarge": true
+ },
+ "DE:1980": {
+  "status": "done",
+  "atLarge": true
+ },
+ "DE:1990": {
+  "status": "done",
+  "atLarge": true
+ },
+ "DE:2000": {
+  "status": "done",
+  "atLarge": true
+ },
+ "DE:2010": {
+  "status": "done",
+  "atLarge": true
+ },
+ "FL:1950": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 0.8746,
+  "ms": 3780
+ },
+ "FL:1960": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 0.8746,
+  "ms": 5033
+ },
+ "FL:1970": {
+  "status": "done",
+  "seats": 15,
+  "coverage": 0.8746,
+  "ms": 3368
+ },
+ "FL:1980": {
+  "status": "done",
+  "seats": 19,
+  "coverage": 0.8746,
+  "ms": 2677
+ },
+ "FL:1990": {
+  "status": "done",
+  "seats": 23,
+  "coverage": 0.8746,
+  "ms": 5113
+ },
+ "FL:2000": {
+  "status": "done",
+  "seats": 25,
+  "coverage": 1,
+  "ms": 1760
+ },
+ "FL:2010": {
+  "status": "done",
+  "seats": 27,
+  "coverage": 1,
+  "ms": 1990
+ },
+ "GA:1950": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 1549
+ },
+ "GA:1960": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 2002
+ },
+ "GA:1970": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 787
+ },
+ "GA:1980": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 510
+ },
+ "GA:1990": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 1557
+ },
+ "GA:2000": {
+  "status": "done",
+  "seats": 13,
+  "coverage": 1,
+  "ms": 873
+ },
+ "GA:2010": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 1091
+ },
+ "HI:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 76
+ },
+ "HI:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 77
+ },
+ "HI:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 57
+ },
+ "HI:1990": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 46
+ },
+ "HI:2000": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 75
+ },
+ "HI:2010": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 113
+ },
+ "ID:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 288
+ },
+ "ID:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 211
+ },
+ "ID:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 228
+ },
+ "ID:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 206
+ },
+ "ID:1990": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 178
+ },
+ "ID:2000": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 507
+ },
+ "ID:2010": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 283
+ },
+ "IL:1950": {
+  "status": "done",
+  "seats": 25,
+  "coverage": 1,
+  "ms": 1195
+ },
+ "IL:1960": {
+  "status": "done",
+  "seats": 24,
+  "coverage": 1,
+  "ms": 1426
+ },
+ "IL:1970": {
+  "status": "done",
+  "seats": 24,
+  "coverage": 1,
+  "ms": 1498
+ },
+ "IL:1980": {
+  "status": "done",
+  "seats": 22,
+  "coverage": 1,
+  "ms": 1057
+ },
+ "IL:1990": {
+  "status": "done",
+  "seats": 20,
+  "coverage": 1,
+  "ms": 830
+ },
+ "IL:2000": {
+  "status": "done",
+  "seats": 19,
+  "coverage": 1,
+  "ms": 1831
+ },
+ "IL:2010": {
+  "status": "done",
+  "seats": 18,
+  "coverage": 1,
+  "ms": 1509
+ },
+ "IN:1950": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 558
+ },
+ "IN:1960": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 691
+ },
+ "IN:1970": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 464
+ },
+ "IN:1980": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 476
+ },
+ "IN:1990": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 1376
+ },
+ "IN:2000": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 378
+ },
+ "IN:2010": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 397
+ },
+ "IA:1950": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1062
+ },
+ "IA:1960": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 878
+ },
+ "IA:1970": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 577
+ },
+ "IA:1980": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 466
+ },
+ "IA:1990": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 305
+ },
+ "IA:2000": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 340
+ },
+ "IA:2010": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 303
+ },
+ "KS:1950": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 523
+ },
+ "KS:1960": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 561
+ },
+ "KS:1970": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 1139
+ },
+ "KS:1980": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 406
+ },
+ "KS:1990": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 574
+ },
+ "KS:2000": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 458
+ },
+ "KS:2010": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 413
+ },
+ "KY:1950": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 622
+ },
+ "KY:1960": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 459
+ },
+ "KY:1970": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 481
+ },
+ "KY:1980": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 607
+ },
+ "KY:1990": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 599
+ },
+ "KY:2000": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 518
+ },
+ "KY:2010": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 253
+ },
+ "LA:1950": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 791
+ },
+ "LA:1960": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1302
+ },
+ "LA:1970": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 519
+ },
+ "LA:1980": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1617
+ },
+ "LA:1990": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 5174
+ },
+ "LA:2000": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 698
+ },
+ "LA:2010": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 646
+ },
+ "ME:1950": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 267
+ },
+ "ME:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 156
+ },
+ "ME:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 169
+ },
+ "ME:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 114
+ },
+ "ME:1990": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 158
+ },
+ "ME:2000": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 153
+ },
+ "ME:2010": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 217
+ },
+ "MD:1950": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 394
+ },
+ "MD:1960": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 325
+ },
+ "MD:1970": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 3459
+ },
+ "MD:1980": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 2057
+ },
+ "MD:1990": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 225
+ },
+ "MD:2000": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 649
+ },
+ "MD:2010": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 617
+ },
+ "MA:1950": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 128
+ },
+ "MA:1960": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 1,
+  "ms": 115
+ },
+ "MA:1970": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 1,
+  "ms": 129
+ },
+ "MA:1980": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 162
+ },
+ "MA:1990": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 63
+ },
+ "MA:2000": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 77
+ },
+ "MA:2010": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 151
+ },
+ "MI:1950": {
+  "status": "done",
+  "seats": 18,
+  "coverage": 1,
+  "ms": 979104
+ },
+ "MI:1960": {
+  "status": "done",
+  "seats": 19,
+  "coverage": 1,
+  "ms": 2110
+ },
+ "MI:1970": {
+  "status": "done",
+  "seats": 19,
+  "coverage": 1,
+  "ms": 175409
+ },
+ "MI:1980": {
+  "status": "done",
+  "seats": 18,
+  "coverage": 1,
+  "ms": 950796
+ },
+ "MI:1990": {
+  "status": "done",
+  "seats": 16,
+  "coverage": 1,
+  "ms": 978
+ },
+ "MI:2000": {
+  "status": "done",
+  "seats": 15,
+  "coverage": 1,
+  "ms": 1787
+ },
+ "MI:2010": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 113127
+ },
+ "MN:1950": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 795
+ },
+ "MN:1960": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1395
+ },
+ "MN:1970": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 596
+ },
+ "MN:1980": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 860
+ },
+ "MN:1990": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1178
+ },
+ "MN:2000": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1545
+ },
+ "MN:2010": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1195
+ },
+ "MS:1950": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 437
+ },
+ "MS:1960": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 374
+ },
+ "MS:1970": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 249
+ },
+ "MS:1980": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 459
+ },
+ "MS:1990": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 407
+ },
+ "MS:2000": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 321
+ },
+ "MS:2010": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 261
+ },
+ "MO:1950": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 1506
+ },
+ "MO:1960": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 901
+ },
+ "MO:1970": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 1410
+ },
+ "MO:1980": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 961
+ },
+ "MO:1990": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 1031
+ },
+ "MO:2000": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 2129
+ },
+ "MO:2010": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1218
+ },
+ "MT:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 538
+ },
+ "MT:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 542
+ },
+ "MT:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 381
+ },
+ "MT:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 750
+ },
+ "MT:1990": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 21
+ },
+ "MT:2000": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 28
+ },
+ "MT:2010": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 24
+ },
+ "NE:1950": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 332
+ },
+ "NE:1960": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 2962
+ },
+ "NE:1970": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 284
+ },
+ "NE:1980": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 337
+ },
+ "NE:1990": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 418
+ },
+ "NE:2000": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 259
+ },
+ "NE:2010": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 2368
+ },
+ "NV:1950": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 15
+ },
+ "NV:1960": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 17
+ },
+ "NV:1970": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 17
+ },
+ "NV:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 410
+ },
+ "NV:1990": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 302
+ },
+ "NV:2000": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 508
+ },
+ "NV:2010": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 2221
+ },
+ "NH:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 31
+ },
+ "NH:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 30
+ },
+ "NH:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 29
+ },
+ "NH:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 39
+ },
+ "NH:1990": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 25
+ },
+ "NH:2000": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 20
+ },
+ "NH:2010": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 39
+ },
+ "NJ:1950": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 297
+ },
+ "NJ:1960": {
+  "status": "done",
+  "seats": 15,
+  "coverage": 1,
+  "ms": 238
+ },
+ "NJ:1970": {
+  "status": "done",
+  "seats": 15,
+  "coverage": 1,
+  "ms": 179
+ },
+ "NJ:1980": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 85
+ },
+ "NJ:1990": {
+  "status": "done",
+  "seats": 13,
+  "coverage": 1,
+  "ms": 119
+ },
+ "NJ:2000": {
+  "status": "done",
+  "seats": 13,
+  "coverage": 1,
+  "ms": 110
+ },
+ "NJ:2010": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 1,
+  "ms": 133
+ },
+ "NM:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 0.9872,
+  "ms": 402
+ },
+ "NM:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 0.9872,
+  "ms": 307
+ },
+ "NM:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 0.9872,
+  "ms": 372
+ },
+ "NM:1980": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 0.9872,
+  "ms": 628
+ },
+ "NM:1990": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 772
+ },
+ "NM:2000": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 531
+ },
+ "NM:2010": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 471
+ },
+ "NY:1950": {
+  "status": "done",
+  "seats": 43,
+  "coverage": 1,
+  "ms": 659
+ },
+ "NY:1960": {
+  "status": "done",
+  "seats": 41,
+  "coverage": 1,
+  "ms": 2455
+ },
+ "NY:1970": {
+  "status": "done",
+  "seats": 39,
+  "coverage": 1,
+  "ms": 1642
+ },
+ "NY:1980": {
+  "status": "done",
+  "seats": 34,
+  "coverage": 1,
+  "ms": 1327
+ },
+ "NY:1990": {
+  "status": "done",
+  "seats": 31,
+  "coverage": 1,
+  "ms": 9645
+ },
+ "NY:2000": {
+  "status": "done",
+  "seats": 29,
+  "coverage": 1,
+  "ms": 1411
+ },
+ "NY:2010": {
+  "status": "done",
+  "seats": 27,
+  "coverage": 1,
+  "ms": 1617
+ },
+ "NC:1950": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 1,
+  "ms": 644
+ },
+ "NC:1960": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 401
+ },
+ "NC:1970": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 620
+ },
+ "NC:1980": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 482
+ },
+ "NC:1990": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 1,
+  "ms": 9392
+ },
+ "NC:2000": {
+  "status": "done",
+  "seats": 13,
+  "coverage": 1,
+  "ms": 966
+ },
+ "NC:2010": {
+  "status": "done",
+  "seats": 13,
+  "coverage": 1,
+  "ms": 629
+ },
+ "ND:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 200
+ },
+ "ND:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 199
+ },
+ "ND:1970": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 19
+ },
+ "ND:1980": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 15
+ },
+ "ND:1990": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 17
+ },
+ "ND:2000": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 14
+ },
+ "ND:2010": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 17
+ },
+ "OH:1950": {
+  "status": "done",
+  "seats": 23,
+  "coverage": 1,
+  "ms": 1429
+ },
+ "OH:1960": {
+  "status": "done",
+  "seats": 24,
+  "coverage": 1,
+  "ms": 760
+ },
+ "OH:1970": {
+  "status": "done",
+  "seats": 23,
+  "coverage": 1,
+  "ms": 1191
+ },
+ "OH:1980": {
+  "status": "done",
+  "seats": 21,
+  "coverage": 1,
+  "ms": 1555
+ },
+ "OH:1990": {
+  "status": "done",
+  "seats": 19,
+  "coverage": 1,
+  "ms": 537
+ },
+ "OH:2000": {
+  "status": "done",
+  "seats": 18,
+  "coverage": 1,
+  "ms": 1031
+ },
+ "OH:2010": {
+  "status": "done",
+  "seats": 16,
+  "coverage": 1,
+  "ms": 876
+ },
+ "OK:1950": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 2312
+ },
+ "OK:1960": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 601
+ },
+ "OK:1970": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 1761
+ },
+ "OK:1980": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 705
+ },
+ "OK:1990": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 7343
+ },
+ "OK:2000": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 1002
+ },
+ "OK:2010": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 430
+ },
+ "OR:1950": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 1020
+ },
+ "OR:1960": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 828
+ },
+ "OR:1970": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 673
+ },
+ "OR:1980": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 1766
+ },
+ "OR:1990": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 809
+ },
+ "OR:2000": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 756
+ },
+ "OR:2010": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 741
+ },
+ "PA:1950": {
+  "status": "done",
+  "seats": 30,
+  "coverage": 1,
+  "ms": 1447
+ },
+ "PA:1960": {
+  "status": "done",
+  "seats": 27,
+  "coverage": 1,
+  "ms": 1391
+ },
+ "PA:1970": {
+  "status": "done",
+  "seats": 25,
+  "coverage": 1,
+  "ms": 587
+ },
+ "PA:1980": {
+  "status": "done",
+  "seats": 23,
+  "coverage": 1,
+  "ms": 896
+ },
+ "PA:1990": {
+  "status": "done",
+  "seats": 21,
+  "coverage": 1,
+  "ms": 1010
+ },
+ "PA:2000": {
+  "status": "done",
+  "seats": 19,
+  "coverage": 1,
+  "ms": 440
+ },
+ "PA:2010": {
+  "status": "done",
+  "seats": 18,
+  "coverage": 1,
+  "ms": 936
+ },
+ "RI:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 11
+ },
+ "RI:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 9
+ },
+ "RI:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 8
+ },
+ "RI:1980": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 6
+ },
+ "RI:1990": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 6
+ },
+ "RI:2000": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 7
+ },
+ "RI:2010": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 8
+ },
+ "SC:1950": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 453
+ },
+ "SC:1960": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 520
+ },
+ "SC:1970": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 290
+ },
+ "SC:1980": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 326
+ },
+ "SC:1990": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 1692
+ },
+ "SC:2000": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 421
+ },
+ "SC:2010": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 212
+ },
+ "SD:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 0.9846,
+  "ms": 320
+ },
+ "SD:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 0.9846,
+  "ms": 177
+ },
+ "SD:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 0.9846,
+  "ms": 192
+ },
+ "SD:1980": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 0.9846,
+  "ms": 20
+ },
+ "SD:1990": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 0.9846,
+  "ms": 21
+ },
+ "SD:2000": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 0.9846,
+  "ms": 22
+ },
+ "SD:2010": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 16
+ },
+ "TN:1950": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 418
+ },
+ "TN:1960": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 440
+ },
+ "TN:1970": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 447
+ },
+ "TN:1980": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 642
+ },
+ "TN:1990": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 375
+ },
+ "TN:2000": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 720
+ },
+ "TN:2010": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 832
+ },
+ "TX:1950": {
+  "status": "done",
+  "seats": 22,
+  "coverage": 1,
+  "ms": 8471
+ },
+ "TX:1960": {
+  "status": "done",
+  "seats": 23,
+  "coverage": 1,
+  "ms": 63642
+ },
+ "TX:1970": {
+  "status": "done",
+  "seats": 24,
+  "coverage": 1,
+  "ms": 6851
+ },
+ "TX:1980": {
+  "status": "done",
+  "seats": 27,
+  "coverage": 1,
+  "ms": 36699
+ },
+ "TX:1990": {
+  "status": "done",
+  "seats": 30,
+  "coverage": 1,
+  "ms": 12925
+ },
+ "TX:2000": {
+  "status": "done",
+  "seats": 32,
+  "coverage": 1,
+  "ms": 10287
+ },
+ "TX:2010": {
+  "status": "done",
+  "seats": 36,
+  "coverage": 1,
+  "ms": 13648
+ },
+ "UT:1950": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 350
+ },
+ "UT:1960": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 307
+ },
+ "UT:1970": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 312
+ },
+ "UT:1980": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 650
+ },
+ "UT:1990": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 324
+ },
+ "UT:2000": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 559
+ },
+ "UT:2010": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 1003
+ },
+ "VT:1950": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VT:1960": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VT:1970": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VT:1980": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VT:1990": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VT:2000": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VT:2010": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VA:1950": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 0.8994,
+  "ms": 807
+ },
+ "VA:1960": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 0.9545,
+  "ms": 826
+ },
+ "VA:1970": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 0.9916,
+  "ms": 1633
+ },
+ "VA:1980": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 432
+ },
+ "VA:1990": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 591
+ },
+ "VA:2000": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 4703
+ },
+ "VA:2010": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 590
+ },
+ "WA:1950": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 609
+ },
+ "WA:1960": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 408
+ },
+ "WA:1970": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 663
+ },
+ "WA:1980": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 878
+ },
+ "WA:1990": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 1083
+ },
+ "WA:2000": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 1045
+ },
+ "WA:2010": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 412
+ },
+ "WV:1950": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 219
+ },
+ "WV:1960": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 398
+ },
+ "WV:1970": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 29193
+ },
+ "WV:1980": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 49922
+ },
+ "WV:1990": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 116
+ },
+ "WV:2000": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 217
+ },
+ "WV:2010": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 209
+ },
+ "WI:1950": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 0.9993,
+  "ms": 576
+ },
+ "WI:1960": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 0.9993,
+  "ms": 844
+ },
+ "WI:1970": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 600
+ },
+ "WI:1980": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 659
+ },
+ "WI:1990": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 371
+ },
+ "WI:2000": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 1274
+ },
+ "WI:2010": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 925
+ },
+ "WY:1950": {
+  "status": "done",
+  "atLarge": true
+ },
+ "WY:1960": {
+  "status": "done",
+  "atLarge": true
+ },
+ "WY:1970": {
+  "status": "done",
+  "atLarge": true
+ },
+ "WY:1980": {
+  "status": "done",
+  "atLarge": true
+ },
+ "WY:1990": {
+  "status": "done",
+  "atLarge": true
+ },
+ "WY:2000": {
+  "status": "done",
+  "atLarge": true
+ },
+ "WY:2010": {
+  "status": "done",
+  "atLarge": true
  }
 }

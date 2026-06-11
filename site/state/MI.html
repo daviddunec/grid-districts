@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Michigan — Grid Districts</title><style>
+:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#1e3a8a;--blue2:#2563eb}
+*{box-sizing:border-box}body{margin:0;background:#f8fafc;color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1020px;margin:0 auto;background:#fff;min-height:100vh}
+header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:26px 36px}
+header h1{margin:0 0 4px;font-size:23px}header p{margin:0;font-size:13px;opacity:.92}
+header a{color:#dbeafe}
+main{padding:10px 36px 44px}
+h2{font-size:19px;color:var(--blue);margin:26px 0 10px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:8px;padding:11px 15px;background:#f8fafc}
+.stat .n{font-size:22px;font-weight:800;color:var(--blue)}.stat .l{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center;background:#fff;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--blue2);box-shadow:0 1px 6px rgba(37,99,235,.18)}
+.card img{width:100%;height:110px;object-fit:contain;image-rendering:pixelated}
+.card .t{font-weight:700;font-size:14px;margin-top:6px}.card .s{font-size:11px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:center}
+thead th{background:#f1f5f9}
+.muted{color:var(--muted)}.callout{border-left:4px solid var(--blue2);background:#f0f6ff;padding:10px 14px;border-radius:6px;font-size:13px;margin:14px 0}
+.slider-row{display:flex;align-items:center;gap:14px;margin:16px 0 4px}
+input[type=range]{flex:1;accent-color:var(--blue2)}
+.decade-label{font-size:26px;font-weight:800;color:var(--blue);min-width:84px;text-align:center}
+.mapbox{text-align:center;border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff;min-height:340px}
+.mapbox img{max-width:100%;max-height:430px;image-rendering:pixelated}
+.btn{display:inline-block;background:var(--blue2);color:#fff;border-radius:6px;padding:8px 14px;text-decoration:none;font-size:13px;margin:8px 4px 0 0}
+footer{border-top:1px solid var(--line);padding:14px 36px;font-size:12px;color:var(--muted)}
+@media(max-width:640px){main,header,footer{padding-left:18px;padding-right:18px}}
+</style></head><body><div class="wrap">
+<header><h1>Michigan <span style="font-weight:400;opacity:.8">— 13 seats today</span></h1>
+<p><a href="../index.html">&larr; All states</a> &nbsp;•&nbsp; Districts drawn by one identical, deterministic process from 1-square-mile blocks</p></header>
+<main>
+<div class="slider-row"><span class="decade-label" id="dl">2020</span>
+<input type="range" id="slider" min="0" max="7" value="7" step="1">
+</div>
+<div class="muted" style="font-size:12px;display:flex;justify-content:space-between"><span>1950</span><span>2020</span></div>
+<div class="mapbox"><img id="mapimg" src="" alt="district map"><div id="mapnote" class="muted" style="font-size:13px;margin-top:8px"></div></div>
+<div id="statsbox"></div>
+<div id="btns"></div>
+<div class="callout"><b>About the historical maps (1950&ndash;2010):</b> these apply the same algorithm to each decade's
+actual seat count and county-level census populations, with the 2020 settlement pattern scaled to each decade's county
+totals (block-level data before 2000 does not exist digitally). They demonstrate the <i>process</i> across history;
+the 2020 map uses full block-level data. Coverage = share of population matched to that decade's county records.</div>
+</main>
+<footer>Generated from engine outputs &middot; 2020 U.S. Census PL 94-171 &middot; <a href="../index.html">Grid Districts</a></footer>
+</div>
+<script>
+const D=["1950","1960","1970","1980","1990","2000","2010","2020"];const DATA={"1950":{"seats":18,"maxDev":1.3530704762394936,"coverage":1,"districts":[{"d":1,"pop":358529,"dev":1.281317690012262},{"d":2,"pop":353843,"dev":-0.042436468494852934},{"d":3,"pop":353014,"dev":-0.27662174322861277},{"d":4,"pop":353331,"dev":-0.18707200608675284},{"d":5,"pop":358783,"dev":1.3530704762394936},{"d":6,"pop":353396,"dev":-0.16871007260340617},{"d":7,"pop":354219,"dev":0.06378025442419855},{"d":8,"pop":353658,"dev":-0.09469735610130114},{"d":9,"pop":353799,"dev":-0.05486608500665683},{"d":10,"pop":352552,"dev":-0.4071327166025537},{"d":11,"pop":353560,"dev":-0.12238150196850074},{"d":12,"pop":352906,"dev":-0.3071308019394041},{"d":13,"pop":353131,"dev":-0.24357026295858875},{"d":14,"pop":353592,"dev":-0.11334178086900698},{"d":15,"pop":353671,"dev":-0.09102496940463181},{"d":16,"pop":353665,"dev":-0.09271991711078688},{"d":17,"pop":353892,"dev":-0.028594395561253143},{"d":18,"pop":352337,"dev":-0.4678683427397773}]},"1960":{"seats":19,"maxDev":1.4857848024132738,"coverage":1,"districts":[{"d":1,"pop":408839,"dev":-0.7047104647267054},{"d":2,"pop":411862,"dev":0.029489697843722545},{"d":3,"pop":411748,"dev":0.001802361246624038},{"d":4,"pop":412078,"dev":0.08194991455401444},{"d":5,"pop":411742,"dev":0.00034513300467148495},{"d":6,"pop":411752,"dev":0.002773846741259073},{"d":7,"pop":411741,"dev":0.00010226163101272615},{"d":8,"pop":411740,"dev":-0.00014060974264603268},{"d":9,"pop":411741,"dev":0.00010226163101272615},{"d":10,"pop":412089,"dev":0.08462149966426079},{"d":11,"pop":413859,"dev":0.5145038310402639},{"d":12,"pop":411742,"dev":0.00034513300467148495},{"d":13,"pop":412797,"dev":0.25657443221466203},{"d":14,"pop":416226,"dev":1.089380372490546},{"d":15,"pop":411729,"dev":-0.0028121948528923796},{"d":16,"pop":411392,"dev":-0.0846598477758941},{"d":17,"pop":412720,"dev":0.2378733364429376},{"d":18,"pop":411651,"dev":-0.021756161998275566},{"d":19,"pop":405623,"dev":-1.4857848024132738}]},"1970":{"seats":19,"maxDev":0.46283677693796116,"coverage":1,"districts":[{"d":1,"pop":467114,"dev":0.0012957672017851949},{"d":2,"pop":467134,"dev":0.005577432738129718},{"d":3,"pop":466970,"dev":-0.029532224659895377},{"d":4,"pop":467109,"dev":0.00022535081769906403},{"d":5,"pop":468396,"dev":0.27575052808146916},{"d":6,"pop":467107,"dev":-0.0002028157359353883},{"d":7,"pop":464946,"dev":-0.46283677693796116},{"d":8,"pop":467017,"dev":-0.019470310649485744},{"d":9,"pop":466997,"dev":-0.02375197618583027},{"d":10,"pop":467146,"dev":0.008146432059936433},{"d":11,"pop":467155,"dev":0.010073181551291468},{"d":12,"pop":467072,"dev":-0.007695730424538304},{"d":13,"pop":467607,"dev":0.10683882267267769},{"d":14,"pop":466742,"dev":-0.07834321177422295},{"d":15,"pop":467108,"dev":0.000011267540881837881},{"d":16,"pop":467311,"dev":0.043470172734778746},{"d":17,"pop":467109,"dev":0.00022535081769906403},{"d":18,"pop":467836,"dev":0.15586389306382248},{"d":19,"pop":467175,"dev":0.014354847087635993}]},"1980":{"seats":18,"maxDev":0.49101585768411155,"coverage":1,"districts":[{"d":1,"pop":514534,"dev":-0.0022349821347188927},{"d":2,"pop":514532,"dev":-0.002623674679887396},{"d":3,"pop":514533,"dev":-0.002429328407303144},{"d":4,"pop":514539,"dev":-0.001263250771797635},{"d":5,"pop":513966,"dev":-0.11262366496257376},{"d":6,"pop":514116,"dev":-0.08347172407493604},{"d":7,"pop":513861,"dev":-0.1330300235839202},{"d":8,"pop":513687,"dev":-0.16684627501357996},{"d":9,"pop":514578,"dev":0.006316253858988175},{"d":10,"pop":513584,"dev":-0.18686394108975787},{"d":11,"pop":514512,"dev":-0.006510600131572426},{"d":12,"pop":514544,"dev":-0.0002915194088763773},{"d":13,"pop":514545,"dev":-0.00009717313629212576},{"d":14,"pop":514547,"dev":0.0002915194088763773},{"d":15,"pop":514546,"dev":0.00009717313629212576},{"d":16,"pop":514566,"dev":0.003984098587977157},{"d":17,"pop":515557,"dev":0.19658125471897045},{"d":18,"pop":517072,"dev":0.49101585768411155}]},"1990":{"seats":16,"maxDev":0.055963008042880444,"coverage":1,"districts":[{"d":1,"pop":581273,"dev":0.05316593343866113},{"d":2,"pop":580964,"dev":-0.00002151595849399479},{"d":3,"pop":581032,"dev":0.01168316546223917},{"d":4,"pop":580972,"dev":0.0013555053851216717},{"d":5,"pop":580964,"dev":-0.00002151595849399479},{"d":6,"pop":580972,"dev":0.0013555053851216717},{"d":7,"pop":580964,"dev":-0.00002151595849399479},{"d":8,"pop":580871,"dev":-0.01602938907802612},{"d":9,"pop":580911,"dev":-0.009144282359947785},{"d":10,"pop":580864,"dev":-0.017234282753689826},{"d":11,"pop":580963,"dev":-0.0001936436264459531},{"d":12,"pop":580639,"dev":-0.055963008042880444},{"d":13,"pop":580958,"dev":-0.0010542819662057448},{"d":14,"pop":581166,"dev":0.034748272967801586},{"d":15,"pop":580951,"dev":-0.002259175641869453},{"d":16,"pop":580962,"dev":-0.0003657712943979114}]},"2000":{"seats":15,"maxDev":0.36424588695247256,"coverage":1,"districts":[{"d":1,"pop":663163,"dev":0.08883530664631424},{"d":2,"pop":663896,"dev":0.19946439222523188},{"d":3,"pop":663446,"dev":0.13154749111948433},{"d":4,"pop":662584,"dev":0.0014488938902524331},{"d":5,"pop":664562,"dev":0.29998140586173816},{"d":6,"pop":662586,"dev":0.0017507467840557555},{"d":7,"pop":662575,"dev":0.00009055586813748265},{"d":8,"pop":662583,"dev":0.001297967443350772},{"d":9,"pop":662574,"dev":-0.00006037057876417849},{"d":10,"pop":662574,"dev":-0.00006037057876417849},{"d":11,"pop":662583,"dev":0.001297967443350772},{"d":12,"pop":661691,"dev":-0.13332842319293098},{"d":13,"pop":661066,"dev":-0.22765745250646918},{"d":14,"pop":662572,"dev":-0.0003622234725675008},{"d":15,"pop":660161,"dev":-0.36424588695247256}]},"2010":{"seats":14,"maxDev":0.4444047808042599,"coverage":1,"districts":[{"d":1,"pop":708412,"dev":0.3507095491326719},{"d":2,"pop":705937,"dev":0.0001113010311386322},{"d":3,"pop":705936,"dev":-0.00003035482668016911},{"d":4,"pop":706706,"dev":0.10904465569379683},{"d":5,"pop":705937,"dev":0.0001113010311386322},{"d":6,"pop":705939,"dev":0.00039461274677623484},{"d":7,"pop":705933,"dev":-0.00045532240013657305},{"d":8,"pop":705936,"dev":-0.00003035482668016911},{"d":9,"pop":705935,"dev":-0.00017201068449897042},{"d":10,"pop":705905,"dev":-0.00442168641906301},{"d":11,"pop":705933,"dev":-0.00045532240013657305},{"d":12,"pop":705863,"dev":-0.010371232447452665},{"d":13,"pop":705936,"dev":-0.00003035482668016911},{"d":14,"pop":702799,"dev":-0.4444047808042599}]},"2020":{"seats":13,"maxDev":0.6931696497812833,"districts":[{"d":1,"pop":779793,"dev":0.595177433389846},{"d":2,"pop":769806,"dev":-0.6931696497812833},{"d":3,"pop":775182,"dev":0.00034731418467153164},{"d":4,"pop":775211,"dev":0.0040883841167795466},{"d":5,"pop":775179,"dev":-0.000039693049684469945},{"d":6,"pop":775179,"dev":-0.000039693049684469945},{"d":7,"pop":775775,"dev":0.07684574417570784},{"d":8,"pop":774903,"dev":-0.03564435861043662},{"d":9,"pop":776144,"dev":0.12444763400149604},{"d":10,"pop":775179,"dev":-0.000039693049684469945},{"d":11,"pop":775179,"dev":-0.000039693049684469945},{"d":12,"pop":775175,"dev":-0.000555702695492472},{"d":13,"pop":774626,"dev":-0.07137802658264075}],"interactive":true}};const ABBR="MI";
+const img=document.getElementById('mapimg'),dl=document.getElementById('dl'),note=document.getElementById('mapnote'),sb=document.getElementById('statsbox'),btns=document.getElementById('btns');
+function fmt(n){return n.toLocaleString('en-US')}
+function show(i){const dec=D[i];dl.textContent=dec;const e=DATA[dec]||{};btns.innerHTML='';
+ if(e.preState){img.style.display='none';note.textContent=ABBR+' was not yet a state in '+dec+'.';sb.innerHTML='';return}
+ if(e.missing){img.style.display='none';note.textContent='Historical run not available for '+dec+'.';sb.innerHTML='';return}
+ img.style.display='inline';img.src='../maps/'+ABBR+'-'+dec+'.png';
+ if(e.atLarge){note.textContent=dec+': at-large — the whole state elects one representative.';sb.innerHTML='';}
+ else{note.textContent=dec+': '+e.seats+' districts'+(e.maxDev!==undefined?' — worst deviation from an equal share: '+e.maxDev.toFixed(2)+'%':'')+(e.coverage!==undefined?' — county-data coverage '+(e.coverage*100).toFixed(1)+'%':'');
+  let rows='';(e.districts||[]).forEach(x=>{rows+='<tr><td>'+x.d+'</td><td>'+fmt(x.pop)+'</td><td>'+(x.dev>=0?'+':'')+x.dev.toFixed(2)+'%</td></tr>'});
+  sb.innerHTML=rows?'<h2>Districts in '+dec+'</h2><table><thead><tr><th>District</th><th>Population</th><th>Deviation</th></tr></thead><tbody>'+rows+'</tbody></table>':'';}
+ if(dec==='2020'&&e.interactive){btns.innerHTML='<a class="btn" href="../interactive/'+ABBR+'.html">Open the full interactive 2020 map (click any district)</a>';}
+}
+document.getElementById('slider').addEventListener('input',ev=>show(+ev.target.value));show(D.length-1);
+</script></body></html>

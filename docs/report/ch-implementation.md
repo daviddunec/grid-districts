@@ -185,7 +185,7 @@ metropolitan states (the same New York / California / Illinois / New Jersey clas
 where a single ultra-dense square-mile cell can exceed a whole district's population
 quota) are flagged rather than treated as passing, and the system reports them as
 such rather than hiding the deviation. Across the national run, 349 districts are
-flagged as irregular in shape, and the reference uses the shortest-line method as its
+flagged as irregular in shape, and the reference uses the shortest-splitline method as its
 production arm because it proved the most geography-robust of the approaches tested;
 the center-out square-block method is carried as the active research direction. None
 of this undercuts the transparency case — it is, in fact, the case. A baseline that

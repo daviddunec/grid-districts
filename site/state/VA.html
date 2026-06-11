@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Virginia — Grid Districts</title><style>
+:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#1e3a8a;--blue2:#2563eb}
+*{box-sizing:border-box}body{margin:0;background:#f8fafc;color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1020px;margin:0 auto;background:#fff;min-height:100vh}
+header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:26px 36px}
+header h1{margin:0 0 4px;font-size:23px}header p{margin:0;font-size:13px;opacity:.92}
+header a{color:#dbeafe}
+main{padding:10px 36px 44px}
+h2{font-size:19px;color:var(--blue);margin:26px 0 10px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:8px;padding:11px 15px;background:#f8fafc}
+.stat .n{font-size:22px;font-weight:800;color:var(--blue)}.stat .l{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center;background:#fff;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--blue2);box-shadow:0 1px 6px rgba(37,99,235,.18)}
+.card img{width:100%;height:110px;object-fit:contain;image-rendering:pixelated}
+.card .t{font-weight:700;font-size:14px;margin-top:6px}.card .s{font-size:11px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:center}
+thead th{background:#f1f5f9}
+.muted{color:var(--muted)}.callout{border-left:4px solid var(--blue2);background:#f0f6ff;padding:10px 14px;border-radius:6px;font-size:13px;margin:14px 0}
+.slider-row{display:flex;align-items:center;gap:14px;margin:16px 0 4px}
+input[type=range]{flex:1;accent-color:var(--blue2)}
+.decade-label{font-size:26px;font-weight:800;color:var(--blue);min-width:84px;text-align:center}
+.mapbox{text-align:center;border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff;min-height:340px}
+.mapbox img{max-width:100%;max-height:430px;image-rendering:pixelated}
+.btn{display:inline-block;background:var(--blue2);color:#fff;border-radius:6px;padding:8px 14px;text-decoration:none;font-size:13px;margin:8px 4px 0 0}
+footer{border-top:1px solid var(--line);padding:14px 36px;font-size:12px;color:var(--muted)}
+@media(max-width:640px){main,header,footer{padding-left:18px;padding-right:18px}}
+</style></head><body><div class="wrap">
+<header><h1>Virginia <span style="font-weight:400;opacity:.8">— 11 seats today</span></h1>
+<p><a href="../index.html">&larr; All states</a> &nbsp;•&nbsp; Districts drawn by one identical, deterministic process from 1-square-mile blocks</p></header>
+<main>
+<div class="slider-row"><span class="decade-label" id="dl">2020</span>
+<input type="range" id="slider" min="0" max="7" value="7" step="1">
+</div>
+<div class="muted" style="font-size:12px;display:flex;justify-content:space-between"><span>1950</span><span>2020</span></div>
+<div class="mapbox"><img id="mapimg" src="" alt="district map"><div id="mapnote" class="muted" style="font-size:13px;margin-top:8px"></div></div>
+<div id="statsbox"></div>
+<div id="btns"></div>
+<div class="callout"><b>About the historical maps (1950&ndash;2010):</b> these apply the same algorithm to each decade's
+actual seat count and county-level census populations, with the 2020 settlement pattern scaled to each decade's county
+totals (block-level data before 2000 does not exist digitally). They demonstrate the <i>process</i> across history;
+the 2020 map uses full block-level data. Coverage = share of population matched to that decade's county records.</div>
+</main>
+<footer>Generated from engine outputs &middot; 2020 U.S. Census PL 94-171 &middot; <a href="../index.html">Grid Districts</a></footer>
+</div>
+<script>
+const D=["1950","1960","1970","1980","1990","2000","2010","2020"];const DATA={"1950":{"seats":10,"maxDev":0.4564867445153202,"coverage":0.8994,"districts":[{"d":1,"pop":338124,"dev":0.220196092786473},{"d":2,"pop":337377,"dev":-0.0012152429403949176},{"d":3,"pop":335841,"dev":-0.4564867445153202},{"d":4,"pop":337478,"dev":0.028721229493893788},{"d":5,"pop":337388,"dev":0.0020451649484880107},{"d":6,"pop":337505,"dev":0.03672404885751552},{"d":7,"pop":337394,"dev":0.003823569251515062},{"d":8,"pop":337383,"dev":0.0005631613626321342},{"d":9,"pop":337492,"dev":0.032870839534290236},{"d":10,"pop":337829,"dev":0.13275788122097631}]},"1960":{"seats":10,"maxDev":0.028242423660124968,"coverage":0.9545,"districts":[{"d":1,"pop":395616,"dev":0.028242423660124968},{"d":2,"pop":395504,"dev":-0.00007585252549425087},{"d":3,"pop":395503,"dev":-0.00032869427715156535},{"d":4,"pop":395504,"dev":-0.00007585252549425087},{"d":5,"pop":395491,"dev":-0.003362795297039339},{"d":6,"pop":395504,"dev":-0.00007585252549425087},{"d":7,"pop":395501,"dev":-0.0008343777804661944},{"d":8,"pop":395503,"dev":-0.00032869427715156535},{"d":9,"pop":395425,"dev":-0.020050350906422095},{"d":10,"pop":395492,"dev":-0.0031099535453820246}]},"1970":{"seats":10,"maxDev":0.4882316407077855,"coverage":0.9916,"districts":[{"d":1,"pop":461813,"dev":-0.33958685900713936},{"d":2,"pop":462211,"dev":-0.2536974526237869},{"d":3,"pop":463449,"dev":0.013466077784731644},{"d":4,"pop":465649,"dev":0.4882316407077855},{"d":5,"pop":463027,"dev":-0.07760258928505415},{"d":6,"pop":463395,"dev":0.001812741240256685},{"d":7,"pop":463402,"dev":0.0033233589404664016},{"d":8,"pop":464329,"dev":0.20337230295395323},{"d":9,"pop":461985,"dev":-0.3024688240877006},{"d":10,"pop":464606,"dev":0.26314960337653776}]},"1980":{"seats":10,"maxDev":0.2678041932844392,"coverage":1,"districts":[{"d":1,"pop":534177,"dev":0.24866191738043583},{"d":2,"pop":532920,"dev":0.012761517269335575},{"d":3,"pop":532852,"dev":0},{"d":4,"pop":531425,"dev":-0.2678041932844392},{"d":5,"pop":532805,"dev":-0.008820460465570177},{"d":6,"pop":532855,"dev":0.0005630081148236284},{"d":7,"pop":532852,"dev":0},{"d":8,"pop":532854,"dev":0.00037533874321575225},{"d":9,"pop":532855,"dev":0.0005630081148236284},{"d":10,"pop":532925,"dev":0.013699864127374957}]},"1990":{"seats":11,"maxDev":0.29034254844999846,"coverage":1,"districts":[{"d":1,"pop":559912,"dev":-0.1714371202453759},{"d":2,"pop":560166,"dev":-0.12615061991772145},{"d":3,"pop":560925,"dev":0.009174001140112213},{"d":4,"pop":560791,"dev":-0.014717302182351172},{"d":5,"pop":560874,"dev":0.00008104241290599877},{"d":6,"pop":560874,"dev":0.00008104241290599877},{"d":7,"pop":560876,"dev":0.00043762902965918367},{"d":8,"pop":560876,"dev":0.00043762902965918367},{"d":9,"pop":560904,"dev":0.005429841664203772},{"d":10,"pop":560909,"dev":0.006321308206086735},{"d":11,"pop":562502,"dev":0.29034254844999846}]},"2000":{"seats":11,"maxDev":0.42803381853165084,"coverage":1,"districts":[{"d":1,"pop":642305,"dev":-0.10204208596250909},{"d":2,"pop":642823,"dev":-0.021477335260784186},{"d":3,"pop":642961,"dev":-0.000014139127892218642},{"d":4,"pop":642963,"dev":0.00029692168562795476},{"d":5,"pop":645609,"dev":0.41183037797281735},{"d":6,"pop":642893,"dev":-0.010590206787578115},{"d":7,"pop":640209,"dev":-0.42803381853165084},{"d":8,"pop":643632,"dev":0.10434676380812596},{"d":9,"pop":642301,"dev":-0.10266420758954944},{"d":10,"pop":643096,"dev":0.020982465784719486},{"d":11,"pop":643780,"dev":0.1273652640086188}]},"2010":{"seats":11,"maxDev":0.623549588334186,"coverage":1,"districts":[{"d":1,"pop":725625,"dev":-0.16058112405036112},{"d":2,"pop":726663,"dev":-0.017761738288795972},{"d":3,"pop":726835,"dev":0.0059039017410587565},{"d":4,"pop":725585,"dev":-0.16608476126660643},{"d":5,"pop":722578,"dev":-0.5798206889978458},{"d":6,"pop":727750,"dev":0.1317996030626697},{"d":7,"pop":725749,"dev":-0.14351984868000076},{"d":8,"pop":726389,"dev":-0.055461653220076186},{"d":9,"pop":727308,"dev":0.07098441182315926},{"d":10,"pop":731324,"dev":0.623549588334186},{"d":11,"pop":728907,"dev":0.29099230954256455}]},"2020":{"seats":11,"maxDev":0.07481990450441023,"districts":[{"d":1,"pop":784681,"dev":0.0011353903130080017},{"d":2,"pop":784811,"dev":0.017702820390632784},{"d":3,"pop":784834,"dev":0.02063398109667409},{"d":4,"pop":784085,"dev":-0.07481990450441023},{"d":5,"pop":784947,"dev":0.03503490108722486},{"d":6,"pop":784672,"dev":-0.000011585615442944678},{"d":7,"pop":784673,"dev":0.00011585615438493826},{"d":8,"pop":784650,"dev":-0.0028153045516563693},{"d":9,"pop":784687,"dev":0.0019000409319752992},{"d":10,"pop":784674,"dev":0.00024329792421282117},{"d":11,"pop":784679,"dev":0.0008805067733522358}],"interactive":true}};const ABBR="VA";
+const img=document.getElementById('mapimg'),dl=document.getElementById('dl'),note=document.getElementById('mapnote'),sb=document.getElementById('statsbox'),btns=document.getElementById('btns');
+function fmt(n){return n.toLocaleString('en-US')}
+function show(i){const dec=D[i];dl.textContent=dec;const e=DATA[dec]||{};btns.innerHTML='';
+ if(e.preState){img.style.display='none';note.textContent=ABBR+' was not yet a state in '+dec+'.';sb.innerHTML='';return}
+ if(e.missing){img.style.display='none';note.textContent='Historical run not available for '+dec+'.';sb.innerHTML='';return}
+ img.style.display='inline';img.src='../maps/'+ABBR+'-'+dec+'.png';
+ if(e.atLarge){note.textContent=dec+': at-large — the whole state elects one representative.';sb.innerHTML='';}
+ else{note.textContent=dec+': '+e.seats+' districts'+(e.maxDev!==undefined?' — worst deviation from an equal share: '+e.maxDev.toFixed(2)+'%':'')+(e.coverage!==undefined?' — county-data coverage '+(e.coverage*100).toFixed(1)+'%':'');
+  let rows='';(e.districts||[]).forEach(x=>{rows+='<tr><td>'+x.d+'</td><td>'+fmt(x.pop)+'</td><td>'+(x.dev>=0?'+':'')+x.dev.toFixed(2)+'%</td></tr>'});
+  sb.innerHTML=rows?'<h2>Districts in '+dec+'</h2><table><thead><tr><th>District</th><th>Population</th><th>Deviation</th></tr></thead><tbody>'+rows+'</tbody></table>':'';}
+ if(dec==='2020'&&e.interactive){btns.innerHTML='<a class="btn" href="../interactive/'+ABBR+'.html">Open the full interactive 2020 map (click any district)</a>';}
+}
+document.getElementById('slider').addEventListener('input',ev=>show(+ev.target.value));show(D.length-1);
+</script></body></html>

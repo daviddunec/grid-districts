@@ -34,7 +34,7 @@ it makes the choice to honor them visible and accountable.
 ### 3. "Squares don't respect real geography."
 
 Two responses. First, the production national run does **not** ship the square method
-— it ships the shortest-line method, which proved the most geography-robust of the
+— it ships the shortest-splitline method, which proved the most geography-robust of the
 approaches tested across all 50 states. The square-block, center-out method is an
 active research arm, not the baseline that was actually run nationally. Second, the
 baseline is a comparator, not a state's enacted map. Its job is to be neutral and
@@ -160,3 +160,15 @@ the count of irregular-shaped districts nationwide — are reported in the publi
 summary, not hidden. No skill or claim here implies an accuracy it has not measured.
 
 Reviewed by: __________  Date: __________
+
+
+## Doesn't a "blind" map still systematically favor one party, because density correlates with partisanship?
+
+Possibly — and the honest answer is that this system cannot measure its own partisan effect, because it
+holds no election data at all; that is a design constraint, not an oversight. Three things follow. First,
+whatever partisan lean the baseline exhibits in a given state is the lean of that state's *geography*, not
+of any drafter's intent — there is no mechanism by which intent can enter. Second, the baseline is a
+disclosure standard, not an enacted map: the "compare and justify" regime is precisely the tool that
+surfaces a *skewed enacted map*, whoever it favors. Third, the baseline is public: any analyst can overlay
+election results on it and publish the partisan-impact measurement this report deliberately does not make.
+That analysis is invited, not feared — it is exactly the public scrutiny the proposal exists to enable.

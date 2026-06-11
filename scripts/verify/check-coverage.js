@@ -234,7 +234,8 @@ const grid = readJson(join(outDir, 'grid.json'));
 
 let anyFound = false;
 let anyFail = false;
-for (const arm of ARMS) {
+const armFilter = args.includes('--arm') ? [args[args.indexOf('--arm') + 1]] : ARMS; // CC-2 arm scoping
+for (const arm of armFilter) {
   const result = checkArm(arm, meta, grid, outDir);
   if (result !== null) anyFound = true;
   if (result === false) anyFail = true;

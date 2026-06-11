@@ -27,6 +27,7 @@ Windows 11 + Git Bash. **Node v24 only — no Python, no sqlite3 CLI.** POSIX/ba
 - **PR-5 (from FL-008):** A greedy accumulator must never finalize below target while supply remains. Every "give up locally" branch (sealed frontier, dead end) needs a "continue globally" continuation (re-seed and keep accumulating), never a close.
 - **PR-6 (from FL-009):** Partition balancing is graph flow, not local swaps. Strictly-improving local moves cannot fix non-adjacent imbalances or cross zero-weight corridors — any balancing pass needs flow-along-paths with journaled rollback.
 - **PR-7 (from FL-011):** When successive local patches each relocate a failure instead of shrinking it, the defect is one level up. Stop patching, escalate the design question (here: the accretion remainder problem → hybrid-finish consensus round).
+- **PR-8 (from FL-012):** A status ledger records the verdict of the artifact it describes — never an aggregate over unrelated artifacts in the same folder. Give every verifier explicit scope parameters as soon as artifact variants exist.
 
 ## Verification gates (all must pass before a state ships)
 V1 exact `===` population conservation (blocks → cells → districts → published resident total) · V2 every in-state cell assigned exactly once · V3 deviation ≤ gate (CO ±1%, national ±2%; NY/CA/IL/NJ flagged-not-failed) · V4 one connected component per district (virtual bridges count) · V5 SHA-256 identical across double run + shuffled-input run · V6 Phase-0 probe (DBF fields present, exact resident-pop sum).

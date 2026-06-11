@@ -92,3 +92,10 @@ Entries are written on: any mechanical verifier FAIL, any agent crash/timeout/ma
 - **Prevention rule:** When successive local patches each move a failure to a new location instead of shrinking it, the defect is one level up (architecture/strategy). Stop patching, escalate the design question.
 - **Promoted:** yes → CLAUDE.md PR-7
 - **State of the code:** splitting KEPT (net win for the vision arm: MD 0.082%, NY 3.42%, CO 0.024%; its only failure is FL's remainder problem). All arms remain deterministic and contiguous everywhere; CO byte-identical throughout.
+
+## FL-012 — Production ledger recorded v-pop:FAIL for FL/MD/NY while their production maps were clean (2026-06-10, congressional-report QC)
+- **Symptom:** Adversarial report review found `data/states.json` showing `v_pop:false` for FL, MD, NY — directly contradicting the report's "clean" labels and the exact-identity narrative. Verdict NOT PUBLISHABLE on this alone.
+- **Root cause:** The independent population verifier audited EVERY `assign_*.csv` in a state's folder — including research-arm artifacts left over from the shakeout (e.g., centroid-FL at 37%) — with a hardcoded ±1% pilot gate, then the batch runner recorded that mixed verdict as the state's production status. The production (splitline) maps themselves passed every gate; the build-time exact-sum identity (V1) was never violated in any state.
+- **Fix:** Verifiers accept `--arm` scoping and the real gate policy (`--gate`, `--flag-not-fail` for NY/CA/IL/NJ per ab-metrics); the batch runner passes production-arm scope; `scripts/refresh-verifier-ledger.js` re-ran all states (3 changed, zero failures remain); report prose corrected to disclose the episode rather than hide it.
+- **Prevention rule:** A status ledger must record the verdict of the artifact it claims to describe — never an aggregate over unrelated artifacts sharing a folder. Verifiers need explicit scope parameters the moment more than one artifact variant exists.
+- **Promoted:** yes → CLAUDE.md PR-8

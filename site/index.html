@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grid Districts — every US congressional district, one identical process</title><style>
+:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#1e3a8a;--blue2:#2563eb}
+*{box-sizing:border-box}body{margin:0;background:#f8fafc;color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1020px;margin:0 auto;background:#fff;min-height:100vh}
+header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:26px 36px}
+header h1{margin:0 0 4px;font-size:23px}header p{margin:0;font-size:13px;opacity:.92}
+header a{color:#dbeafe}
+main{padding:10px 36px 44px}
+h2{font-size:19px;color:var(--blue);margin:26px 0 10px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:8px;padding:11px 15px;background:#f8fafc}
+.stat .n{font-size:22px;font-weight:800;color:var(--blue)}.stat .l{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center;background:#fff;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--blue2);box-shadow:0 1px 6px rgba(37,99,235,.18)}
+.card img{width:100%;height:110px;object-fit:contain;image-rendering:pixelated}
+.card .t{font-weight:700;font-size:14px;margin-top:6px}.card .s{font-size:11px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:center}
+thead th{background:#f1f5f9}
+.muted{color:var(--muted)}.callout{border-left:4px solid var(--blue2);background:#f0f6ff;padding:10px 14px;border-radius:6px;font-size:13px;margin:14px 0}
+.slider-row{display:flex;align-items:center;gap:14px;margin:16px 0 4px}
+input[type=range]{flex:1;accent-color:var(--blue2)}
+.decade-label{font-size:26px;font-weight:800;color:var(--blue);min-width:84px;text-align:center}
+.mapbox{text-align:center;border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff;min-height:340px}
+.mapbox img{max-width:100%;max-height:430px;image-rendering:pixelated}
+.btn{display:inline-block;background:var(--blue2);color:#fff;border-radius:6px;padding:8px 14px;text-decoration:none;font-size:13px;margin:8px 4px 0 0}
+footer{border-top:1px solid var(--line);padding:14px 36px;font-size:12px;color:var(--muted)}
+@media(max-width:640px){main,header,footer{padding-left:18px;padding-right:18px}}
+</style></head><body><div class="wrap">
+<header><h1>Grid Districts</h1><p>Every congressional district in America, drawn from 1-square-mile blocks by one identical,
+deterministic, open-source process — equal population, connected, reproducible by anyone. Click a state to see its districts
+and slide through every decade since 1950.</p></header>
+<main>
+<div class="stats">
+<div class="stat"><div class="n">50/50</div><div class="l">states districted (2020 census)</div></div>
+<div class="stat"><div class="n">435</div><div class="l">congressional districts</div></div>
+<div class="stat"><div class="n">49</div><div class="l">states fully clean</div></div>
+<div class="stat"><div class="n">330,759,736</div><div class="l">people — every one counted exactly once (exact match to the official Census total)</div></div>
+<div class="stat"><div class="n">1950&rarr;2020</div><div class="l">historical demonstration, all 8 apportionment cycles</div></div>
+</div>
+<div class="callout"><b>What this is.</b> A complete, working, open-source redistricting baseline: the same algorithm runs on every
+state, sees only population counts (never race, party, or addresses), and produces byte-identical maps on every run. Today's maps
+use the geography-robust shortest-split method; the center-out square-block method is the project's active research arm.
+Full documentation, verification trail, and the report for lawmakers are in the repository.</div>
+<h2>Every state — click to explore</h2>
+<div class="grid">
+<a class="card" href="state/AL.html"><img src="maps/AL-2020.png" alt="Alabama" loading="lazy">
+<div class="t">Alabama</div><div class="s">7 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/AK.html"><img src="maps/AK-2020.png" alt="Alaska" loading="lazy">
+<div class="t">Alaska</div><div class="s">1 seat &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/AZ.html"><img src="maps/AZ-2020.png" alt="Arizona" loading="lazy">
+<div class="t">Arizona</div><div class="s">9 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/AR.html"><img src="maps/AR-2020.png" alt="Arkansas" loading="lazy">
+<div class="t">Arkansas</div><div class="s">4 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/CA.html"><img src="maps/CA-2020.png" alt="California" loading="lazy">
+<div class="t">California</div><div class="s">52 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/CO.html"><img src="maps/CO-2020.png" alt="Colorado" loading="lazy">
+<div class="t">Colorado</div><div class="s">8 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/CT.html"><img src="maps/CT-2020.png" alt="Connecticut" loading="lazy">
+<div class="t">Connecticut</div><div class="s">5 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/DE.html"><img src="maps/DE-2020.png" alt="Delaware" loading="lazy">
+<div class="t">Delaware</div><div class="s">1 seat &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/FL.html"><img src="maps/FL-2020.png" alt="Florida" loading="lazy">
+<div class="t">Florida</div><div class="s">28 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/GA.html"><img src="maps/GA-2020.png" alt="Georgia" loading="lazy">
+<div class="t">Georgia</div><div class="s">14 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/HI.html"><img src="maps/HI-2020.png" alt="Hawaii" loading="lazy">
+<div class="t">Hawaii</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/ID.html"><img src="maps/ID-2020.png" alt="Idaho" loading="lazy">
+<div class="t">Idaho</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/IL.html"><img src="maps/IL-2020.png" alt="Illinois" loading="lazy">
+<div class="t">Illinois</div><div class="s">17 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/IN.html"><img src="maps/IN-2020.png" alt="Indiana" loading="lazy">
+<div class="t">Indiana</div><div class="s">9 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/IA.html"><img src="maps/IA-2020.png" alt="Iowa" loading="lazy">
+<div class="t">Iowa</div><div class="s">4 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/KS.html"><img src="maps/KS-2020.png" alt="Kansas" loading="lazy">
+<div class="t">Kansas</div><div class="s">4 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/KY.html"><img src="maps/KY-2020.png" alt="Kentucky" loading="lazy">
+<div class="t">Kentucky</div><div class="s">6 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/LA.html"><img src="maps/LA-2020.png" alt="Louisiana" loading="lazy">
+<div class="t">Louisiana</div><div class="s">6 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/ME.html"><img src="maps/ME-2020.png" alt="Maine" loading="lazy">
+<div class="t">Maine</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MD.html"><img src="maps/MD-2020.png" alt="Maryland" loading="lazy">
+<div class="t">Maryland</div><div class="s">8 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MA.html"><img src="maps/MA-2020.png" alt="Massachusetts" loading="lazy">
+<div class="t">Massachusetts</div><div class="s">9 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MI.html"><img src="maps/MI-2020.png" alt="Michigan" loading="lazy">
+<div class="t">Michigan</div><div class="s">13 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MN.html"><img src="maps/MN-2020.png" alt="Minnesota" loading="lazy">
+<div class="t">Minnesota</div><div class="s">8 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MS.html"><img src="maps/MS-2020.png" alt="Mississippi" loading="lazy">
+<div class="t">Mississippi</div><div class="s">4 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MO.html"><img src="maps/MO-2020.png" alt="Missouri" loading="lazy">
+<div class="t">Missouri</div><div class="s">8 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/MT.html"><img src="maps/MT-2020.png" alt="Montana" loading="lazy">
+<div class="t">Montana</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NE.html"><img src="maps/NE-2020.png" alt="Nebraska" loading="lazy">
+<div class="t">Nebraska</div><div class="s">3 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NV.html"><img src="maps/NV-2020.png" alt="Nevada" loading="lazy">
+<div class="t">Nevada</div><div class="s">4 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NH.html"><img src="maps/NH-2020.png" alt="New Hampshire" loading="lazy">
+<div class="t">New Hampshire</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NJ.html"><img src="maps/NJ-2020.png" alt="New Jersey" loading="lazy">
+<div class="t">New Jersey</div><div class="s">12 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NM.html"><img src="maps/NM-2020.png" alt="New Mexico" loading="lazy">
+<div class="t">New Mexico</div><div class="s">3 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NY.html"><img src="maps/NY-2020.png" alt="New York" loading="lazy">
+<div class="t">New York</div><div class="s">26 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/NC.html"><img src="maps/NC-2020.png" alt="North Carolina" loading="lazy">
+<div class="t">North Carolina</div><div class="s">14 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/ND.html"><img src="maps/ND-2020.png" alt="North Dakota" loading="lazy">
+<div class="t">North Dakota</div><div class="s">1 seat &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/OH.html"><img src="maps/OH-2020.png" alt="Ohio" loading="lazy">
+<div class="t">Ohio</div><div class="s">15 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/OK.html"><img src="maps/OK-2020.png" alt="Oklahoma" loading="lazy">
+<div class="t">Oklahoma</div><div class="s">5 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/OR.html"><img src="maps/OR-2020.png" alt="Oregon" loading="lazy">
+<div class="t">Oregon</div><div class="s">6 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/PA.html"><img src="maps/PA-2020.png" alt="Pennsylvania" loading="lazy">
+<div class="t">Pennsylvania</div><div class="s">17 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/RI.html"><img src="maps/RI-2020.png" alt="Rhode Island" loading="lazy">
+<div class="t">Rhode Island</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/SC.html"><img src="maps/SC-2020.png" alt="South Carolina" loading="lazy">
+<div class="t">South Carolina</div><div class="s">7 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/SD.html"><img src="maps/SD-2020.png" alt="South Dakota" loading="lazy">
+<div class="t">South Dakota</div><div class="s">1 seat &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/TN.html"><img src="maps/TN-2020.png" alt="Tennessee" loading="lazy">
+<div class="t">Tennessee</div><div class="s">9 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/TX.html"><img src="maps/TX-2020.png" alt="Texas" loading="lazy">
+<div class="t">Texas</div><div class="s">38 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/UT.html"><img src="maps/UT-2020.png" alt="Utah" loading="lazy">
+<div class="t">Utah</div><div class="s">4 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/VT.html"><img src="maps/VT-2020.png" alt="Vermont" loading="lazy">
+<div class="t">Vermont</div><div class="s">1 seat &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/VA.html"><img src="maps/VA-2020.png" alt="Virginia" loading="lazy">
+<div class="t">Virginia</div><div class="s">11 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/WA.html"><img src="maps/WA-2020.png" alt="Washington" loading="lazy">
+<div class="t">Washington</div><div class="s">10 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/WV.html"><img src="maps/WV-2020.png" alt="West Virginia" loading="lazy">
+<div class="t">West Virginia</div><div class="s">2 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/WI.html"><img src="maps/WI-2020.png" alt="Wisconsin" loading="lazy">
+<div class="t">Wisconsin</div><div class="s">8 seats &middot; 1950&rarr;2020</div></a>
+<a class="card" href="state/WY.html"><img src="maps/WY-2020.png" alt="Wyoming" loading="lazy">
+<div class="t">Wyoming</div><div class="s">1 seat &middot; 1950&rarr;2020</div></a></div>
+</main>
+<footer>Built from 2020 U.S. Census PL 94-171 block data &middot; historical decades scaled from official county census counts &middot; MIT license</footer>
+</div></body></html>
