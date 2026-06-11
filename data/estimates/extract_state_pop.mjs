@@ -2,8 +2,9 @@
 // and run mechanical verification gates. No fabricated values: everything read from the CSV.
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const dir = 'C:/Users/david/Downloads/Claude Personal App/redistricting/data/estimates';
+const dir = path.dirname(fileURLToPath(import.meta.url)); // this file lives in data/estimates/
 const csvPath = path.join(dir, 'NST-EST2025-ALLDATA.csv');
 const raw = fs.readFileSync(csvPath, 'utf8').replace(/^﻿/, '');
 

@@ -2,7 +2,7 @@
 
 Deterministic grid-walk congressional redistricting: 1-mi² (640-acre) cells over an equal-area grid, walked up/down/left/right, accumulating 2020 census block population into equal-population districts. **One identical process per state.** Goal: maximize square/regular districts; ≤2–4 irregular leftover districts per state.
 
-Full build plan: `C:/Users/david/.claude/plans/what-i-m-looking-to-quirky-hartmanis.md`
+Full architecture and verification gates: `docs/report/ch-algorithm.md` and `STRATEGIES.md`.
 
 ## Environment
 Windows 11 + Git Bash. **Node v24 only — no Python, no sqlite3 CLI.** POSIX/bash syntax, forward slashes in all JS paths, quote paths with spaces. Deps: `shapefile`, `proj4`, `adm-zip`, `@turf/boolean-point-in-polygon` — nothing else without a logged reason.
