@@ -65,10 +65,10 @@ treatment: a four-reviewer adversarial pass on its facts, clarity, accessibility
 work yet; obtaining that review (from GAO or the Census Bureau) is the report&rsquo;s explicit ask.</p>
 
 <h2 id="run">Run it yourself</h2>
-<p>The repository contains the full engine, data pipeline, verification suite, this website&rsquo;s generator, and the report. It is
-published together with this site — if you&rsquo;re reading this on the web, the source repository is linked from the hosting page;
-if you have the repository, you already have everything. With Node.js installed:</p>
-<pre tabindex="0" role="region" aria-label="Run commands" style="background:#172554;color:#dbe3fb;padding:14px 18px;border-radius:10px;overflow:auto;font:13.5px/1.6 var(--mono)">node cli.js all --state CO     # grid &rarr; districts &rarr; verify &rarr; render, one state
+<p>The repository — <a href="https://github.com/daviddunec/grid-districts">github.com/daviddunec/grid-districts</a> — contains the full engine, data pipeline,
+verification suite, this website&rsquo;s generator, and the report. With Node.js installed:</p>
+<pre tabindex="0" role="region" aria-label="Run commands" style="background:#172554;color:#dbe3fb;padding:14px 18px;border-radius:10px;overflow:auto;font:13.5px/1.6 var(--mono)">git clone https://github.com/daviddunec/grid-districts.git &amp;&amp; cd grid-districts &amp;&amp; npm install
+node cli.js all --state CO     # grid &rarr; districts &rarr; verify &rarr; render, one state
 node scripts/run-all-states.js # the full 50-state production run
 node scripts/site-export-data.js &amp;&amp; node scripts/site-build.js   # rebuild this website</pre>
 <p>The code also checks once a year for newly published census data, so each new decade&rsquo;s baseline can be rebuilt and re-verified
@@ -96,6 +96,7 @@ mapmaker. Read the <a href="report.html">full report</a> or the <a href="slides.
 <li><a href="slides.html">Briefing slides</a></li>
 <li><a href="about.html#run">Run it yourself</a></li>
 <li><a href="about.html#verify">How it&rsquo;s verified</a></li>
+<li><a href="https://github.com/daviddunec/grid-districts">Source code on GitHub</a></li>
 </ul></div>
 <div><p class="foot-h">Data</p><ul>
 <li>2020 Census PL&nbsp;94-171 blocks</li>

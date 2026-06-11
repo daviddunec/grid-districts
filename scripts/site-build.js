@@ -23,6 +23,7 @@ const DECADES = ['1950', '1960', '1970', '1980', '1990', '2000', '2010', '2020']
 const NAMES = { AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming' };
 const statesSorted = Object.keys(SEATS).sort((a, b) => NAMES[a].localeCompare(NAMES[b]));
 const fmt = (n) => n.toLocaleString('en-US');
+const REPO_URL = 'https://github.com/daviddunec/grid-districts';
 
 // ---------- computed facts (never hand-typed) ----------
 const totalDistricts = Object.values(SEATS).reduce((a, b) => a + b, 0);
@@ -206,6 +207,7 @@ function footer(rel) {
 <li><a href="${rel}slides.html">Briefing slides</a></li>
 <li><a href="${rel}about.html#run">Run it yourself</a></li>
 <li><a href="${rel}about.html#verify">How it&rsquo;s verified</a></li>
+<li><a href="https://github.com/daviddunec/grid-districts">Source code on GitHub</a></li>
 </ul></div>
 <div><p class="foot-h">Data</p><ul>
 <li>2020 Census PL&nbsp;94-171 blocks</li>
@@ -745,9 +747,9 @@ deviations to be justified in writing. No district is forced on anyone. The repo
 constitutional power to regulate House elections (the Elections Clause).</p>`],
   ['Can I check any of this myself?',
     `<p>Yes — that&rsquo;s the entire design. The code, data pipeline, verification suite, defect log, and this website ship together as
-one open repository (it publishes alongside this site; details on the <a href="about.html#run">About page</a>). Re-run any state and
-compare hashes (digital fingerprints of the output); re-derive any number in the report; the build fails loudly if a single person
-goes missing.</p>`],
+<a href="https://github.com/daviddunec/grid-districts">one open repository</a>. Re-run any state and compare hashes (digital
+fingerprints of the output); re-derive any number in the report; the build fails loudly if a single person goes missing. Start with
+<a href="about.html#run">Run it yourself</a>.</p>`],
 ];
 const faqBody = `
 <main id="main">
@@ -818,10 +820,10 @@ treatment: a four-reviewer adversarial pass on its facts, clarity, accessibility
 work yet; obtaining that review (from GAO or the Census Bureau) is the report&rsquo;s explicit ask.</p>
 
 <h2 id="run">Run it yourself</h2>
-<p>The repository contains the full engine, data pipeline, verification suite, this website&rsquo;s generator, and the report. It is
-published together with this site — if you&rsquo;re reading this on the web, the source repository is linked from the hosting page;
-if you have the repository, you already have everything. With Node.js installed:</p>
-<pre tabindex="0" role="region" aria-label="Run commands" style="background:#172554;color:#dbe3fb;padding:14px 18px;border-radius:10px;overflow:auto;font:13.5px/1.6 var(--mono)">node cli.js all --state CO     # grid &rarr; districts &rarr; verify &rarr; render, one state
+<p>The repository — <a href="${REPO_URL}">github.com/daviddunec/grid-districts</a> — contains the full engine, data pipeline,
+verification suite, this website&rsquo;s generator, and the report. With Node.js installed:</p>
+<pre tabindex="0" role="region" aria-label="Run commands" style="background:#172554;color:#dbe3fb;padding:14px 18px;border-radius:10px;overflow:auto;font:13.5px/1.6 var(--mono)">git clone ${REPO_URL}.git &amp;&amp; cd grid-districts &amp;&amp; npm install
+node cli.js all --state CO     # grid &rarr; districts &rarr; verify &rarr; render, one state
 node scripts/run-all-states.js # the full 50-state production run
 node scripts/site-export-data.js &amp;&amp; node scripts/site-build.js   # rebuild this website</pre>
 <p>The code also checks once a year for newly published census data, so each new decade&rsquo;s baseline can be rebuilt and re-verified
