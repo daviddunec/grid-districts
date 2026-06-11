@@ -36,9 +36,11 @@ block in America — the algorithm&rsquo;s only modern input.</li>
 data only exists from 1990 onward, so for consistency the historical demonstration uses official county totals for <i>every</i>
 decade, scaling today&rsquo;s street-level settlement pattern to match — a labeled estimate that demonstrates the <i>process</i>, not a
 literal reconstruction.</li>
-<li><b>Census Bureau Vintage 2025 population estimates</b> (July 1, 2025) for the &ldquo;since the census&rdquo; figures and the 2030
-seat preview. The preview uses the official Huntington&ndash;Hill apportionment method, and our implementation had to reproduce the
-real 2020 apportionment of all 435 seats exactly before it was allowed to touch the estimates.</li>
+<li><b>Census Bureau Vintage 2025 population estimates</b> (July 1, 2025) — state totals for the &ldquo;since the census&rdquo; figures
+and the 2030 seat preview, county totals for the 2025-estimate map on every state page (county-scaled, the same method as the
+historical maps; Connecticut scales statewide because the Bureau&rsquo;s estimates now use planning regions instead of the legacy
+counties on 2020 census blocks). The seat preview uses the official Huntington&ndash;Hill apportionment method, and our implementation
+had to reproduce the real 2020 apportionment of all 435 seats exactly before it was allowed to touch the estimates.</li>
 </ul>
 <p class="small">Coverage, defined: the share of that decade&rsquo;s official county population records we located and matched. Across
 the 321 multi-district historical runs, the median is 100.0% and the lowest is

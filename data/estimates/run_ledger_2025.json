@@ -1,0 +1,294 @@
+{
+ "AL:2025": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 5788
+ },
+ "AK:2025": {
+  "status": "done",
+  "atLarge": true
+ },
+ "AZ:2025": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 6759
+ },
+ "AR:2025": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 4876
+ },
+ "CA:2025": {
+  "status": "done",
+  "seats": 52,
+  "coverage": 1,
+  "ms": 28421
+ },
+ "CO:2025": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 5412
+ },
+ "CT:2025": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 0,
+  "ms": 1388
+ },
+ "DE:2025": {
+  "status": "done",
+  "atLarge": true
+ },
+ "FL:2025": {
+  "status": "done",
+  "seats": 28,
+  "coverage": 1,
+  "ms": 11814
+ },
+ "GA:2025": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 8323
+ },
+ "HI:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 535
+ },
+ "ID:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 2493
+ },
+ "IL:2025": {
+  "status": "done",
+  "seats": 17,
+  "coverage": 1,
+  "ms": 13599
+ },
+ "IN:2025": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 8846
+ },
+ "IA:2025": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 6389
+ },
+ "KS:2025": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 6589
+ },
+ "KY:2025": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 4123
+ },
+ "LA:2025": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 5466
+ },
+ "ME:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 1513
+ },
+ "MD:2025": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 4195
+ },
+ "MA:2025": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 3305
+ },
+ "MI:2025": {
+  "status": "done",
+  "seats": 13,
+  "coverage": 1,
+  "ms": 9658
+ },
+ "MN:2025": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 7450
+ },
+ "MS:2025": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 3562
+ },
+ "MO:2025": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 53344
+ },
+ "MT:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 3456
+ },
+ "NE:2025": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 3765
+ },
+ "NV:2025": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 3602
+ },
+ "NH:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 908
+ },
+ "NJ:2025": {
+  "status": "done",
+  "seats": 12,
+  "coverage": 1,
+  "ms": 3832
+ },
+ "NM:2025": {
+  "status": "done",
+  "seats": 3,
+  "coverage": 1,
+  "ms": 4006
+ },
+ "NY:2025": {
+  "status": "done",
+  "seats": 26,
+  "coverage": 1,
+  "ms": 12440
+ },
+ "NC:2025": {
+  "status": "done",
+  "seats": 14,
+  "coverage": 1,
+  "ms": 8685
+ },
+ "ND:2025": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 2661
+ },
+ "OH:2025": {
+  "status": "done",
+  "seats": 15,
+  "coverage": 1,
+  "ms": 10330
+ },
+ "OK:2025": {
+  "status": "done",
+  "seats": 5,
+  "coverage": 1,
+  "ms": 5489
+ },
+ "OR:2025": {
+  "status": "done",
+  "seats": 6,
+  "coverage": 1,
+  "ms": 4493
+ },
+ "PA:2025": {
+  "status": "done",
+  "seats": 17,
+  "coverage": 1,
+  "ms": 9751
+ },
+ "RI:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 631
+ },
+ "SC:2025": {
+  "status": "done",
+  "seats": 7,
+  "coverage": 1,
+  "ms": 3999
+ },
+ "SD:2025": {
+  "status": "done",
+  "seats": 1,
+  "coverage": 1,
+  "ms": 1869
+ },
+ "TN:2025": {
+  "status": "done",
+  "seats": 9,
+  "coverage": 1,
+  "ms": 4893
+ },
+ "TX:2025": {
+  "status": "done",
+  "seats": 38,
+  "coverage": 1,
+  "ms": 33068
+ },
+ "UT:2025": {
+  "status": "done",
+  "seats": 4,
+  "coverage": 1,
+  "ms": 3015
+ },
+ "VT:2025": {
+  "status": "done",
+  "atLarge": true
+ },
+ "VA:2025": {
+  "status": "done",
+  "seats": 11,
+  "coverage": 1,
+  "ms": 4854
+ },
+ "WA:2025": {
+  "status": "done",
+  "seats": 10,
+  "coverage": 1,
+  "ms": 5562
+ },
+ "WV:2025": {
+  "status": "done",
+  "seats": 2,
+  "coverage": 1,
+  "ms": 2216
+ },
+ "WI:2025": {
+  "status": "done",
+  "seats": 8,
+  "coverage": 1,
+  "ms": 7233
+ },
+ "WY:2025": {
+  "status": "done",
+  "atLarge": true
+ }
+}

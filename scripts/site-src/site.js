@@ -414,20 +414,25 @@
       imgEl.style.display = showCanvas ? 'none' : 'inline';
       if (e.preState) { imgEl.style.display = 'none'; note.textContent = CFG.name + ' was not yet a state in ' + dec + '.'; return; }
       if (e.missing) { imgEl.style.display = 'none'; note.textContent = 'Historical run not available for ' + dec + '.'; return; }
+      const decLabel = e.est ? 'July ' + dec + ' estimate' : dec;
       if (!showCanvas) {
         imgEl.src = '../maps/' + CFG.abbr + '-' + dec + '.png';
-        imgEl.alt = CFG.name + ' district map, ' + dec + (e.seats > 1 ? ' — ' + e.seats + ' districts (estimated historical pattern)' : '');
+        imgEl.alt = CFG.name + ' district map, ' + decLabel + (e.seats > 1 ? ' — ' + e.seats + ' districts (estimate)' : '');
       }
       if (e.atLarge) {
-        note.textContent = dec + ': at-large — the whole state elects one representative, so there are no district lines to draw.';
+        note.textContent = decLabel + ': at-large — the whole state elects one representative, so there are no district lines to draw.';
         return;
       }
       let n = dec === '2020'
         ? 'Hover, tap, or use the table below to explore each district.'
-        : dec + ': ' + e.seats + ' districts';
+        : decLabel + ': ' + e.seats + ' districts';
       if (dec !== '2020') {
         if (e.maxDev !== undefined) n += ' — worst deviation from an equal share: ' + e.maxDev.toFixed(2) + '%';
-        if (e.coverage !== undefined) n += ' — county-record coverage ' + (e.coverage * 100).toFixed(1) + '%';
+        if (e.coverage !== undefined) {
+          n += e.est
+            ? (e.coverage < 0.5 ? ' — statewide scaling (county boundaries changed in the 2025 estimates)' : ' — county-estimate coverage ' + (e.coverage * 100).toFixed(1) + '%')
+            : ' — county-record coverage ' + (e.coverage * 100).toFixed(1) + '%';
+        }
       }
       note.textContent = n;
       let rows = '';
@@ -435,7 +440,7 @@
         rows += '<tr data-d="' + x.d + '" tabindex="0"><td><span class="swatch" style="background:' + GD.colorCss(x.d) + '"></span>' + x.d +
           '</td><td>' + fmt(x.pop) + '</td><td>' + fmtPct(x.dev) + '</td></tr>';
       });
-      if (rows) sb.innerHTML = '<h2>Districts in ' + dec + '</h2><table class="districts"><thead><tr><th scope="col">District</th><th scope="col">Population</th><th scope="col">From equal share</th></tr></thead><tbody>' + rows + '</tbody></table>';
+      if (rows) sb.innerHTML = '<h2>Districts in ' + (e.est ? 'the July ' + dec + ' estimate' : dec) + '</h2><table class="districts"><thead><tr><th scope="col">District</th><th scope="col">Population</th><th scope="col">From equal share</th></tr></thead><tbody>' + rows + '</tbody></table>';
       if (dec === '2020' && e.interactive) {
         btns.innerHTML = '<a class="btn btn-ghost" href="../interactive/' + CFG.abbr + '.html">Open the full-screen zoomable map</a>';
       }

@@ -22,9 +22,9 @@ All of the underlying data and findings are in <a href="../report.html">the full
 <p class="lead">South Dakota elects one at-large representative, so the whole state is a single district — there are no lines to draw. The decade slider still shows how its seat count and population evolved since 1950.</p>
 
 <div class="slider-row"><span class="decade-label" id="dl">2020</span>
-<input type="range" id="slider" min="0" max="7" value="7" step="1" aria-label="Census decade" aria-valuetext="2020" autocomplete="off">
+<input type="range" id="slider" min="0" max="8" value="7" step="1" aria-label="Census year (slide right for the July 2025 estimate)" aria-valuetext="2020" autocomplete="off">
 </div>
-<div class="range-ends"><span>1950</span><span>2020</span></div>
+<div class="range-ends"><span>1950</span><span>2025 est.</span></div>
 <div class="mapframe">
 <canvas id="mapcanvas" class="demo" style="display:none" role="img" aria-label="Interactive 2020 district map of South Dakota. The table below lists every district.">The table below this map lists every district&rsquo;s population.</canvas>
 <img id="mapimg" src="../maps/SD-2020.png" alt="South Dakota district map, 2020">
@@ -33,7 +33,7 @@ All of the underlying data and findings are in <a href="../report.html">the full
 <div id="btns"></div>
 <div id="statsbox"></div>
 
-<div class="callout"><p><b>About the historical maps (1950&ndash;2010):</b> these are labeled estimates. The same algorithm runs on each decade&rsquo;s real seat count and official county census totals, with today&rsquo;s street-level settlement pattern scaled to match (complete digital block-level data only exists for recent censuses, so every historical decade uses the same county-based method for consistency). They demonstrate the <i>process</i> across history; the 2020 map uses full census-block data. &ldquo;Coverage&rdquo; is the share of the state&rsquo;s population we matched to that decade&rsquo;s county records.</p></div>
+<div class="callout"><p><b>About the historical (1950&ndash;2010) and 2025 maps:</b> these are labeled estimates. The same algorithm runs on each year&rsquo;s real seat count and official county totals — decennial census counts for 1950&ndash;2010, the Census Bureau&rsquo;s July 1, 2025 estimates for 2025 — with today&rsquo;s street-level settlement pattern scaled to match (complete digital block-level data only exists for recent censuses, so every estimated year uses the same county-based method for consistency). They demonstrate the <i>process</i> across time; the 2020 map uses full census-block data. &ldquo;Coverage&rdquo; is the share of the state&rsquo;s population we matched to that year&rsquo;s county records.</p></div>
 <div class="statenav">
 <a class="btn btn-ghost" href="SC.html">&larr; South Carolina</a>
 <a class="btn btn-ghost" href="../index.html#map">All states</a>
@@ -44,7 +44,7 @@ All of the underlying data and findings are in <a href="../report.html">the full
 <div class="maptip2" id="maptip" role="status" aria-live="polite"></div>
 <script>
 window.addEventListener('DOMContentLoaded',function(){
-GD.statePage({abbr:"SD",name:"South Dakota",decades:["1950","1960","1970","1980","1990","2000","2010","2020"],data:{"1950":{"seats":2,"maxDev":0.000152522027993893,"coverage":0.9846,"districts":[{"d":1,"pop":327821,"dev":-0.000152522027993893},{"d":2,"pop":327822,"dev":0.000152522027993893}]},"1960":{"seats":2,"maxDev":0.00014617254499556365,"coverage":0.9846,"districts":[{"d":1,"pop":342061,"dev":-0.00014617254499556365},{"d":2,"pop":342062,"dev":0.00014617254499556365}]},"1970":{"seats":2,"maxDev":0.00015013594810100544,"coverage":0.9846,"districts":[{"d":1,"pop":333032,"dev":0.00015013594810100544},{"d":2,"pop":333031,"dev":-0.00015013594810100544}]},"1980":{"seats":1,"atLarge":true,"coverage":0.9846},"1990":{"seats":1,"atLarge":true,"coverage":0.9846},"2000":{"seats":1,"atLarge":true,"coverage":0.9846},"2010":{"seats":1,"atLarge":true,"coverage":1},"2020":{"seats":1,"atLarge":true}},grid:null});
+GD.statePage({abbr:"SD",name:"South Dakota",decades:["1950","1960","1970","1980","1990","2000","2010","2020","2025"],data:{"1950":{"seats":2,"maxDev":0.000152522027993893,"coverage":0.9846,"districts":[{"d":1,"pop":327821,"dev":-0.000152522027993893},{"d":2,"pop":327822,"dev":0.000152522027993893}]},"1960":{"seats":2,"maxDev":0.00014617254499556365,"coverage":0.9846,"districts":[{"d":1,"pop":342061,"dev":-0.00014617254499556365},{"d":2,"pop":342062,"dev":0.00014617254499556365}]},"1970":{"seats":2,"maxDev":0.00015013594810100544,"coverage":0.9846,"districts":[{"d":1,"pop":333032,"dev":0.00015013594810100544},{"d":2,"pop":333031,"dev":-0.00015013594810100544}]},"1980":{"seats":1,"atLarge":true,"coverage":0.9846},"1990":{"seats":1,"atLarge":true,"coverage":0.9846},"2000":{"seats":1,"atLarge":true,"coverage":0.9846},"2010":{"seats":1,"atLarge":true,"coverage":1},"2020":{"seats":1,"atLarge":true},"2025":{"seats":1,"atLarge":true,"coverage":1,"est":true}},grid:null});
 });
 </script>
 <footer class="site"><div class="sec-in">

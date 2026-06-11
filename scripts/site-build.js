@@ -19,7 +19,8 @@ process.chdir(ROOT);
 const { SEATS, FIPS, AT_LARGE, RESIDENT_POP } = await import('../src/constants.js');
 const APP = JSON.parse(fs.readFileSync('data/history/apportionment.json', 'utf8'));
 const LEDGER = JSON.parse(fs.readFileSync('data/states.json', 'utf8'));
-const DECADES = ['1950', '1960', '1970', '1980', '1990', '2000', '2010', '2020'];
+const DECADES = ['1950', '1960', '1970', '1980', '1990', '2000', '2010', '2020', '2025'];
+const DEFAULT_DECADE_IDX = DECADES.indexOf('2020'); // default to the official census map (the interactive one)
 const NAMES = { AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming' };
 const statesSorted = Object.keys(SEATS).sort((a, b) => NAMES[a].localeCompare(NAMES[b]));
 const fmt = (n) => n.toLocaleString('en-US');
@@ -33,13 +34,14 @@ const cleanStates = ledgerRows.filter((r) => r.status === 'done' && r.eligible &
 const flaggedRows = ledgerRows.filter((r) => r.gateFailures && r.gateFailures !== 'none');
 const nyRow = LEDGER.NY || ledgerRows.find((r) => r.abbr === 'NY');
 const nyDev = nyRow ? nyRow.maxDevPct : null;
-let histRuns = 0; const coverages = [];
+let histRuns = 0, runs2025 = 0; const coverages = [];
 for (const st of fs.readdirSync('out')) {
   const hd = path.join('out', st, 'history');
   if (!fs.existsSync(hd)) continue;
   for (const d of fs.readdirSync(hd)) {
     const p = path.join(hd, d, 'stats.json');
     if (!fs.existsSync(p)) continue;
+    if (d === '2025') { runs2025++; continue; } // the forward estimate is counted separately
     histRuns++;
     const s = JSON.parse(fs.readFileSync(p, 'utf8'));
     if (typeof s.coverage === 'number') coverages.push(s.coverage);
@@ -277,7 +279,8 @@ let built = 0; const missingHist = [];
 for (const abbr of statesSorted) {
   const perDecade = {};
   for (const dec of DECADES) {
-    const seats = (APP.seats[dec] || {})[abbr];
+    // 2025 is not an apportionment year: seats are the current (2020-census) apportionment
+    const seats = dec === '2025' ? SEATS[abbr] : (APP.seats[dec] || {})[abbr];
     if (!seats) { perDecade[dec] = { preState: true }; continue; }
     if (dec === '2020') {
       const png2020 = path.join('site/maps', `${abbr}-2020.png`);
@@ -310,8 +313,8 @@ for (const abbr of statesSorted) {
         else fs.writeFileSync(sitePng, await silhouettePng(abbr));
       }
       perDecade[dec] = st.atLarge
-        ? { seats: 1, atLarge: true, coverage: st.coverage }
-        : { seats: st.seats, maxDev: st.maxAbsDevPct, coverage: st.coverage, districts: (st.districts || []).map((x) => ({ d: x.district, pop: x.pop, dev: x.deviationPct })) };
+        ? { seats: 1, atLarge: true, coverage: st.coverage, ...(st.estimate ? { est: true } : {}) }
+        : { seats: st.seats, maxDev: st.maxAbsDevPct, coverage: st.coverage, ...(st.estimate ? { est: true } : {}), districts: (st.districts || []).map((x) => ({ d: x.district, pop: x.pop, dev: x.deviationPct })) };
     }
   }
   const leafletSrc = path.join('out', abbr, 'map_splitline.html');
@@ -329,7 +332,7 @@ for (const abbr of statesSorted) {
 
   const intro = seats2020 === 1
     ? `${NAMES[abbr]} elects one at-large representative, so the whole state is a single district — there are no lines to draw. The decade slider still shows how its seat count and population evolved since 1950.`
-    : `${NAMES[abbr]} has <b>${seats2020} congressional seats</b>. Below is what one neutral, open rule draws from census data alone — no politician touched it. Hover over the 2020 map to inspect any district, and slide back through every census since 1950.`;
+    : `${NAMES[abbr]} has <b>${seats2020} congressional seats</b>. Below is what one neutral, open rule draws from census data alone — no politician touched it. Hover over the 2020 map to inspect any district, slide back through every census since 1950, or slide forward to the <b>July 2025 estimate</b>.`;
 
   const flagNote = flagged
     ? `<div class="callout warn"><p><b>Flagged for refinement.</b> ${nyFlagText(`its worst district deviates ${ledger.maxDevPct.toFixed(2)}% from a perfectly equal share — above the project&rsquo;s self-imposed 2% flag threshold`)}. The fix (subdividing only the densest cells) is specified in the report. We flag it rather than hide it.</p></div>`
@@ -349,9 +352,9 @@ for (const abbr of statesSorted) {
 <p class="lead">${intro}</p>
 ${estNote}
 <div class="slider-row"><span class="decade-label" id="dl">2020</span>
-<input type="range" id="slider" min="0" max="${DECADES.length - 1}" value="${DECADES.length - 1}" step="1" aria-label="Census decade" aria-valuetext="2020" autocomplete="off">
+<input type="range" id="slider" min="0" max="${DECADES.length - 1}" value="${DEFAULT_DECADE_IDX}" step="1" aria-label="Census year (slide right for the July 2025 estimate)" aria-valuetext="2020" autocomplete="off">
 </div>
-<div class="range-ends"><span>1950</span><span>2020</span></div>
+<div class="range-ends"><span>1950</span><span>2025 est.</span></div>
 <div class="mapframe">
 <canvas id="mapcanvas" class="demo" style="display:none" role="img" aria-label="Interactive 2020 district map of ${NAMES[abbr]}. The table below lists every district.">The table below this map lists every district&rsquo;s population.</canvas>
 <img id="mapimg" src="../maps/${abbr}-2020.png" alt="${NAMES[abbr]} district map, 2020">
@@ -360,7 +363,7 @@ ${estNote}
 <div id="btns"></div>
 <div id="statsbox"></div>
 ${flagNote}
-<div class="callout"><p><b>About the historical maps (1950&ndash;2010):</b> these are labeled estimates. The same algorithm runs on each decade&rsquo;s real seat count and official county census totals, with today&rsquo;s street-level settlement pattern scaled to match (complete digital block-level data only exists for recent censuses, so every historical decade uses the same county-based method for consistency). They demonstrate the <i>process</i> across history; the 2020 map uses full census-block data. &ldquo;Coverage&rdquo; is the share of the state&rsquo;s population we matched to that decade&rsquo;s county records.</p></div>
+<div class="callout"><p><b>About the historical (1950&ndash;2010) and 2025 maps:</b> these are labeled estimates. The same algorithm runs on each year&rsquo;s real seat count and official county totals — decennial census counts for 1950&ndash;2010, the Census Bureau&rsquo;s July 1, 2025 estimates for 2025 — with today&rsquo;s street-level settlement pattern scaled to match (complete digital block-level data only exists for recent censuses, so every estimated year uses the same county-based method for consistency). They demonstrate the <i>process</i> across time; the 2020 map uses full census-block data. &ldquo;Coverage&rdquo; is the share of the state&rsquo;s population we matched to that year&rsquo;s county records.${abbr === 'CT' ? ' For 2025, Connecticut scales statewide: the Bureau&rsquo;s estimates now use planning regions instead of the legacy counties on 2020 census blocks.' : ''}</p></div>
 <div class="statenav">
 <a class="btn btn-ghost" href="${prev}.html">&larr; ${NAMES[prev]}</a>
 <a class="btn btn-ghost" href="../index.html#map">All states</a>
@@ -490,15 +493,15 @@ ${usMapSvg()}
 
 <section class="section"><div class="sec-in reveal">
 <p class="kicker">It isn&rsquo;t about today&rsquo;s politics</p>
-<h2>Same rule, any era: 1950 &rarr; 2020</h2>
+<h2>Same rule, any era: 1950 &rarr; 2025</h2>
 <p class="lead" style="max-width:780px">We ran the identical rule for every state in every census year since 1950 &mdash; ${fmt(histRuns)} runs
-in all, zero failures. Here&rsquo;s Ohio shrinking from 23 seats to 15 as its share of the nation&rsquo;s population fell. The process never
-changes; only the people move.</p>
+in all, zero failures &mdash; and then ran it forward onto the Census Bureau&rsquo;s <b>July 2025</b> estimates. Here&rsquo;s Ohio shrinking
+from 23 seats to 15 as its share of the nation&rsquo;s population fell. The process never changes; only the people move.</p>
 <div class="hist-strip">
-${['1950', '1970', '1990', '2010', '2020'].map((d) => `<figure><img src="maps/OH-${d}.png" alt="Ohio's ${d === '2020' ? '' : 'estimated '}algorithm-drawn districts in ${d}"><figcaption>${d}</figcaption></figure>`).join('')}
+${['1950', '1970', '1990', '2010', '2025'].map((d) => `<figure><img src="maps/OH-${d}.png" alt="Ohio's estimated algorithm-drawn districts in ${d}"><figcaption>${d}${d === '2025' ? ' est.' : ''}</figcaption></figure>`).join('')}
 </div>
-<p class="small center" style="margin-top:10px">Historical maps are estimates: today&rsquo;s street-level population pattern, scaled to each
-decade&rsquo;s official county counts (details in <a href="about.html">About</a>). The 2020 map uses full census-block data.</p>
+<p class="small center" style="margin-top:10px">Maps for non-census years are estimates: today&rsquo;s street-level population pattern, scaled to each
+year&rsquo;s official county figures (details in <a href="about.html">About</a>). The 2020 maps use full census-block data.</p>
 <p class="center" style="margin-top:10px"><a class="btn btn-ghost" href="state/OH.html">Slide through Ohio&rsquo;s decades yourself &rarr;</a></p>
 </div></section>
 
@@ -515,7 +518,10 @@ who would gain and lose:</p>
 <div class="card"><h3>&#128201; Losing seats</h3><p>${ESTM.seatChanges.filter((s) => s.delta < 0).map((s) => `<b>${NAMES[s.abbr]}</b> ${s.delta} (&rarr; ${s.projSeats})`).join(' &middot; ') || 'none'}</p>
 <p class="small">Slowest growth since 2020: ${Object.entries(ESTM.states).sort((a, b) => a[1].pctChange - b[1].pctChange).slice(0, 3).map(([ab, s]) => `${NAMES[ab]} ${s.pctChange >= 0 ? '+' : ''}${s.pctChange.toFixed(1)}%`).join(', ')}.</p></div>
 </div>
-<p class="small" style="max-width:780px;margin-top:14px">A preview of the trend, not a prediction: official 2030 reapportionment will use the
+<p style="max-width:780px;margin-top:14px"><b>And the maps keep up too:</b> every state page&rsquo;s decade slider now runs through
+<b>2025</b> &mdash; the same engine, drawn on the Bureau&rsquo;s July 2025 county estimates (labeled as an estimate, like every
+non-census year).</p>
+<p class="small" style="max-width:780px;margin-top:10px">The seat preview is a trend, not a prediction: official 2030 reapportionment will use the
 actual 2030 count. Seat math uses the official Huntington&ndash;Hill method &mdash; our implementation was verified by reproducing the real 2020
 apportionment of all 435 seats exactly before touching the estimates. Source: U.S. Census Bureau, Vintage 2025 Population Estimates.
 The moment 2030 census data publishes, every map on this site rebuilds automatically.</p>
@@ -731,11 +737,12 @@ current Supreme Court doctrine. An idea became an auditable system.</p>`],
     `<p>It&rsquo;s run. All 50 states, ${fmt(totalDistricts)} districts, zero failed runs, with the national total matching the official
 50-state census total exactly: ${fmt(popTotal)} people. Then it was re-run for every state in every census year back to 1950 —
 ${fmt(histRuns)} runs in all. Every map on this site is real engine output, and the repository reproduces all of it.</p>`],
-  ['The maps use 2020 data. What about today’s population?',
-    `<p>By law, districts are drawn from the once-a-decade census count — that&rsquo;s the data with block-by-block precision, and it&rsquo;s
-what every state&rsquo;s real map uses too. Between censuses, the Census Bureau publishes yearly state estimates, and this site shows the
-latest (July 1, 2025) on every state page — including a preview of which states would gain or lose seats if the House were re-divided
-on today&rsquo;s numbers. When the 2030 census block data publishes, the whole site re-draws automatically.</p>`],
+  ['Are these maps current, or stuck in 2020?',
+    `<p>Both, on purpose. By law, districts are drawn from the once-a-decade census count — that&rsquo;s the data with block-by-block
+precision, and it&rsquo;s what every state&rsquo;s real map uses too. But this site also carries the Census Bureau&rsquo;s latest figures
+(July 1, 2025): every state page shows its 2025 population, the decade slider runs forward to a <b>2025-estimate map</b> drawn by the
+same engine from the Bureau&rsquo;s county estimates, and the home page previews which states would gain or lose seats on today&rsquo;s
+numbers. When the 2030 census block data publishes, the whole site re-draws automatically.</p>`],
   ['Who controls the code?',
     `<p>Nobody, which is the point. It&rsquo;s open source under the MIT license. The draft bill assigns a custodian (such as the
 Census Bureau) to <i>run</i> the published specification each cycle — but anyone on earth can run it too, which is what keeps the
@@ -791,9 +798,11 @@ block in America — the algorithm&rsquo;s only modern input.</li>
 data only exists from 1990 onward, so for consistency the historical demonstration uses official county totals for <i>every</i>
 decade, scaling today&rsquo;s street-level settlement pattern to match — a labeled estimate that demonstrates the <i>process</i>, not a
 literal reconstruction.</li>
-<li><b>Census Bureau Vintage 2025 population estimates</b> (July 1, 2025) for the &ldquo;since the census&rdquo; figures and the 2030
-seat preview. The preview uses the official Huntington&ndash;Hill apportionment method, and our implementation had to reproduce the
-real 2020 apportionment of all 435 seats exactly before it was allowed to touch the estimates.</li>
+<li><b>Census Bureau Vintage 2025 population estimates</b> (July 1, 2025) — state totals for the &ldquo;since the census&rdquo; figures
+and the 2030 seat preview, county totals for the 2025-estimate map on every state page (county-scaled, the same method as the
+historical maps; Connecticut scales statewide because the Bureau&rsquo;s estimates now use planning regions instead of the legacy
+counties on 2020 census blocks). The seat preview uses the official Huntington&ndash;Hill apportionment method, and our implementation
+had to reproduce the real 2020 apportionment of all 435 seats exactly before it was allowed to touch the estimates.</li>
 </ul>
 <p class="small">Coverage, defined: the share of that decade&rsquo;s official county population records we located and matched. Across
 the ${coverages.length} multi-district historical runs, the median is ${(covMedian * 100).toFixed(1)}% and the lowest is
