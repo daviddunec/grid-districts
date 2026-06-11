@@ -1,64 +1,77 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oklahoma — Grid Districts</title><style>
-:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#1e3a8a;--blue2:#2563eb}
-*{box-sizing:border-box}body{margin:0;background:#f8fafc;color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:1020px;margin:0 auto;background:#fff;min-height:100vh}
-header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:26px 36px}
-header h1{margin:0 0 4px;font-size:23px}header p{margin:0;font-size:13px;opacity:.92}
-header a{color:#dbeafe}
-main{padding:10px 36px 44px}
-h2{font-size:19px;color:var(--blue);margin:26px 0 10px}
-.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
-.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:8px;padding:11px 15px;background:#f8fafc}
-.stat .n{font-size:22px;font-weight:800;color:var(--blue)}.stat .l{font-size:11px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.card{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center;background:#fff;text-decoration:none;color:var(--ink)}
-.card:hover{border-color:var(--blue2);box-shadow:0 1px 6px rgba(37,99,235,.18)}
-.card img{width:100%;height:110px;object-fit:contain;image-rendering:pixelated}
-.card .t{font-weight:700;font-size:14px;margin-top:6px}.card .s{font-size:11px;color:var(--muted)}
-table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
-th,td{border:1px solid var(--line);padding:6px 9px;text-align:center}
-thead th{background:#f1f5f9}
-.muted{color:var(--muted)}.callout{border-left:4px solid var(--blue2);background:#f0f6ff;padding:10px 14px;border-radius:6px;font-size:13px;margin:14px 0}
-.slider-row{display:flex;align-items:center;gap:14px;margin:16px 0 4px}
-input[type=range]{flex:1;accent-color:var(--blue2)}
-.decade-label{font-size:26px;font-weight:800;color:var(--blue);min-width:84px;text-align:center}
-.mapbox{text-align:center;border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff;min-height:340px}
-.mapbox img{max-width:100%;max-height:430px;image-rendering:pixelated}
-.btn{display:inline-block;background:var(--blue2);color:#fff;border-radius:6px;padding:8px 14px;text-decoration:none;font-size:13px;margin:8px 4px 0 0}
-footer{border-top:1px solid var(--line);padding:14px 36px;font-size:12px;color:var(--muted)}
-@media(max-width:640px){main,header,footer{padding-left:18px;padding-right:18px}}
-</style></head><body><div class="wrap">
-<header><h1>Oklahoma <span style="font-weight:400;opacity:.8">— 5 seats today</span></h1>
-<p><a href="../index.html">&larr; All states</a> &nbsp;•&nbsp; Districts drawn by one identical, deterministic process from 1-square-mile blocks</p></header>
-<main>
+<title>Oklahoma — 5 districts drawn by one neutral rule | Grid Districts</title>
+<meta name="description" content="Oklahoma's congressional districts drawn by an open, deterministic algorithm from 2020 census data — plus every decade back to 1950.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20aria-hidden%3D%22true%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%232c4bd8%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23b07a1e%22%2F%3E%3C%2Fsvg%3E">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="scrollbar" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main"><div class="nav-in">
+<a class="brand" href="../index.html"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg> Grid Districts</a>
+<a class="link" href="../how-it-works.html">How it works</a>
+<a class="link" href="../index.html#map">Your state</a>
+<a class="link" href="../faq.html">FAQ</a>
+<a class="link" href="../about.html">About</a>
+</div></nav>
+<noscript><div class="sec-in" style="padding:14px 22px"><p class="callout warn">The interactive maps and tables on this page need JavaScript.
+All of the underlying data and findings are in <a href="../report.html">the full report</a>, which works without it.</p></div></noscript>
+
+<main id="main">
+<section class="section tight"><div class="sec-in">
+<div class="statehead"><h1>Oklahoma</h1><span class="seats">5 seats today &middot; 3,959,353 residents (2020 census) &middot; July 2025 estimate: 4,123,288 <span style="color:var(--good)">(+4.1% since the census)</span></span></div>
+<p class="lead">Oklahoma has <b>5 congressional seats</b>. Below is what one neutral, open rule draws from census data alone — no politician touched it. Hover over the 2020 map to inspect any district, and slide back through every census since 1950.</p>
+
 <div class="slider-row"><span class="decade-label" id="dl">2020</span>
-<input type="range" id="slider" min="0" max="7" value="7" step="1">
+<input type="range" id="slider" min="0" max="7" value="7" step="1" aria-label="Census decade" aria-valuetext="2020" autocomplete="off">
 </div>
-<div class="muted" style="font-size:12px;display:flex;justify-content:space-between"><span>1950</span><span>2020</span></div>
-<div class="mapbox"><img id="mapimg" src="" alt="district map"><div id="mapnote" class="muted" style="font-size:13px;margin-top:8px"></div></div>
-<div id="statsbox"></div>
+<div class="range-ends"><span>1950</span><span>2020</span></div>
+<div class="mapframe">
+<canvas id="mapcanvas" class="demo" style="display:none" role="img" aria-label="Interactive 2020 district map of Oklahoma. The table below lists every district.">The table below this map lists every district&rsquo;s population.</canvas>
+<img id="mapimg" src="../maps/OK-2020.png" alt="Oklahoma district map, 2020">
+<div class="note" id="mapnote"></div>
+</div>
 <div id="btns"></div>
-<div class="callout"><b>About the historical maps (1950&ndash;2010):</b> these apply the same algorithm to each decade's
-actual seat count and county-level census populations, with the 2020 settlement pattern scaled to each decade's county
-totals (block-level data before 2000 does not exist digitally). They demonstrate the <i>process</i> across history;
-the 2020 map uses full block-level data. Coverage = share of population matched to that decade's county records.</div>
-</main>
-<footer>Generated from engine outputs &middot; 2020 U.S. Census PL 94-171 &middot; <a href="../index.html">Grid Districts</a></footer>
+<div id="statsbox"></div>
+
+<div class="callout"><p><b>About the historical maps (1950&ndash;2010):</b> these are labeled estimates. The same algorithm runs on each decade&rsquo;s real seat count and official county census totals, with today&rsquo;s street-level settlement pattern scaled to match (complete digital block-level data only exists for recent censuses, so every historical decade uses the same county-based method for consistency). They demonstrate the <i>process</i> across history; the 2020 map uses full census-block data. &ldquo;Coverage&rdquo; is the share of the state&rsquo;s population we matched to that decade&rsquo;s county records.</p></div>
+<div class="statenav">
+<a class="btn btn-ghost" href="OH.html">&larr; Ohio</a>
+<a class="btn btn-ghost" href="../index.html#map">All states</a>
+<a class="btn btn-ghost" href="OR.html">Oregon &rarr;</a>
 </div>
+</div></section>
+</main>
+<div class="maptip2" id="maptip" role="status" aria-live="polite"></div>
 <script>
-const D=["1950","1960","1970","1980","1990","2000","2010","2020"];const DATA={"1950":{"seats":6,"maxDev":0.001835748835525572,"coverage":1,"districts":[{"d":1,"pop":372237,"dev":0.00004477436184742668},{"d":2,"pop":372238,"dev":0.0003134205329007122},{"d":3,"pop":372237,"dev":0.00004477436184742668},{"d":4,"pop":372230,"dev":-0.001835748835525572},{"d":5,"pop":372237,"dev":0.00004477436184742668},{"d":6,"pop":372242,"dev":0.0013880052171138543}]},"1960":{"seats":6,"maxDev":0.10699817918394094,"coverage":1,"districts":[{"d":1,"pop":388013,"dev":0.00004295390573921805},{"d":2,"pop":388012,"dev":-0.00021476952866608727},{"d":3,"pop":388011,"dev":-0.00047249296307139263},{"d":4,"pop":388428,"dev":0.10699817918394094},{"d":5,"pop":388013,"dev":0.00004295390573921805},{"d":6,"pop":387600,"dev":-0.10639682450365189}]},"1970":{"seats":6,"maxDev":0.0008205185911930223,"coverage":1,"districts":[{"d":1,"pop":426558,"dev":-0.00035165082479700956},{"d":2,"pop":426559,"dev":-0.00011721694159900319},{"d":3,"pop":426557,"dev":-0.000586084707995016},{"d":4,"pop":426560,"dev":0.00011721694159900319},{"d":5,"pop":426560,"dev":0.00011721694159900319},{"d":6,"pop":426563,"dev":0.0008205185911930223}]},"1980":{"seats":6,"maxDev":0.002115568201955989,"coverage":1,"districts":[{"d":1,"pop":504200,"dev":0.0002644460252401694},{"d":2,"pop":504206,"dev":0.0014544531388382483},{"d":3,"pop":504201,"dev":0.0004627805441731825},{"d":4,"pop":504199,"dev":0.00006611150630715619},{"d":5,"pop":504188,"dev":-0.002115568201955989},{"d":6,"pop":504198,"dev":-0.00013222301262585698}]},"1990":{"seats":6,"maxDev":0.48555480804814993,"coverage":1,"districts":[{"d":1,"pop":521666,"dev":-0.48555480804814993},{"d":2,"pop":524211,"dev":-0.0000635875861733749},{"d":3,"pop":526605,"dev":0.4566224563375877},{"d":4,"pop":524211,"dev":-0.0000635875861733749},{"d":5,"pop":524251,"dev":0.007566922755075765},{"d":6,"pop":524324,"dev":0.021492604127855447}]},"2000":{"seats":5,"maxDev":0.00020288132051731305,"coverage":1,"districts":[{"d":1,"pop":690060,"dev":0.00020288132051731305},{"d":2,"pop":690059,"dev":0.000057966091578785205},{"d":3,"pop":690058,"dev":-0.00008694913735974262},{"d":4,"pop":690058,"dev":-0.00008694913735974262},{"d":5,"pop":690058,"dev":-0.00008694913735974262}]},"2010":{"seats":5,"maxDev":0.46873650413153206,"coverage":1,"districts":[{"d":1,"pop":750231,"dev":0.0001866095392694827},{"d":2,"pop":750230,"dev":0.00005331701122206896},{"d":3,"pop":746713,"dev":-0.46873650413153206},{"d":4,"pop":750230,"dev":0.00005331701122206896},{"d":5,"pop":753744,"dev":0.468443260569834}]},"2020":{"seats":5,"maxDev":0.00007576995534077372,"districts":[{"d":1,"pop":791870,"dev":-0.00007576995534077372},{"d":2,"pop":791871,"dev":0.00005051330356541625},{"d":3,"pop":791871,"dev":0.00005051330356541625},{"d":4,"pop":791871,"dev":0.00005051330356541625},{"d":5,"pop":791870,"dev":-0.00007576995534077372}],"interactive":true}};const ABBR="OK";
-const img=document.getElementById('mapimg'),dl=document.getElementById('dl'),note=document.getElementById('mapnote'),sb=document.getElementById('statsbox'),btns=document.getElementById('btns');
-function fmt(n){return n.toLocaleString('en-US')}
-function show(i){const dec=D[i];dl.textContent=dec;const e=DATA[dec]||{};btns.innerHTML='';
- if(e.preState){img.style.display='none';note.textContent=ABBR+' was not yet a state in '+dec+'.';sb.innerHTML='';return}
- if(e.missing){img.style.display='none';note.textContent='Historical run not available for '+dec+'.';sb.innerHTML='';return}
- img.style.display='inline';img.src='../maps/'+ABBR+'-'+dec+'.png';
- if(e.atLarge){note.textContent=dec+': at-large — the whole state elects one representative.';sb.innerHTML='';}
- else{note.textContent=dec+': '+e.seats+' districts'+(e.maxDev!==undefined?' — worst deviation from an equal share: '+e.maxDev.toFixed(2)+'%':'')+(e.coverage!==undefined?' — county-data coverage '+(e.coverage*100).toFixed(1)+'%':'');
-  let rows='';(e.districts||[]).forEach(x=>{rows+='<tr><td>'+x.d+'</td><td>'+fmt(x.pop)+'</td><td>'+(x.dev>=0?'+':'')+x.dev.toFixed(2)+'%</td></tr>'});
-  sb.innerHTML=rows?'<h2>Districts in '+dec+'</h2><table><thead><tr><th>District</th><th>Population</th><th>Deviation</th></tr></thead><tbody>'+rows+'</tbody></table>':'';}
- if(dec==='2020'&&e.interactive){btns.innerHTML='<a class="btn" href="../interactive/'+ABBR+'.html">Open the full interactive 2020 map (click any district)</a>';}
-}
-document.getElementById('slider').addEventListener('input',ev=>show(+ev.target.value));show(D.length-1);
-</script></body></html>
+window.addEventListener('DOMContentLoaded',function(){
+GD.statePage({abbr:"OK",name:"Oklahoma",decades:["1950","1960","1970","1980","1990","2000","2010","2020"],data:{"1950":{"seats":6,"maxDev":0.001835748835525572,"coverage":1,"districts":[{"d":1,"pop":372237,"dev":0.00004477436184742668},{"d":2,"pop":372238,"dev":0.0003134205329007122},{"d":3,"pop":372237,"dev":0.00004477436184742668},{"d":4,"pop":372230,"dev":-0.001835748835525572},{"d":5,"pop":372237,"dev":0.00004477436184742668},{"d":6,"pop":372242,"dev":0.0013880052171138543}]},"1960":{"seats":6,"maxDev":0.10699817918394094,"coverage":1,"districts":[{"d":1,"pop":388013,"dev":0.00004295390573921805},{"d":2,"pop":388012,"dev":-0.00021476952866608727},{"d":3,"pop":388011,"dev":-0.00047249296307139263},{"d":4,"pop":388428,"dev":0.10699817918394094},{"d":5,"pop":388013,"dev":0.00004295390573921805},{"d":6,"pop":387600,"dev":-0.10639682450365189}]},"1970":{"seats":6,"maxDev":0.0008205185911930223,"coverage":1,"districts":[{"d":1,"pop":426558,"dev":-0.00035165082479700956},{"d":2,"pop":426559,"dev":-0.00011721694159900319},{"d":3,"pop":426557,"dev":-0.000586084707995016},{"d":4,"pop":426560,"dev":0.00011721694159900319},{"d":5,"pop":426560,"dev":0.00011721694159900319},{"d":6,"pop":426563,"dev":0.0008205185911930223}]},"1980":{"seats":6,"maxDev":0.002115568201955989,"coverage":1,"districts":[{"d":1,"pop":504200,"dev":0.0002644460252401694},{"d":2,"pop":504206,"dev":0.0014544531388382483},{"d":3,"pop":504201,"dev":0.0004627805441731825},{"d":4,"pop":504199,"dev":0.00006611150630715619},{"d":5,"pop":504188,"dev":-0.002115568201955989},{"d":6,"pop":504198,"dev":-0.00013222301262585698}]},"1990":{"seats":6,"maxDev":0.48555480804814993,"coverage":1,"districts":[{"d":1,"pop":521666,"dev":-0.48555480804814993},{"d":2,"pop":524211,"dev":-0.0000635875861733749},{"d":3,"pop":526605,"dev":0.4566224563375877},{"d":4,"pop":524211,"dev":-0.0000635875861733749},{"d":5,"pop":524251,"dev":0.007566922755075765},{"d":6,"pop":524324,"dev":0.021492604127855447}]},"2000":{"seats":5,"maxDev":0.00020288132051731305,"coverage":1,"districts":[{"d":1,"pop":690060,"dev":0.00020288132051731305},{"d":2,"pop":690059,"dev":0.000057966091578785205},{"d":3,"pop":690058,"dev":-0.00008694913735974262},{"d":4,"pop":690058,"dev":-0.00008694913735974262},{"d":5,"pop":690058,"dev":-0.00008694913735974262}]},"2010":{"seats":5,"maxDev":0.46873650413153206,"coverage":1,"districts":[{"d":1,"pop":750231,"dev":0.0001866095392694827},{"d":2,"pop":750230,"dev":0.00005331701122206896},{"d":3,"pop":746713,"dev":-0.46873650413153206},{"d":4,"pop":750230,"dev":0.00005331701122206896},{"d":5,"pop":753744,"dev":0.468443260569834}]},"2020":{"seats":5,"maxDev":0.00007576995534077372,"districts":[{"d":1,"pop":791870,"dev":-0.00007576995534077372},{"d":2,"pop":791871,"dev":0.00005051330356541625},{"d":3,"pop":791871,"dev":0.00005051330356541625},{"d":4,"pop":791871,"dev":0.00005051330356541625},{"d":5,"pop":791870,"dev":-0.00007576995534077372}],"interactive":true}},grid:{"abbr":"OK","seats":5,"ideal":791870.6,"h":249,"w":474,"rle":[0,3,1,1,0,473,1,14,0,460,1,27,0,447,1,41,0,432,1,56,0,4,1,1,0,413,1,78,0,396,1,93,0,381,1,114,0,2,1,1,0,357,1,137,0,1,1,1,0,335,1,161,0,1,1,1,0,311,1,184,0,290,1,209,0,265,1,242,0,4,1,1,0,227,1,284,0,190,1,388,2,72,0,14,1,388,2,72,0,14,1,388,2,72,0,13,1,389,2,72,0,13,1,390,2,71,0,13,1,388,2,73,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,13,1,389,2,72,0,12,1,391,2,71,0,12,1,390,2,72,0,12,1,390,2,72,0,12,1,390,2,72,0,12,1,390,2,72,0,20,1,382,2,72,0,34,1,368,2,73,0,44,1,357,2,72,0,64,1,338,2,72,0,75,1,1,0,2,1,324,2,73,0,87,1,1,0,6,1,307,2,72,0,105,1,1,0,7,1,289,2,72,0,131,1,271,2,72,0,144,1,1,0,3,1,2,0,1,1,1,0,1,1,249,2,72,0,175,1,227,2,72,0,177,1,225,2,72,0,177,1,225,2,73,0,176,1,225,2,72,0,177,1,225,2,72,0,177,1,225,2,73,0,176,1,225,2,72,0,177,1,225,2,73,0,176,1,225,2,73,0,176,1,225,2,73,0,176,1,225,2,73,0,176,1,225,2,73,0,176,1,225,2,73,0,176,1,225,2,74,0,174,1,226,2,74,0,175,1,225,2,74,0,175,1,225,2,74,0,175,1,225,2,74,0,175,1,225,2,74,0,175,1,225,2,74,0,175,1,225,2,74,0,175,1,225,2,75,0,173,1,226,2,75,0,173,1,226,2,75,0,173,1,226,2,75,0,173,1,226,2,75,0,173,1,226,2,76,0,172,1,226,2,76,0,172,1,226,2,76,0,172,1,226,2,76,0,172,1,226,2,76,0,172,1,227,2,76,0,171,1,226,2,76,0,172,1,226,2,76,0,172,1,226,2,77,0,171,1,226,2,77,0,171,1,226,2,77,0,171,1,226,2,77,0,171,1,226,2,77,0,171,1,226,2,78,0,170,1,226,2,78,0,170,1,226,2,78,0,170,1,226,2,78,0,170,1,226,2,78,0,170,1,226,2,78,0,169,1,227,2,79,0,169,1,226,2,79,0,168,1,227,2,79,0,168,1,227,2,79,0,168,1,227,2,79,0,168,1,227,2,79,0,168,1,227,2,79,0,168,1,223,4,1,1,3,2,33,4,1,2,46,0,167,1,223,4,1,1,3,2,33,4,1,2,46,0,167,1,223,4,1,1,3,2,33,4,1,2,46,0,167,1,32,3,1,1,28,3,1,1,6,3,1,1,90,4,1,1,13,4,1,1,49,4,1,1,1,4,1,1,1,2,20,4,1,2,7,4,2,2,1,4,1,2,1,4,2,2,45,0,167,3,156,4,151,0,167,3,155,4,152,0,167,3,154,4,153,0,167,3,153,4,154,0,167,3,152,4,156,0,166,3,151,4,157,0,166,3,150,4,158,0,166,3,149,4,159,0,166,3,148,4,160,0,166,3,147,4,161,0,166,3,146,4,163,0,165,3,145,4,164,0,165,3,144,4,165,0,165,3,143,4,166,0,164,3,143,4,167,0,164,3,142,4,169,0,163,3,141,4,170,0,163,3,138,4,1,3,1,4,171,0,163,3,138,4,173,0,163,3,138,4,173,0,163,3,137,4,174,0,163,3,136,4,176,0,162,3,135,4,177,0,162,3,134,4,178,0,162,3,133,4,179,0,162,3,132,4,180,0,162,3,131,4,181,0,162,3,130,4,182,0,162,3,129,4,183,0,162,3,128,4,184,0,162,3,127,4,185,0,162,3,126,4,186,0,161,3,126,4,14,5,1,4,172,0,161,3,125,4,14,5,3,4,171,0,161,3,124,4,16,5,1,4,172,0,162,3,121,5,2,4,16,5,1,4,52,5,1,4,11,5,1,4,107,0,162,3,121,5,191,0,162,3,120,5,192,0,162,3,119,5,193,0,161,3,118,5,195,0,161,3,118,5,195,0,161,3,117,5,196,0,161,3,116,5,197,0,161,3,115,5,198,0,161,3,114,5,199,0,161,3,113,5,200,0,161,3,112,5,201,0,161,3,111,5,201,0,162,3,110,5,202,0,162,3,109,5,203,0,162,3,108,5,204,0,162,3,107,5,205,0,162,3,106,5,207,0,161,3,105,5,208,0,161,3,104,5,208,0,162,3,103,5,209,0,162,3,102,5,210,0,162,3,101,5,211,0,162,3,100,5,212,0,162,3,99,5,214,0,161,3,98,5,215,0,160,3,98,5,216,0,160,3,97,5,216,0,161,3,95,5,218,0,161,3,95,5,218,0,161,3,94,5,219,0,161,3,93,5,220,0,161,3,92,5,221,0,161,3,91,5,222,0,161,3,90,5,223,0,161,3,89,5,224,0,161,3,88,5,226,0,160,3,87,5,226,0,161,3,86,5,227,0,161,3,85,5,229,0,160,3,84,5,230,0,160,3,83,5,230,0,161,3,82,5,232,0,160,3,2,0,2,3,77,5,233,0,160,3,1,0,4,3,75,5,233,0,167,3,73,5,234,0,168,3,71,5,235,0,169,3,69,5,236,0,170,3,67,5,237,0,171,3,65,5,238,0,171,3,64,5,239,0,172,3,62,5,241,0,172,3,60,5,241,0,174,3,21,0,1,3,36,5,242,0,174,3,21,0,2,3,34,5,243,0,176,3,8,0,2,3,9,0,3,3,32,5,244,0,176,3,8,0,5,3,6,0,4,3,1,0,1,3,28,5,245,0,177,3,7,0,7,3,4,0,7,3,26,5,246,0,192,3,1,0,9,3,25,5,248,0,201,3,24,5,248,0,203,3,22,5,249,0,204,3,20,5,250,0,204,3,19,5,251,0,204,3,18,5,252,0,204,3,17,5,253,0,206,3,14,5,254,0,206,3,13,5,255,0,206,3,12,5,256,0,206,3,11,5,257,0,206,3,10,5,258,0,207,3,1,0,1,3,7,0,2,5,256,0,220,5,254,0,220,5,254,0,222,5,252,0,224,5,250,0,224,5,1,0,3,5,7,0,3,5,1,0,1,5,234,0,230,5,1,0,10,5,11,0,3,5,11,0,1,5,207,0,230,5,1,0,10,5,10,0,7,5,1,0,1,5,5,0,2,5,207,0,242,5,9,0,11,5,2,0,3,5,207,0,243,5,7,0,17,5,207,0,244,5,6,0,16,5,208,0,245,5,3,0,18,5,208,0,267,5,207,0,268,5,206,0,267,5,207,0,268,5,206,0,268,5,6,0,1,5,199,0,271,5,3,0,1,5,199,0,275,5,16,0,1,5,1,0,1,5,180,0,276,5,14,0,4,5,180,0,275,5,14,0,7,5,178,0,275,5,13,0,8,5,34,0,1,5,2,0,2,5,96,0,2,5,41,0,275,5,12,0,9,5,34,0,1,5,1,0,4,5,74,0,1,5,19,0,7,5,37,0,274,5,11,0,11,5,4,0,1,5,1,0,1,5,14,0,1,5,13,0,5,5,73,0,4,5,17,0,6,5,3,0,1,5,34,0,274,5,10,0,14,5,1,0,5,5,12,0,3,5,12,0,5,5,12,0,2,5,56,0,1,5,1,0,5,5,15,0,1,5,1,0,7,5,1,0,1,5,35,0,276,5,7,0,21,5,8,0,1,5,3,0,4,5,11,0,5,5,12,0,6,5,47,0,1,5,3,0,8,5,15,0,1,5,1,0,8,5,36,0,278,5,6,0,20,5,8,0,1,5,3,0,4,5,10,0,6,5,12,0,5,5,38,0,1,5,9,0,14,5,10,0,1,5,2,0,13,5,33,0,304,5,6,0,10,5,9,0,8,5,2,0,3,5,6,0,4,5,38,0,4,5,7,0,18,5,1,0,1,5,2,0,18,5,33,0,304,5,6,0,10,5,5,0,2,5,2,0,14,5,4,0,4,5,36,0,8,5,2,0,2,5,2,0,45,5,28,0,304,5,5,0,10,5,8,0,16,5,4,0,6,5,29,0,1,5,2,0,61,5,28,0,318,5,8,0,28,5,25,0,68,5,27,0,318,5,7,0,32,5,21,0,71,5,25,0,319,5,6,0,32,5,21,0,71,5,25,0,319,5,6,0,33,5,19,0,73,5,24,0,319,5,6,0,38,5,7,0,2,5,5,0,74,5,3,0,1,5,19,0,320,5,5,0,39,5,6,0,4,5,1,0,76,5,23,0,320,5,4,0,41,5,4,0,88,5,17,0,365,5,5,0,90,5,14,0,366,5,3,0,89,5,16,0,366,5,3,0,92,5,2,0,1,5,10,0,463,5,2,0,1,5,8,0,468,5,6,0,469,5,2,0,1,5,2,0,469,5,1,0,1,5,2,0,2],"districts":[{"d":1,"pop":791870,"dev":-0.00007576995534077372,"irregular":true},{"d":2,"pop":791871,"dev":0.00005051330356541625,"irregular":false},{"d":3,"pop":791871,"dev":0.00005051330356541625,"irregular":false},{"d":4,"pop":791871,"dev":0.00005051330356541625,"irregular":true},{"d":5,"pop":791870,"dev":-0.00007576995534077372,"irregular":true}]}});
+});
+</script>
+<footer class="site"><div class="sec-in">
+<div style="max-width:340px"><div class="brand" style="color:#fff;margin-bottom:8px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg>&nbsp; Grid Districts</div>
+<p>Every U.S. congressional district, drawn by one open, deterministic rule from census data alone. A benchmark for fair maps — built in the open, mistakes and all.</p>
+<p style="color:#dbe3fb">Created by <b>Mark Dunec, CRE, MAI, FRICS</b> and <b>David Dunec</b>.</p></div>
+<div class="cols">
+<div><p class="foot-h">Explore</p><ul>
+<li><a href="../how-it-works.html">How it works</a></li>
+<li><a href="../index.html#map">Find your state</a></li>
+<li><a href="../faq.html">Hard questions</a></li>
+<li><a href="../about.html">About &amp; methods</a></li>
+</ul></div>
+<div><p class="foot-h">Go deeper</p><ul>
+<li><a href="../report.html">The full report</a></li>
+<li><a href="../slides.html">Briefing slides</a></li>
+<li><a href="../about.html#run">Run it yourself</a></li>
+<li><a href="../about.html#verify">How it&rsquo;s verified</a></li>
+</ul></div>
+<div><p class="foot-h">Data</p><ul>
+<li>2020 Census PL&nbsp;94-171 blocks</li>
+<li>Census TIGER/Line &amp; cartographic boundaries</li>
+<li>Decennial county counts, 1950&ndash;2010</li>
+<li>Census Vintage 2025 population estimates</li>
+<li>Open source &middot; MIT license &middot; made with math</li>
+</ul></div>
+</div></div></footer>
+<script src="../assets/site.js"></script>
+<script>GD.reveal();GD.scrollbar();GD.counters();</script>
+</body></html>

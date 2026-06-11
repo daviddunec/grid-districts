@@ -29,6 +29,7 @@ node scripts/run-all-states.js      # the full country (resumable; ~3.5GB downlo
 node scripts/verify/check-population.js CO    # independent verification suite
 node scripts/build-national-summary.js        # the all-50 visual summary HTML
 node scripts/historical-run.js      # the 1950–2010 historical demonstration
+node scripts/site-export-data.js    # website data: RLE grids, US map, cut trace -> site/data/
 node scripts/site-build.js          # the interactive website -> site/
 ```
 
@@ -82,6 +83,10 @@ anyone running this code gets the identical map. Full specification: `docs/repor
 - This is a **baseline/benchmark proposal**, not a claim that these maps should be enacted
   as-is; see the legal chapter (`docs/report/ch-legal.md`) for the Voting Rights Act
   discussion and the recommended implementation posture.
+
+## Credit
+
+Grid Districts was created by **Mark Dunec, CRE, MAI, FRICS** and **David Dunec**.
 
 ## License
 

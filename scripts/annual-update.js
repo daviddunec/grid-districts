@@ -82,6 +82,9 @@ if (full) {
 const rs = run(['scripts/build-national-summary.js']);
 if (rs.status !== 0) { say('summary rebuild FAILED'); failures++; } else say('national summary regenerated');
 if (fs.existsSync('scripts/site-build.js')) {
+  // export first: site-build consumes site/data/*.json (RLE grids, US map, demo cuts)
+  const re = run(['scripts/site-export-data.js']);
+  if (re.status !== 0) { say('site data export FAILED'); failures++; }
   const rw = run(['scripts/site-build.js']);
   if (rw.status !== 0) { say('site rebuild FAILED'); failures++; } else say('website regenerated');
 }

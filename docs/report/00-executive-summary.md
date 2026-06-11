@@ -1,5 +1,7 @@
 # Deterministic Grid Redistricting: A Transparent, Reproducible Baseline for Congressional Maps
 
+**Prepared by Mark Dunec, CRE, MAI, FRICS, and David Dunec**
+
 ## Report to Lawmakers — Executive Summary
 
 This report documents a deterministic, demographics-blind redistricting algorithm and proposes that
@@ -35,7 +37,7 @@ claim about it can be independently re-derived.
   island/peninsula geographies (HI, MI).
 - The development process used independent verification code written against a published data
   contract, internal blind multi-reviewer evaluation of the candidate methods, and a published
-  defect log (eleven issues, each with root cause and fix). **No external expert review has yet
+  defect log (twelve issues, each with root cause and fix). **No external expert review has yet
   been conducted; obtaining one — from GAO or the Census Bureau — is this report's explicit ask.**
 
 **What this output is, and is not.** The one-square-mile output is a *benchmark*, not an enactable

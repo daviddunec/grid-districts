@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — data, verification, and how to run it yourself | Grid Districts</title>
+<meta name="description" content="The data sources, the verification gates (exact-to-the-person accounting, determinism hashes), the public defect log, and how to reproduce every map.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20aria-hidden%3D%22true%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%232c4bd8%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23b07a1e%22%2F%3E%3C%2Fsvg%3E">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="scrollbar" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main"><div class="nav-in">
+<a class="brand" href="index.html"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg> Grid Districts</a>
+<a class="link" href="how-it-works.html">How it works</a>
+<a class="link" href="index.html#map">Your state</a>
+<a class="link" href="faq.html">FAQ</a>
+<a class="link" href="about.html" aria-current="page">About</a>
+</div></nav>
+<noscript><div class="sec-in" style="padding:14px 22px"><p class="callout warn">The interactive maps and tables on this page need JavaScript.
+All of the underlying data and findings are in <a href="report.html">the full report</a>, which works without it.</p></div></noscript>
+
+<main id="main">
+<section class="section tight"><div class="sec-in narrow">
+<p class="kicker">About the project</p>
+<h1 style="font-size:clamp(30px,4.5vw,46px)">Built in the open, verified to the last person</h1>
+<p class="lead">Grid Districts is an open-source project with one goal: give the country a congressional-district baseline that
+requires zero trust in any person or party — and make it easy enough that anyone can check it.</p>
+
+<h2>Who made this</h2>
+<p>Grid Districts was created by <b>Mark Dunec, CRE, MAI, FRICS</b> and <b>David Dunec</b>. It is not affiliated with any party,
+campaign, or government body, and it favors no one: the algorithm never sees race, party, or any person&rsquo;s identity.</p>
+
+<h2>The data</h2>
+<ul>
+<li><b>2020 Census PL 94-171 block counts</b>, placed with TIGER/Line block coordinates: the official population of every census
+block in America — the algorithm&rsquo;s only modern input.</li>
+<li><b>Census cartographic state boundaries</b> for grids and the maps on this site.</li>
+<li><b>Official decennial county populations, 1950&ndash;2010</b>, for the historical demonstration. Complete digital block-level
+data only exists from 1990 onward, so for consistency the historical demonstration uses official county totals for <i>every</i>
+decade, scaling today&rsquo;s street-level settlement pattern to match — a labeled estimate that demonstrates the <i>process</i>, not a
+literal reconstruction.</li>
+<li><b>Census Bureau Vintage 2025 population estimates</b> (July 1, 2025) for the &ldquo;since the census&rdquo; figures and the 2030
+seat preview. The preview uses the official Huntington&ndash;Hill apportionment method, and our implementation had to reproduce the
+real 2020 apportionment of all 435 seats exactly before it was allowed to touch the estimates.</li>
+</ul>
+<p class="small">Coverage, defined: the share of that decade&rsquo;s official county population records we located and matched. Across
+the 321 multi-district historical runs, the median is 100.0% and the lowest is
+87.46% (Florida&rsquo;s earliest decades); the gap is scaled, not guessed, and every map shows its own number.</p>
+
+<h2 id="verify">How it&rsquo;s verified</h2>
+<p>Every state must pass five gates, in order:</p>
+<ul>
+<li><b>Exact head-count match</b> at grid build — the grid&rsquo;s total must equal the state&rsquo;s official resident population to the
+person. A single missing person fails the build.</li>
+<li><b>Coverage</b> — every in-state square lands in exactly one district.</li>
+<li><b>Contiguity</b> — every district is one connected piece.</li>
+<li><b>Deviation gate</b> — the worst district within 2% of an equal share, with dense-state exceptions flagged rather than hidden.</li>
+<li><b>Determinism</b> — re-runs, including deliberately shuffled input, must reproduce the map byte-for-byte under cryptographic
+hash (a short digital fingerprint that changes if even one byte changes).</li>
+</ul>
+<p>Nationally, the assigned total across all 435 districts equals the official 50-state resident population —
+330,759,736 — exactly.</p>
+<p>Beyond the gates, the project ran adversarial review on itself: independent verification code written against a published data
+contract, blind multi-reviewer evaluation of candidate methods, a hostile review of the report that initially ruled it
+<i>not publishable</i> (the problems it found were fixed, and the episode is recorded in the public failure log as FL-012), and a
+public defect log — <b>12 issues so far</b>, each with root cause and fix. This website itself went through the same
+treatment: a four-reviewer adversarial pass on its facts, clarity, accessibility, and code. No external expert has reviewed the
+work yet; obtaining that review (from GAO or the Census Bureau) is the report&rsquo;s explicit ask.</p>
+
+<h2 id="run">Run it yourself</h2>
+<p>The repository contains the full engine, data pipeline, verification suite, this website&rsquo;s generator, and the report. It is
+published together with this site — if you&rsquo;re reading this on the web, the source repository is linked from the hosting page;
+if you have the repository, you already have everything. With Node.js installed:</p>
+<pre tabindex="0" role="region" aria-label="Run commands" style="background:#172554;color:#dbe3fb;padding:14px 18px;border-radius:10px;overflow:auto;font:13.5px/1.6 var(--mono)">node cli.js all --state CO     # grid &rarr; districts &rarr; verify &rarr; render, one state
+node scripts/run-all-states.js # the full 50-state production run
+node scripts/site-export-data.js &amp;&amp; node scripts/site-build.js   # rebuild this website</pre>
+<p>The code also checks once a year for newly published census data, so each new decade&rsquo;s baseline can be rebuilt and re-verified
+automatically.</p>
+
+<h2>The fine print</h2>
+<p>MIT license. The historical maps are labeled estimates. The 2020 maps are a published benchmark — enacted maps must additionally
+satisfy near-zero deviation and the Voting Rights Act, which is why the proposal is a disclosure standard, not a replacement
+mapmaker. Read the <a href="report.html">full report</a> or the <a href="slides.html">briefing deck</a>.</p>
+</div></section>
+</main>
+<footer class="site"><div class="sec-in">
+<div style="max-width:340px"><div class="brand" style="color:#fff;margin-bottom:8px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg>&nbsp; Grid Districts</div>
+<p>Every U.S. congressional district, drawn by one open, deterministic rule from census data alone. A benchmark for fair maps — built in the open, mistakes and all.</p>
+<p style="color:#dbe3fb">Created by <b>Mark Dunec, CRE, MAI, FRICS</b> and <b>David Dunec</b>.</p></div>
+<div class="cols">
+<div><p class="foot-h">Explore</p><ul>
+<li><a href="how-it-works.html">How it works</a></li>
+<li><a href="index.html#map">Find your state</a></li>
+<li><a href="faq.html">Hard questions</a></li>
+<li><a href="about.html">About &amp; methods</a></li>
+</ul></div>
+<div><p class="foot-h">Go deeper</p><ul>
+<li><a href="report.html">The full report</a></li>
+<li><a href="slides.html">Briefing slides</a></li>
+<li><a href="about.html#run">Run it yourself</a></li>
+<li><a href="about.html#verify">How it&rsquo;s verified</a></li>
+</ul></div>
+<div><p class="foot-h">Data</p><ul>
+<li>2020 Census PL&nbsp;94-171 blocks</li>
+<li>Census TIGER/Line &amp; cartographic boundaries</li>
+<li>Decennial county counts, 1950&ndash;2010</li>
+<li>Census Vintage 2025 population estimates</li>
+<li>Open source &middot; MIT license &middot; made with math</li>
+</ul></div>
+</div></div></footer>
+<script src="assets/site.js"></script>
+<script>GD.reveal();GD.scrollbar();GD.counters();</script>
+</body></html>

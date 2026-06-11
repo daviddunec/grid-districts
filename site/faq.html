@@ -1,0 +1,118 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — hard questions, straight answers | Grid Districts</title>
+<meta name="description" content="The Voting Rights Act, communities of interest, partisan effects, dense cities, gaming the algorithm — the strongest objections, answered plainly.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20aria-hidden%3D%22true%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%232c4bd8%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23b07a1e%22%2F%3E%3C%2Fsvg%3E">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="scrollbar" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main"><div class="nav-in">
+<a class="brand" href="index.html"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg> Grid Districts</a>
+<a class="link" href="how-it-works.html">How it works</a>
+<a class="link" href="index.html#map">Your state</a>
+<a class="link" href="faq.html" aria-current="page">FAQ</a>
+<a class="link" href="about.html">About</a>
+</div></nav>
+<noscript><div class="sec-in" style="padding:14px 22px"><p class="callout warn">The interactive maps and tables on this page need JavaScript.
+All of the underlying data and findings are in <a href="report.html">the full report</a>, which works without it.</p></div></noscript>
+
+<main id="main">
+<section class="section tight"><div class="sec-in narrow">
+<p class="kicker">No softballs</p>
+<h1 style="font-size:clamp(30px,4.5vw,46px)">Hard questions, straight answers</h1>
+<p class="lead">The strongest objections we know of — including the ones that have real teeth — answered the same way the
+report answers them for policymakers, minus the footnotes.</p>
+<details class="faq"><summary>Doesn’t this hurt minority representation under the Voting Rights Act?</summary><div class="a"><p>It would if these maps replaced the real ones — that&rsquo;s exactly why the proposal doesn&rsquo;t do that. A demographics-blind
+map can&rsquo;t guarantee the minority-opportunity districts the VRA sometimes requires, so states keep drawing their own maps under
+existing law. The baseline is published <i>next to</i> the enacted map, and VRA-driven choices simply become documented, justified
+departures. The draft bill contains an explicit savings clause: the baseline binds no one and preempts nothing.</p></div></details>
+<details class="faq"><summary>What about communities — city limits, county lines, neighborhoods?</summary><div class="a"><p>The rule ignores them, on purpose. Every &ldquo;respect this boundary&rdquo; input is a knob, and history shows every knob gets
+turned by whoever holds the pen. The baseline trades community-boundary fit for something no hand-drawn map can offer: proof that
+nobody&rsquo;s thumb was on the scale. States that value county integrity can keep it in their enacted maps — and explain the
+trade-off in public, with numbers.</p></div></details>
+<details class="faq"><summary>Why squares? People don’t live in squares.</summary><div class="a"><p>Squares are equal-area, identical everywhere, and impossible to nudge for advantage. One square mile is small enough to follow
+real population patterns (cities get many crowded squares, ranchland gets empty ones) but large enough that the math stays simple
+and checkable. The squares are just the unit we count in — like pixels in a photo.</p></div></details>
+<details class="faq"><summary>Isn’t the deviation worse than real enacted maps?</summary><div class="a"><p>Yes — and that&rsquo;s disclosed everywhere it appears. (Deviation means how far a district&rsquo;s population strays from a
+perfectly equal share.) Enacted maps reach near-zero deviation by splitting individual city blocks, a refinement step this build
+intentionally leaves to the official process. The benchmark&rsquo;s job is to show the <i>shape</i> of politics-free lines; the report
+specifies exactly how a custodian would do the final block-level trim.</p></div></details>
+<details class="faq"><summary>Why is New York flagged?</summary><div class="a"><p>Because we don&rsquo;t hide bad numbers. New York&rsquo;s densest square mile holds about 121,000 people — roughly a sixth of a whole district&rsquo;s 776,971-person share — and the rule never splits a square. Cuts that land near such heavy blocks can&rsquo;t fine-tune the count, so New York&rsquo;s worst district deviates about 4.08% from equal;
+our self-imposed flag-it threshold is 2%. The fix — subdividing only the densest cells — is specified in the report. The other
+49 states pass the deviation gate clean.</p></div></details>
+<details class="faq"><summary>Couldn’t someone game the algorithm?</summary><div class="a"><p>After publication? No: there are no parameters to tune, no randomness to fish, no inputs except published census counts. The code
+is open source; the output is deterministic; anyone can re-run it and compare hashes. The only way to change the map is to change where
+people actually live — which is the one thing a map is supposed to reflect. The sharper version of this question — couldn&rsquo;t the
+<i>rule itself</i> have been picked to favor someone? — gets the next answer.</p></div></details>
+<details class="faq"><summary>Couldn’t YOU have picked a rule that favors one side?</summary><div class="a"><p>That&rsquo;s the strongest objection, so here&rsquo;s the straight answer. Every design choice (one-square-mile squares,
+split-in-halves, the tie-breaking order) is published with its reasoning, was made on neutral grounds — the algorithm has no party
+data to look at — and the development history, including every mistake, ships in the public defect log. The 1950&ndash;2020
+demonstration also shows the same rule producing sane maps across eight different political eras; it wasn&rsquo;t tuned to 2020&rsquo;s
+politics. And because the proposal is a disclosure standard, not a mandate, anyone who suspects the rule can publish a rival fixed
+rule and let the two baselines be compared in the open. The point was never that this rule is sacred — it&rsquo;s that the reference
+point should be <i>some</i> fixed, published rule instead of a person with a stake in the outcome.</p></div></details>
+<details class="faq"><summary>Does this help Democrats or Republicans?</summary><div class="a"><p>The algorithm can&rsquo;t know — it never sees party data. Geography does correlate with partisanship (cities lean one way,
+rural areas the other), so a blind map still has partisan <i>consequences</i>, and they differ by state. The honest answer is that a
+published baseline makes that question <b>measurable instead of arguable</b>: compare any enacted map to the baseline and the
+difference is the part politicians chose. Both parties gerrymander; this measures both equally.</p></div></details>
+<details class="faq"><summary>What about Alaska, Hawaii, islands, and water?</summary><div class="a"><p>Six states have a single at-large seat, so there&rsquo;s nothing to draw. For island geography (Hawaii, Michigan&rsquo;s
+peninsulas, the Florida Keys), the engine adds &ldquo;virtual bridges&rdquo; along real-world ferry and causeway connections so every
+district stays reachable. Hawaii&rsquo;s two districts came out within 0.02% of an equal share.</p></div></details>
+<details class="faq"><summary>Why isn’t Washington, D.C. (or Puerto Rico) on the map?</summary><div class="a"><p>Because they have no voting House seats to draw — the 435 districts belong entirely to the 50 states. That&rsquo;s also why our
+total is 330,759,736 rather than the famous full-U.S. census figure of 331,449,281: the difference is D.C.&rsquo;s 689,545
+residents, who have no House district under current law. (Puerto Rico&rsquo;s 3.3 million residents are likewise outside the 435.)
+Whether they <i>should</i> have voting seats is a real debate — but it&rsquo;s a different law than the one this project proposes.</p></div></details>
+<details class="faq"><summary>Is this just the old &ldquo;shortest splitline&rdquo; idea?</summary><div class="a"><p>The cutting rule builds on the splitline concept mathematicians proposed in the 2000s — we say so plainly. What&rsquo;s new is
+everything that makes it usable: an exact-to-the-person accounting gate, island repair, a published verification suite, a
+50-state run with cryptographic reproducibility, the 1950&ndash;2020 historical demonstration, and a draft disclosure law that fits
+current Supreme Court doctrine. An idea became an auditable system.</p></div></details>
+<details class="faq"><summary>Has this actually been run, or is it a concept?</summary><div class="a"><p>It&rsquo;s run. All 50 states, 435 districts, zero failed runs, with the national total matching the official
+50-state census total exactly: 330,759,736 people. Then it was re-run for every state in every census year back to 1950 —
+348 runs in all. Every map on this site is real engine output, and the repository reproduces all of it.</p></div></details>
+<details class="faq"><summary>The maps use 2020 data. What about today’s population?</summary><div class="a"><p>By law, districts are drawn from the once-a-decade census count — that&rsquo;s the data with block-by-block precision, and it&rsquo;s
+what every state&rsquo;s real map uses too. Between censuses, the Census Bureau publishes yearly state estimates, and this site shows the
+latest (July 1, 2025) on every state page — including a preview of which states would gain or lose seats if the House were re-divided
+on today&rsquo;s numbers. When the 2030 census block data publishes, the whole site re-draws automatically.</p></div></details>
+<details class="faq"><summary>Who controls the code?</summary><div class="a"><p>Nobody, which is the point. It&rsquo;s open source under the MIT license. The draft bill assigns a custodian (such as the
+Census Bureau) to <i>run</i> the published specification each cycle — but anyone on earth can run it too, which is what keeps the
+custodian honest.</p></div></details>
+<details class="faq"><summary>How would this actually become law?</summary><div class="a"><p>The draft bill (Appendix A of the report) is deliberately small: after each census, publish the baseline map for every
+state; require each enacted plan to be published alongside its baseline with a standard metrics comparison; require material
+deviations to be justified in writing. No district is forced on anyone. The report argues this fits squarely within Congress&rsquo;s
+constitutional power to regulate House elections (the Elections Clause).</p></div></details>
+<details class="faq"><summary>Can I check any of this myself?</summary><div class="a"><p>Yes — that&rsquo;s the entire design. The code, data pipeline, verification suite, defect log, and this website ship together as
+one open repository (it publishes alongside this site; details on the <a href="about.html#run">About page</a>). Re-run any state and
+compare hashes (digital fingerprints of the output); re-derive any number in the report; the build fails loudly if a single person
+goes missing.</p></div></details>
+<p style="margin-top:22px">Want the versions with citations? <a href="report.html">The full report</a> addresses each of these
+with case law and data.</p>
+</div></section>
+</main>
+<footer class="site"><div class="sec-in">
+<div style="max-width:340px"><div class="brand" style="color:#fff;margin-bottom:8px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg>&nbsp; Grid Districts</div>
+<p>Every U.S. congressional district, drawn by one open, deterministic rule from census data alone. A benchmark for fair maps — built in the open, mistakes and all.</p>
+<p style="color:#dbe3fb">Created by <b>Mark Dunec, CRE, MAI, FRICS</b> and <b>David Dunec</b>.</p></div>
+<div class="cols">
+<div><p class="foot-h">Explore</p><ul>
+<li><a href="how-it-works.html">How it works</a></li>
+<li><a href="index.html#map">Find your state</a></li>
+<li><a href="faq.html">Hard questions</a></li>
+<li><a href="about.html">About &amp; methods</a></li>
+</ul></div>
+<div><p class="foot-h">Go deeper</p><ul>
+<li><a href="report.html">The full report</a></li>
+<li><a href="slides.html">Briefing slides</a></li>
+<li><a href="about.html#run">Run it yourself</a></li>
+<li><a href="about.html#verify">How it&rsquo;s verified</a></li>
+</ul></div>
+<div><p class="foot-h">Data</p><ul>
+<li>2020 Census PL&nbsp;94-171 blocks</li>
+<li>Census TIGER/Line &amp; cartographic boundaries</li>
+<li>Decennial county counts, 1950&ndash;2010</li>
+<li>Census Vintage 2025 population estimates</li>
+<li>Open source &middot; MIT license &middot; made with math</li>
+</ul></div>
+</div></div></footer>
+<script src="assets/site.js"></script>
+<script>GD.reveal();GD.scrollbar();GD.counters();</script>
+</body></html>

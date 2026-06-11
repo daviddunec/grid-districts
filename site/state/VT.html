@@ -1,64 +1,77 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vermont — Grid Districts</title><style>
-:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#1e3a8a;--blue2:#2563eb}
-*{box-sizing:border-box}body{margin:0;background:#f8fafc;color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:1020px;margin:0 auto;background:#fff;min-height:100vh}
-header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:26px 36px}
-header h1{margin:0 0 4px;font-size:23px}header p{margin:0;font-size:13px;opacity:.92}
-header a{color:#dbeafe}
-main{padding:10px 36px 44px}
-h2{font-size:19px;color:var(--blue);margin:26px 0 10px}
-.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
-.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:8px;padding:11px 15px;background:#f8fafc}
-.stat .n{font-size:22px;font-weight:800;color:var(--blue)}.stat .l{font-size:11px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.card{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center;background:#fff;text-decoration:none;color:var(--ink)}
-.card:hover{border-color:var(--blue2);box-shadow:0 1px 6px rgba(37,99,235,.18)}
-.card img{width:100%;height:110px;object-fit:contain;image-rendering:pixelated}
-.card .t{font-weight:700;font-size:14px;margin-top:6px}.card .s{font-size:11px;color:var(--muted)}
-table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
-th,td{border:1px solid var(--line);padding:6px 9px;text-align:center}
-thead th{background:#f1f5f9}
-.muted{color:var(--muted)}.callout{border-left:4px solid var(--blue2);background:#f0f6ff;padding:10px 14px;border-radius:6px;font-size:13px;margin:14px 0}
-.slider-row{display:flex;align-items:center;gap:14px;margin:16px 0 4px}
-input[type=range]{flex:1;accent-color:var(--blue2)}
-.decade-label{font-size:26px;font-weight:800;color:var(--blue);min-width:84px;text-align:center}
-.mapbox{text-align:center;border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff;min-height:340px}
-.mapbox img{max-width:100%;max-height:430px;image-rendering:pixelated}
-.btn{display:inline-block;background:var(--blue2);color:#fff;border-radius:6px;padding:8px 14px;text-decoration:none;font-size:13px;margin:8px 4px 0 0}
-footer{border-top:1px solid var(--line);padding:14px 36px;font-size:12px;color:var(--muted)}
-@media(max-width:640px){main,header,footer{padding-left:18px;padding-right:18px}}
-</style></head><body><div class="wrap">
-<header><h1>Vermont <span style="font-weight:400;opacity:.8">— 1 seat today</span></h1>
-<p><a href="../index.html">&larr; All states</a> &nbsp;•&nbsp; Districts drawn by one identical, deterministic process from 1-square-mile blocks</p></header>
-<main>
+<title>Vermont — 1 district drawn by one neutral rule | Grid Districts</title>
+<meta name="description" content="Vermont's congressional districts drawn by an open, deterministic algorithm from 2020 census data — plus every decade back to 1950.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20aria-hidden%3D%22true%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%232c4bd8%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%221%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23172554%22%2F%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%229%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23b07a1e%22%2F%3E%3C%2Fsvg%3E">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="scrollbar" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main"><div class="nav-in">
+<a class="brand" href="../index.html"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg> Grid Districts</a>
+<a class="link" href="../how-it-works.html">How it works</a>
+<a class="link" href="../index.html#map">Your state</a>
+<a class="link" href="../faq.html">FAQ</a>
+<a class="link" href="../about.html">About</a>
+</div></nav>
+<noscript><div class="sec-in" style="padding:14px 22px"><p class="callout warn">The interactive maps and tables on this page need JavaScript.
+All of the underlying data and findings are in <a href="../report.html">the full report</a>, which works without it.</p></div></noscript>
+
+<main id="main">
+<section class="section tight"><div class="sec-in">
+<div class="statehead"><h1>Vermont</h1><span class="seats">1 seat today &middot; 643,077 residents (2020 census) &middot; July 2025 estimate: 644,663 <span style="color:var(--good)">(+0.2% since the census)</span></span></div>
+<p class="lead">Vermont elects one at-large representative, so the whole state is a single district — there are no lines to draw. The decade slider still shows how its seat count and population evolved since 1950.</p>
+
 <div class="slider-row"><span class="decade-label" id="dl">2020</span>
-<input type="range" id="slider" min="0" max="7" value="7" step="1">
+<input type="range" id="slider" min="0" max="7" value="7" step="1" aria-label="Census decade" aria-valuetext="2020" autocomplete="off">
 </div>
-<div class="muted" style="font-size:12px;display:flex;justify-content:space-between"><span>1950</span><span>2020</span></div>
-<div class="mapbox"><img id="mapimg" src="" alt="district map"><div id="mapnote" class="muted" style="font-size:13px;margin-top:8px"></div></div>
-<div id="statsbox"></div>
+<div class="range-ends"><span>1950</span><span>2020</span></div>
+<div class="mapframe">
+<canvas id="mapcanvas" class="demo" style="display:none" role="img" aria-label="Interactive 2020 district map of Vermont. The table below lists every district.">The table below this map lists every district&rsquo;s population.</canvas>
+<img id="mapimg" src="../maps/VT-2020.png" alt="Vermont district map, 2020">
+<div class="note" id="mapnote"></div>
+</div>
 <div id="btns"></div>
-<div class="callout"><b>About the historical maps (1950&ndash;2010):</b> these apply the same algorithm to each decade's
-actual seat count and county-level census populations, with the 2020 settlement pattern scaled to each decade's county
-totals (block-level data before 2000 does not exist digitally). They demonstrate the <i>process</i> across history;
-the 2020 map uses full block-level data. Coverage = share of population matched to that decade's county records.</div>
-</main>
-<footer>Generated from engine outputs &middot; 2020 U.S. Census PL 94-171 &middot; <a href="../index.html">Grid Districts</a></footer>
+<div id="statsbox"></div>
+
+<div class="callout"><p><b>About the historical maps (1950&ndash;2010):</b> these are labeled estimates. The same algorithm runs on each decade&rsquo;s real seat count and official county census totals, with today&rsquo;s street-level settlement pattern scaled to match (complete digital block-level data only exists for recent censuses, so every historical decade uses the same county-based method for consistency). They demonstrate the <i>process</i> across history; the 2020 map uses full census-block data. &ldquo;Coverage&rdquo; is the share of the state&rsquo;s population we matched to that decade&rsquo;s county records.</p></div>
+<div class="statenav">
+<a class="btn btn-ghost" href="UT.html">&larr; Utah</a>
+<a class="btn btn-ghost" href="../index.html#map">All states</a>
+<a class="btn btn-ghost" href="VA.html">Virginia &rarr;</a>
 </div>
+</div></section>
+</main>
+<div class="maptip2" id="maptip" role="status" aria-live="polite"></div>
 <script>
-const D=["1950","1960","1970","1980","1990","2000","2010","2020"];const DATA={"1950":{"seats":1,"atLarge":true},"1960":{"seats":1,"atLarge":true},"1970":{"seats":1,"atLarge":true},"1980":{"seats":1,"atLarge":true},"1990":{"seats":1,"atLarge":true},"2000":{"seats":1,"atLarge":true},"2010":{"seats":1,"atLarge":true},"2020":{"seats":1,"atLarge":true}};const ABBR="VT";
-const img=document.getElementById('mapimg'),dl=document.getElementById('dl'),note=document.getElementById('mapnote'),sb=document.getElementById('statsbox'),btns=document.getElementById('btns');
-function fmt(n){return n.toLocaleString('en-US')}
-function show(i){const dec=D[i];dl.textContent=dec;const e=DATA[dec]||{};btns.innerHTML='';
- if(e.preState){img.style.display='none';note.textContent=ABBR+' was not yet a state in '+dec+'.';sb.innerHTML='';return}
- if(e.missing){img.style.display='none';note.textContent='Historical run not available for '+dec+'.';sb.innerHTML='';return}
- img.style.display='inline';img.src='../maps/'+ABBR+'-'+dec+'.png';
- if(e.atLarge){note.textContent=dec+': at-large — the whole state elects one representative.';sb.innerHTML='';}
- else{note.textContent=dec+': '+e.seats+' districts'+(e.maxDev!==undefined?' — worst deviation from an equal share: '+e.maxDev.toFixed(2)+'%':'')+(e.coverage!==undefined?' — county-data coverage '+(e.coverage*100).toFixed(1)+'%':'');
-  let rows='';(e.districts||[]).forEach(x=>{rows+='<tr><td>'+x.d+'</td><td>'+fmt(x.pop)+'</td><td>'+(x.dev>=0?'+':'')+x.dev.toFixed(2)+'%</td></tr>'});
-  sb.innerHTML=rows?'<h2>Districts in '+dec+'</h2><table><thead><tr><th>District</th><th>Population</th><th>Deviation</th></tr></thead><tbody>'+rows+'</tbody></table>':'';}
- if(dec==='2020'&&e.interactive){btns.innerHTML='<a class="btn" href="../interactive/'+ABBR+'.html">Open the full interactive 2020 map (click any district)</a>';}
-}
-document.getElementById('slider').addEventListener('input',ev=>show(+ev.target.value));show(D.length-1);
-</script></body></html>
+window.addEventListener('DOMContentLoaded',function(){
+GD.statePage({abbr:"VT",name:"Vermont",decades:["1950","1960","1970","1980","1990","2000","2010","2020"],data:{"1950":{"seats":1,"atLarge":true},"1960":{"seats":1,"atLarge":true},"1970":{"seats":1,"atLarge":true},"1980":{"seats":1,"atLarge":true},"1990":{"seats":1,"atLarge":true},"2000":{"seats":1,"atLarge":true},"2010":{"seats":1,"atLarge":true},"2020":{"seats":1,"atLarge":true}},grid:null});
+});
+</script>
+<footer class="site"><div class="sec-in">
+<div style="max-width:340px"><div class="brand" style="color:#fff;margin-bottom:8px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="1.5" fill="#2c4bd8"/><rect x="12" y="1" width="9" height="9" rx="1.5" fill="#172554"/><rect x="1" y="12" width="9" height="9" rx="1.5" fill="#172554"/><rect x="12" y="12" width="9" height="9" rx="1.5" fill="#b07a1e"/></svg>&nbsp; Grid Districts</div>
+<p>Every U.S. congressional district, drawn by one open, deterministic rule from census data alone. A benchmark for fair maps — built in the open, mistakes and all.</p>
+<p style="color:#dbe3fb">Created by <b>Mark Dunec, CRE, MAI, FRICS</b> and <b>David Dunec</b>.</p></div>
+<div class="cols">
+<div><p class="foot-h">Explore</p><ul>
+<li><a href="../how-it-works.html">How it works</a></li>
+<li><a href="../index.html#map">Find your state</a></li>
+<li><a href="../faq.html">Hard questions</a></li>
+<li><a href="../about.html">About &amp; methods</a></li>
+</ul></div>
+<div><p class="foot-h">Go deeper</p><ul>
+<li><a href="../report.html">The full report</a></li>
+<li><a href="../slides.html">Briefing slides</a></li>
+<li><a href="../about.html#run">Run it yourself</a></li>
+<li><a href="../about.html#verify">How it&rsquo;s verified</a></li>
+</ul></div>
+<div><p class="foot-h">Data</p><ul>
+<li>2020 Census PL&nbsp;94-171 blocks</li>
+<li>Census TIGER/Line &amp; cartographic boundaries</li>
+<li>Decennial county counts, 1950&ndash;2010</li>
+<li>Census Vintage 2025 population estimates</li>
+<li>Open source &middot; MIT license &middot; made with math</li>
+</ul></div>
+</div></div></footer>
+<script src="../assets/site.js"></script>
+<script>GD.reveal();GD.scrollbar();GD.counters();</script>
+</body></html>

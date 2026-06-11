@@ -1,0 +1,206 @@
+{
+  "source": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-table01.xlsx",
+  "retrieved": "2026-06-11",
+  "states": {
+    "AK": {
+      "apportionmentPop": 736081,
+      "seats": 1
+    },
+    "AL": {
+      "apportionmentPop": 5030053,
+      "seats": 7
+    },
+    "AR": {
+      "apportionmentPop": 3013756,
+      "seats": 4
+    },
+    "AZ": {
+      "apportionmentPop": 7158923,
+      "seats": 9
+    },
+    "CA": {
+      "apportionmentPop": 39576757,
+      "seats": 52
+    },
+    "CO": {
+      "apportionmentPop": 5782171,
+      "seats": 8
+    },
+    "CT": {
+      "apportionmentPop": 3608298,
+      "seats": 5
+    },
+    "DE": {
+      "apportionmentPop": 990837,
+      "seats": 1
+    },
+    "FL": {
+      "apportionmentPop": 21570527,
+      "seats": 28
+    },
+    "GA": {
+      "apportionmentPop": 10725274,
+      "seats": 14
+    },
+    "HI": {
+      "apportionmentPop": 1460137,
+      "seats": 2
+    },
+    "IA": {
+      "apportionmentPop": 3192406,
+      "seats": 4
+    },
+    "ID": {
+      "apportionmentPop": 1841377,
+      "seats": 2
+    },
+    "IL": {
+      "apportionmentPop": 12822739,
+      "seats": 17
+    },
+    "IN": {
+      "apportionmentPop": 6790280,
+      "seats": 9
+    },
+    "KS": {
+      "apportionmentPop": 2940865,
+      "seats": 4
+    },
+    "KY": {
+      "apportionmentPop": 4509342,
+      "seats": 6
+    },
+    "LA": {
+      "apportionmentPop": 4661468,
+      "seats": 6
+    },
+    "MA": {
+      "apportionmentPop": 7033469,
+      "seats": 9
+    },
+    "MD": {
+      "apportionmentPop": 6185278,
+      "seats": 8
+    },
+    "ME": {
+      "apportionmentPop": 1363582,
+      "seats": 2
+    },
+    "MI": {
+      "apportionmentPop": 10084442,
+      "seats": 13
+    },
+    "MN": {
+      "apportionmentPop": 5709752,
+      "seats": 8
+    },
+    "MO": {
+      "apportionmentPop": 6160281,
+      "seats": 8
+    },
+    "MS": {
+      "apportionmentPop": 2963914,
+      "seats": 4
+    },
+    "MT": {
+      "apportionmentPop": 1085407,
+      "seats": 2
+    },
+    "NC": {
+      "apportionmentPop": 10453948,
+      "seats": 14
+    },
+    "ND": {
+      "apportionmentPop": 779702,
+      "seats": 1
+    },
+    "NE": {
+      "apportionmentPop": 1963333,
+      "seats": 3
+    },
+    "NH": {
+      "apportionmentPop": 1379089,
+      "seats": 2
+    },
+    "NJ": {
+      "apportionmentPop": 9294493,
+      "seats": 12
+    },
+    "NM": {
+      "apportionmentPop": 2120220,
+      "seats": 3
+    },
+    "NV": {
+      "apportionmentPop": 3108462,
+      "seats": 4
+    },
+    "NY": {
+      "apportionmentPop": 20215751,
+      "seats": 26
+    },
+    "OH": {
+      "apportionmentPop": 11808848,
+      "seats": 15
+    },
+    "OK": {
+      "apportionmentPop": 3963516,
+      "seats": 5
+    },
+    "OR": {
+      "apportionmentPop": 4241500,
+      "seats": 6
+    },
+    "PA": {
+      "apportionmentPop": 13011844,
+      "seats": 17
+    },
+    "RI": {
+      "apportionmentPop": 1098163,
+      "seats": 2
+    },
+    "SC": {
+      "apportionmentPop": 5124712,
+      "seats": 7
+    },
+    "SD": {
+      "apportionmentPop": 887770,
+      "seats": 1
+    },
+    "TN": {
+      "apportionmentPop": 6916897,
+      "seats": 9
+    },
+    "TX": {
+      "apportionmentPop": 29183290,
+      "seats": 38
+    },
+    "UT": {
+      "apportionmentPop": 3275252,
+      "seats": 4
+    },
+    "VA": {
+      "apportionmentPop": 8654542,
+      "seats": 11
+    },
+    "VT": {
+      "apportionmentPop": 643503,
+      "seats": 1
+    },
+    "WA": {
+      "apportionmentPop": 7715946,
+      "seats": 10
+    },
+    "WI": {
+      "apportionmentPop": 5897473,
+      "seats": 8
+    },
+    "WV": {
+      "apportionmentPop": 1795045,
+      "seats": 2
+    },
+    "WY": {
+      "apportionmentPop": 577719,
+      "seats": 1
+    }
+  }
+}

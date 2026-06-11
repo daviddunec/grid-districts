@@ -4,7 +4,10 @@
 // -> V < H < D1 < D2 -> lower threshold. Side A (west/north/NW/NE) gets a seats.
 // Depth-first numbering, A-side first. Disconnected halves are allowed -> repair.
 
-export function runSplitline(grid, meta) {
+// Optional third arg `onCut(cells, cut, s, a, b)` observes each accepted cut (site
+// animation export). It must not mutate `cells`. Omitted in all production paths, so
+// output is bit-identical with or without it (verified by scripts/site-export-data.js A/B).
+export function runSplitline(grid, meta, onCut) {
   const { rows, cols, inState, pop } = grid;
   const n = rows * cols;
   const district = new Int16Array(n).fill(-1);
@@ -95,6 +98,7 @@ export function runSplitline(grid, meta) {
       split(sorted.slice(idx + 1), b);
       return;
     }
+    if (onCut) onCut(cells, cut, s, a, b);
     const key = KEYS[cut.fam];
     const A = [], B = [];
     for (const i of cells) {

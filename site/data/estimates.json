@@ -1,0 +1,380 @@
+{
+ "provenance": {
+  "estimates": {
+   "source": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv",
+   "vintage": "2025",
+   "asOf": "2025-07-01",
+   "retrieved": "2026-06-11"
+  },
+  "apportionment2020": {
+   "source": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-table01.xlsx",
+   "retrieved": "2026-06-11"
+  },
+  "method": "Huntington-Hill (method of equal proportions), verified by reproducing the official 2020 apportionment exactly before use",
+  "caveat": "Projection applies the official method to July 1, 2025 resident-population ESTIMATES. Actual 2030 apportionment will use the 2030 census count, which includes overseas federal personnel."
+ },
+ "national": {
+  "censusTotal": 330759736,
+  "est2025Total": 341091212,
+  "pctChange": 3.1235591505007125
+ },
+ "states": {
+  "AK": {
+   "est2025": 737270,
+   "pctChange": 0.5289129536631891,
+   "projSeats2030": 1,
+   "seatDelta": 0
+  },
+  "AL": {
+   "est2025": 5193088,
+   "pctChange": 3.3598651667234245,
+   "projSeats2030": 7,
+   "seatDelta": 0
+  },
+  "AR": {
+   "est2025": 3114791,
+   "pctChange": 3.4290611663729065,
+   "projSeats2030": 4,
+   "seatDelta": 0
+  },
+  "AZ": {
+   "est2025": 7623818,
+   "pctChange": 6.604430789504079,
+   "projSeats2030": 10,
+   "seatDelta": 1
+  },
+  "CA": {
+   "est2025": 39355309,
+   "pctChange": -0.4626257482537847,
+   "projSeats2030": 50,
+   "seatDelta": -2
+  },
+  "CO": {
+   "est2025": 6012561,
+   "pctChange": 4.136799986975455,
+   "projSeats2030": 8,
+   "seatDelta": 0
+  },
+  "CT": {
+   "est2025": 3688496,
+   "pctChange": 2.289331170977697,
+   "projSeats2030": 5,
+   "seatDelta": 0
+  },
+  "DE": {
+   "est2025": 1059952,
+   "pctChange": 7.071482542517385,
+   "projSeats2030": 1,
+   "seatDelta": 0
+  },
+  "FL": {
+   "est2025": 23462518,
+   "pctChange": 8.93450781163707,
+   "projSeats2030": 30,
+   "seatDelta": 2
+  },
+  "GA": {
+   "est2025": 11302748,
+   "pctChange": 5.515730717627522,
+   "projSeats2030": 14,
+   "seatDelta": 0
+  },
+  "HI": {
+   "est2025": 1432820,
+   "pctChange": -1.542736713643026,
+   "projSeats2030": 2,
+   "seatDelta": 0
+  },
+  "IA": {
+   "est2025": 3238387,
+   "pctChange": 1.5050923576551805,
+   "projSeats2030": 4,
+   "seatDelta": 0
+  },
+  "ID": {
+   "est2025": 2029733,
+   "pctChange": 10.365199178296411,
+   "projSeats2030": 3,
+   "seatDelta": 1
+  },
+  "IL": {
+   "est2025": 12719141,
+   "pctChange": -0.7287175937763316,
+   "projSeats2030": 16,
+   "seatDelta": -1
+  },
+  "IN": {
+   "est2025": 6973333,
+   "pctChange": 2.7677286130128707,
+   "projSeats2030": 9,
+   "seatDelta": 0
+  },
+  "KS": {
+   "est2025": 2977220,
+   "pctChange": 1.3390608193663458,
+   "projSeats2030": 4,
+   "seatDelta": 0
+  },
+  "KY": {
+   "est2025": 4606864,
+   "pctChange": 2.2421588357854123,
+   "projSeats2030": 6,
+   "seatDelta": 0
+  },
+  "LA": {
+   "est2025": 4618189,
+   "pctChange": -0.8495076063435685,
+   "projSeats2030": 6,
+   "seatDelta": 0
+  },
+  "MA": {
+   "est2025": 7154084,
+   "pctChange": 1.7662655192088328,
+   "projSeats2030": 9,
+   "seatDelta": 0
+  },
+  "MD": {
+   "est2025": 6265347,
+   "pctChange": 1.4265793178294974,
+   "projSeats2030": 8,
+   "seatDelta": 0
+  },
+  "ME": {
+   "est2025": 1414874,
+   "pctChange": 3.8547108361305646,
+   "projSeats2030": 2,
+   "seatDelta": 0
+  },
+  "MI": {
+   "est2025": 10127884,
+   "pctChange": 0.5016506850871526,
+   "projSeats2030": 13,
+   "seatDelta": 0
+  },
+  "MN": {
+   "est2025": 5830405,
+   "pctChange": 2.1714033169928855,
+   "projSeats2030": 7,
+   "seatDelta": -1
+  },
+  "MO": {
+   "est2025": 6270541,
+   "pctChange": 1.8786293161251835,
+   "projSeats2030": 8,
+   "seatDelta": 0
+  },
+  "MS": {
+   "est2025": 2954160,
+   "pctChange": -0.24040287997179596,
+   "projSeats2030": 4,
+   "seatDelta": 0
+  },
+  "MT": {
+   "est2025": 1144694,
+   "pctChange": 5.577163411653485,
+   "projSeats2030": 2,
+   "seatDelta": 0
+  },
+  "NC": {
+   "est2025": 11197968,
+   "pctChange": 7.266517922314986,
+   "projSeats2030": 14,
+   "seatDelta": 0
+  },
+  "ND": {
+   "est2025": 799358,
+   "pctChange": 2.6009698444603604,
+   "projSeats2030": 1,
+   "seatDelta": 0
+  },
+  "NE": {
+   "est2025": 2018006,
+   "pctChange": 2.880544724864186,
+   "projSeats2030": 3,
+   "seatDelta": 0
+  },
+  "NH": {
+   "est2025": 1415342,
+   "pctChange": 2.7449875828385464,
+   "projSeats2030": 2,
+   "seatDelta": 0
+  },
+  "NJ": {
+   "est2025": 9548215,
+   "pctChange": 2.7906251204382304,
+   "projSeats2030": 12,
+   "seatDelta": 0
+  },
+  "NM": {
+   "est2025": 2125498,
+   "pctChange": 0.3766666887050052,
+   "projSeats2030": 3,
+   "seatDelta": 0
+  },
+  "NV": {
+   "est2025": 3282188,
+   "pctChange": 5.719680449807931,
+   "projSeats2030": 4,
+   "seatDelta": 0
+  },
+  "NY": {
+   "est2025": 20002427,
+   "pctChange": -0.9842064715899497,
+   "projSeats2030": 25,
+   "seatDelta": -1
+  },
+  "OH": {
+   "est2025": 11900510,
+   "pctChange": 0.8564976937904214,
+   "projSeats2030": 15,
+   "seatDelta": 0
+  },
+  "OK": {
+   "est2025": 4123288,
+   "pctChange": 4.140449209757251,
+   "projSeats2030": 5,
+   "seatDelta": 0
+  },
+  "OR": {
+   "est2025": 4273586,
+   "pctChange": 0.8573945024799069,
+   "projSeats2030": 5,
+   "seatDelta": -1
+  },
+  "PA": {
+   "est2025": 13059432,
+   "pctChange": 0.43630938189760593,
+   "projSeats2030": 17,
+   "seatDelta": 0
+  },
+  "RI": {
+   "est2025": 1114521,
+   "pctChange": 1.5620856604691724,
+   "projSeats2030": 1,
+   "seatDelta": -1
+  },
+  "SC": {
+   "est2025": 5570274,
+   "pctChange": 8.827891392371678,
+   "projSeats2030": 7,
+   "seatDelta": 0
+  },
+  "SD": {
+   "est2025": 935094,
+   "pctChange": 5.461689676056513,
+   "projSeats2030": 1,
+   "seatDelta": 0
+  },
+  "TN": {
+   "est2025": 7315076,
+   "pctChange": 5.849303413188556,
+   "projSeats2030": 9,
+   "seatDelta": 0
+  },
+  "TX": {
+   "est2025": 31709821,
+   "pctChange": 8.798324132657848,
+   "projSeats2030": 40,
+   "seatDelta": 2
+  },
+  "UT": {
+   "est2025": 3538904,
+   "pctChange": 8.16990747080342,
+   "projSeats2030": 5,
+   "seatDelta": 1
+  },
+  "VA": {
+   "est2025": 8880107,
+   "pctChange": 2.8815047582701885,
+   "projSeats2030": 11,
+   "seatDelta": 0
+  },
+  "VT": {
+   "est2025": 644663,
+   "pctChange": 0.246626764757564,
+   "projSeats2030": 1,
+   "seatDelta": 0
+  },
+  "WA": {
+   "est2025": 8001020,
+   "pctChange": 3.83813387208072,
+   "projSeats2030": 10,
+   "seatDelta": 0
+  },
+  "WI": {
+   "est2025": 5972787,
+   "pctChange": 1.3415809850420397,
+   "projSeats2030": 8,
+   "seatDelta": 0
+  },
+  "WV": {
+   "est2025": 1766147,
+   "pctChange": -1.536976868132971,
+   "projSeats2030": 2,
+   "seatDelta": 0
+  },
+  "WY": {
+   "est2025": 588753,
+   "pctChange": 2.06327110467001,
+   "projSeats2030": 1,
+   "seatDelta": 0
+  }
+ },
+ "seatChanges": [
+  {
+   "abbr": "FL",
+   "delta": 2,
+   "projSeats": 30
+  },
+  {
+   "abbr": "TX",
+   "delta": 2,
+   "projSeats": 40
+  },
+  {
+   "abbr": "AZ",
+   "delta": 1,
+   "projSeats": 10
+  },
+  {
+   "abbr": "ID",
+   "delta": 1,
+   "projSeats": 3
+  },
+  {
+   "abbr": "UT",
+   "delta": 1,
+   "projSeats": 5
+  },
+  {
+   "abbr": "IL",
+   "delta": -1,
+   "projSeats": 16
+  },
+  {
+   "abbr": "MN",
+   "delta": -1,
+   "projSeats": 7
+  },
+  {
+   "abbr": "NY",
+   "delta": -1,
+   "projSeats": 25
+  },
+  {
+   "abbr": "OR",
+   "delta": -1,
+   "projSeats": 5
+  },
+  {
+   "abbr": "RI",
+   "delta": -1,
+   "projSeats": 1
+  },
+  {
+   "abbr": "CA",
+   "delta": -2,
+   "projSeats": 50
+  }
+ ]
+}
