@@ -1,0 +1,58 @@
+{
+  "evaluator_id": "E4",
+  "lens": "User-vision fidelity — weighing how much of the user's stated vision (center-outward seeding; up/down/left/right growth; squares-first as the explicit #1 goal) survives in each mechanism's SHIPPED map, and whether missing pieces are recoverable as partial fidelity (e.g., center re-seeding). Key interpretive move: the user ranked squares-first as the \"#1 stated goal\" and posed center-outward as an open question, so squares-first outweighs center-outward when they trade off.",
+  "disqualified": [],
+  "scores": {
+    "S1": {
+      "squareness_outcome": 2,
+      "repair_burden": 2,
+      "geography_robustness": 2,
+      "vision_center_outward": 5,
+      "vision_squares_first": 3,
+      "notes": "The unique literal embodiment of center-outward: D1 forms on the centroid and grows E/S/W/N. But the user's #1 goal is squares, and spiral yields concentric rings/arcs for D2..n — the opposite of square. On CO's 1.4:1 rectangle the spiral runs off N/S edges, fragmenting outer districts; HIGH repair means even the center-outward walk gets partly redrawn, so the appealing description is not fully what ships. Squareness gets 3 on vision (D1 square-ish + four-direction intent) but only 2 as outcome (rings + heavy repair). Edge fragmentation is a real >=2-4 irregular-budget risk, not yet fatal."
+    },
+    "S2": {
+      "squareness_outcome": 1,
+      "repair_burden": 5,
+      "geography_robustness": 3,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Honest walk (near-contiguous, LOW repair) but the honest output is full-width bands at aspect ~10 — maximally non-square, blowing the irregular budget conceptually. Zero center-outward, zero squares-first. Lowest possible vision fidelity on both axes. Engineering virtue (repair=5) cannot rescue a mechanism that contradicts the user's #1 goal."
+    },
+    "S3": {
+      "squareness_outcome": 5,
+      "repair_burden": 4,
+      "geography_robustness": 3,
+      "vision_center_outward": 2,
+      "vision_squares_first": 5,
+      "notes": "The bbox-side growth penalty IS a squares-first objective in the mechanism itself — directly serving the user's #1 stated goal — and LOW-MEDIUM repair means that square output largely survives to ship. Its one vision gap is center-outward: seeds sweep from the west edge (score 2, not 1, because the packet explicitly names the recoverable hybrid 'S3 growth rule re-seeded from the center,' so partial fidelity on the missing axis is achievable). Delivers the ranked-higher vision element durably; the ranked-lower element is recoverable."
+    },
+    "S4": {
+      "squareness_outcome": 3,
+      "repair_burden": 3,
+      "geography_robustness": 5,
+      "vision_center_outward": 1,
+      "vision_squares_first": 2,
+      "notes": "Compact blobs degrade gracefully on MD/FL/NY — the robustness fallback. But blobs are compact, not square, and mask-crossing jumps give MEDIUM repair. No center-outward; squares-first only incidentally (locality != squareness). Better squareness-as-outcome than bands/rings, but the mechanism does not pursue the user's #1 goal."
+    },
+    "S5": {
+      "squareness_outcome": 4,
+      "repair_burden": 4,
+      "geography_robustness": 5,
+      "vision_center_outward": 1,
+      "vision_squares_first": 2,
+      "notes": "Best engineering: best pre-repair pop balance, rectangle-ish wedges that survive (LOW repair), most robust to pathological geography. But it embodies NONE of the user's vision — no square-mile walk, no center-outward, no squares-first objective. Squareness 4 is an outcome accident of recursive halving, not a stated goal pursuit (vision_squares_first stays 2). The anti-vision baseline; strong on every axis except the one my lens weights."
+    }
+  },
+  "ranking": [
+    "S3",
+    "S1",
+    "S5",
+    "S4",
+    "S2"
+  ],
+  "first_choice": "S3",
+  "steelman_against_first_choice": "The user's MOST emphatic and unambiguous language is spatial/directional — \"literally right in the middle of the state... start moving this process up, down, left, right, back, forth\" — and S3 delivers exactly zero of that out of the box (west-edge sweep). My defense leans on a re-seeded hybrid the protocol explicitly says is NOT a votable option, so on the AS-SPECIFIED ballot I am awarding S3 the win for a vision element (center-outward) it does not possess, while S1 is the only candidate that actually shows the user the picture in their head. If the user's true acceptance test is \"does it start in the middle and grow outward\" — a plausible reading given that's the part they described most vividly and asked me to figure out — then S1 is the faithful choice and S3 is a competent redistricting engine wearing the wrong vision. Furthermore, S3's squareness depends on the k0~114 band heuristic and 'sealed' early-closure regions whose repair burden I rated 4 partly on faith; if sealed-region repair is heavier than predicted, S3 loses its one decisive advantage (durable squares) while still having no center semantics, collapsing my entire rationale.",
+  "fatal_flaws": [],
+  "confidence": 0.66
+}

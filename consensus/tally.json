@@ -1,0 +1,95 @@
+{
+  "ballots": 5,
+  "borda": {
+    "S1": 6,
+    "S2": 4,
+    "S3": 20,
+    "S4": 9,
+    "S5": 11
+  },
+  "bordaRanked": [
+    "S3",
+    "S5",
+    "S4",
+    "S1",
+    "S2"
+  ],
+  "firstChoice": {
+    "S1": 0,
+    "S2": 0,
+    "S3": 5,
+    "S4": 0,
+    "S5": 0
+  },
+  "condorcet": "S3",
+  "meanScores": {
+    "S1": {
+      "squareness_outcome": 1.8,
+      "repair_burden": 1.6,
+      "geography_robustness": 1.6,
+      "vision_center_outward": 5,
+      "vision_squares_first": 2.2,
+      "total": 12.2
+    },
+    "S2": {
+      "squareness_outcome": 1,
+      "repair_burden": 4.8,
+      "geography_robustness": 3.4,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "total": 11.2
+    },
+    "S3": {
+      "squareness_outcome": 4.2,
+      "repair_burden": 3.6,
+      "geography_robustness": 3.4,
+      "vision_center_outward": 2.2,
+      "vision_squares_first": 5,
+      "total": 18.4
+    },
+    "S4": {
+      "squareness_outcome": 2.6,
+      "repair_burden": 3,
+      "geography_robustness": 4.6,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1.8,
+      "total": 13
+    },
+    "S5": {
+      "squareness_outcome": 3.2,
+      "repair_burden": 4,
+      "geography_robustness": 4,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1.4,
+      "total": 13.6
+    }
+  },
+  "pairwise": {
+    "S1": {
+      "S2": 3,
+      "S4": 1,
+      "S5": 2
+    },
+    "S2": {
+      "S1": 2,
+      "S4": 1,
+      "S5": 1
+    },
+    "S3": {
+      "S1": 5,
+      "S2": 5,
+      "S4": 5,
+      "S5": 5
+    },
+    "S4": {
+      "S1": 4,
+      "S2": 4,
+      "S5": 1
+    },
+    "S5": {
+      "S1": 3,
+      "S4": 4,
+      "S2": 4
+    }
+  }
+}

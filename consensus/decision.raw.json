@@ -1,0 +1,46 @@
+{
+  "top2": [
+    "S3",
+    "S5"
+  ],
+  "single_winner": null,
+  "rationale": "UNANIMOUS, UNAMBIGUOUS #1; NO BORDA/CONDORCET CONFLICT. S3 is the Condorcet winner (beats all four rivals 5-0 pairwise), the Borda leader (20 vs S5's 11), and took all 5 first-choice votes. Every lens — robustness (E1), shape (E2), repair-realism (E3), vision-fidelity (E4), 50-state scale (E5) — independently landed S3 first because it is the ONLY mechanism whose objective function (minimize resulting-region bbox max side) directly mechanizes the user's #1 stated goal: squares-first (mean vision_squares_first 5.0). All other strategies pursue compactness (S4 blobs, S5 wedges), traversal (S1 spiral, S2 bands) — proxies, not the goal.\n\n#2 SLOT = S5, by both methods. Borda ranks S5(11) > S4(9) > S1(6). Pairwise confirms: S5 beats S4 (4-1) and S1 (3-2); S4 beats S1 (4-1). S5 is the clean Condorcet runner-up. It is the engineering baseline (best pre-repair population balance, LOW repair, robust across geographies) — the right safety contrast to carry into A/B against S3's aspirational squares. NOTE the runner-up tension: E5 (50-state lens) ranked S4 second, arguing S4's locality carries a SHAPE-INDEPENDENT guarantee (it never seals, so cannot cascade-seal) and is the safer untuned 50-state bet. This is a real minority view, but it loses to S5 on both Borda and pairwise, so S5 advances; S4's robustness case is preserved in the dissent register for the implementer.\n\nSINGLE_WINNER = NULL, deliberately. The ≥4/5 first-choice gate is met (5/5). The zero-unresolved-fatal-flaw gate is NOT cleanly met in substance. No evaluator LABELED an S3 flaw 'fatal' (E2 logged it 'minor'), but the steelman_against_first_choice fields are NOT vacuous — they are substantive, specific, and CONVERGENT: all five evaluators independently identify the same unresolved empirical risk (early-sealing CASCADE on concave/disjoint geographies — MD Chesapeake, FL panhandle+Keys, NY islands — dumping irregular leftovers onto a repair pass whose 'LOW-MEDIUM' burden E4 admits was 'rated 4 partly on faith,' plus the west-edge seed that contradicts the user's most emphatic 'start in the middle' clause). The protocol itself reserves the final pick to mechanical Colorado A/B scores in ab-metrics.md — and the evaluators' own steelmen explicitly defer to that A/B ('if MD/FL A/B testing shows sealing cascades, S2's predictability could beat S3'). Crowning a single winner now would preempt the exact mechanism the protocol freezes for resolution. Hence S3 advances as the overwhelming favorite but not a frozen winner; A/B decides.",
+  "dissents": [
+    {
+      "evaluator": "E5",
+      "position": "Ranked S4 second (above the panel's S5), and in steelman argued S4 is the SAFER 50-state bet than the very strategy E5 voted #1: S4's Hilbert locality is a shape-INDEPENDENT guarantee that 'cannot cascade-seal because it never seals,' whereas S3's contiguity guarantee is explicitly PARTIAL and may degrade exactly off Colorado (the easy case E5 was told to discount).",
+      "why_it_matters": "This is the single most decision-relevant dissent: the panel's own scale-specialist warns its consensus #1 may be over-indexed on the easy geography. It directly motivates making the MD/FL/NY sealing-cascade test the gating A/B metric, and keeps S4 alive as the robustness fallback if S3 cascades."
+    },
+    {
+      "evaluator": "E4",
+      "position": "Sole evaluator to rank S1 SECOND (vision-fidelity lens). Argues S1 is the only candidate that 'actually shows the user the picture in their head' — literal center-outward growth (D1 on centroid, grows up/down/left/right) — and that awarding S3 a win for a center-outward property it does not possess (west-edge sweep) leans on a re-seeded hybrid the protocol says is NOT votable. If the user's true acceptance test is 'does it start in the middle and grow outward,' S1 is faithful and S3 is 'a competent redistricting engine wearing the wrong vision.'",
+      "why_it_matters": "A lone dissent is a finding, not noise. E4 surfaces that the panel optimized squares-first (the ranked #1 goal) while the user's MOST VIVID language was directional. The center-outward axis is recoverable as a hybrid (S3 re-seeded from centroid) — see hybrid_notes — so this dissent should shape implementation, not be discarded."
+    },
+    {
+      "evaluator": "E1",
+      "position": "Conditional reversal toward S2: 'If MD/FL A/B testing shows sealing cascades, S2's predictability could beat S3's aspirational squareness.' Frames S3's squareness as PARTIAL precisely where its lens worries most — the early-sealed regions and final remainder ARE the irregular districts, and their shapes are decided by the repair pass, not the bbox rule.",
+      "why_it_matters": "Identifies the exact falsification condition for S3's #1 claim. Makes the sealing-cascade A/B test the load-bearing experiment and names S2 (not S5) as the spoiler if S3's nominal-vs-shipped gap proves large."
+    }
+  ],
+  "fatal_flaw_register": [
+    {
+      "strategy": "S2",
+      "flaw": "Eight full-width ~10:1-aspect boustrophedon bands mean effectively ZERO square districts and all ~8 irregular by squareness — breaches the user's <=2-4 irregular-district budget (an enumerated eligibility gate) by a wide margin.",
+      "raised_by": "E2 (fatal); echoed as concept-level budget breach by E4",
+      "disposition": "UPHELD as fatal to S2's candidacy on the squareness/eligibility criterion. Does NOT eliminate S2 entirely from consideration as a repair-fidelity REFERENCE (E1/E3 note its walk ships unchanged), but it cannot be a primary pick. S2 not in top 2; moot for the winner decision."
+    },
+    {
+      "strategy": "S1",
+      "flaw": "Fixed-run-length square spiral assumes an unbounded plane; on CO's 1.4:1 rectangle the arms overshoot the N-S dimension, producing concentric ring/arc outer districts (D2..n annular). Plausibly ~7 of 8 districts irregular — wide breach of the 2-4 budget — plus HIGH repair that redraws the outer map, so the appealing center-outward walk is NOT what ships.",
+      "raised_by": "E1 (major), E2 (major)",
+      "disposition": "PARTIALLY UPHELD, severity MAJOR not fatal — it is a packet PREDICTION, not an executed outcome, and re-seeding/repair could partially mitigate. Disqualifies S1 from a top-2 slot but its sole virtue (true center-outward, vision_center_outward 5.0) is preserved via the hybrid path. Moot for winner decision (S1 not in top 2)."
+    },
+    {
+      "strategy": "S3",
+      "flaw": "Squareness 'by construction' guarantee is PARTIAL: only grown interior regions are bbox-square; early-sealed regions + final remainder are handed to the repair pass and are where shapes turn irregular. On concave/disjoint geographies the west-edge sweep can SEAL EARLY repeatedly (cascade), spiking repair load and eroding the square-fidelity that justifies the #1 ranking — a risk all five evaluators raise and admit is UNTESTED ('rated partly on faith').",
+      "raised_by": "E2 (logged minor); raised in steelman by E1, E3, E4, E5 (not formally logged as fatal)",
+      "disposition": "UNRESOLVED but BOUNDED. Severity per the only formal log is MINOR (E2: bounded within budget, not eliminated). It is NOT labeled fatal by any evaluator, so it does not formally trip the fatal-flaw gate — but its convergence across all 5 ballots plus its untested status is the explicit reason single_winner is held null and deferred to the frozen Colorado A/B + hard-geography (MD/FL/NY) sealing-cascade test. The A/B mechanism, not the panel, resolves this."
+    }
+  ],
+  "hybrid_notes": "CENTER RE-SEEDING IS THE LIVE HYBRID and it directly serves the user's center-outward vision — carry it into implementation. Four of five evaluators (E2, E3, E4, E5) note S3 is 'trivially/re-seedable from the centroid,' and E4 cites the packet's explicitly-named hybrid 'S3 growth rule re-seeded from the center.' This captures BOTH vision clauses in one mechanism: S3's bbox-side penalty delivers squares-first (the ranked #1 goal, durable to ship) while a centroid seed restores the up/down/left/right center-outward growth that S1 alone embodies (and that E4's dissent says is the user's most vivid ask). Recommended implementation: take S3 as the spine, and in the A/B harness run TWO S3 variants — (a) as-specified west-edge sweep, (b) centroid re-seeded — and add the center-outward growth direction as an A/B-scored dimension alongside squareness and post-repair contiguity. SECOND hybrid to keep in reserve: if the MD/FL/NY sealing-cascade test (E1/E5's falsification condition) shows S3's repair load spiking off the easy case, fall back to S4's locality as the robustness floor (E5's shape-independent, never-seals guarantee) — i.e., S3-for-shape / S4-for-safety, decided by the A/B cascade metric. The gating A/B experiment is therefore: nominal-walk-vs-shipped-map divergence on hard geographies, with centroid-seed and Hilbert-fallback as the two contingency arms."
+}

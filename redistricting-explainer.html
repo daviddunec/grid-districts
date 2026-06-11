@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equal-Population Redistricting by 1-Square-Mile Squares</title>
+<style>
+  :root{ --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb; --accent2:#1e3a8a; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#f8fafc; color:var(--ink);
+        font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  .wrap{ max-width:860px; margin:0 auto; background:#fff; }
+  header{ background:linear-gradient(135deg,#1e3a8a,#2563eb); color:#fff; padding:36px 40px 30px; }
+  header h1{ margin:0 0 6px; font-size:26px; line-height:1.25; }
+  header p{ margin:0; opacity:.92; font-size:15px; }
+  main{ padding:8px 40px 48px; }
+  h2{ font-size:20px; margin:34px 0 10px; color:var(--accent2); }
+  h3{ font-size:16px; margin:22px 0 6px; }
+  p{ margin:10px 0; }
+  .muted{ color:var(--muted); }
+  .lead{ font-size:17px; }
+  .callout{ border-left:4px solid var(--accent); background:#f0f6ff; padding:14px 18px; border-radius:6px; margin:18px 0; }
+  .callout.good{ border-color:#1a7f37; background:#eef8f1; }
+  .callout.warn{ border-color:#d97706; background:#fdf6ec; }
+  .tag{ display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
+        background:#dbeafe; color:#1e40af; padding:2px 7px; border-radius:999px; vertical-align:middle; }
+  table{ border-collapse:collapse; width:100%; margin:14px 0; font-size:14px; }
+  th,td{ border:1px solid var(--line); padding:9px 10px; vertical-align:top; }
+  thead th{ background:#f1f5f9; text-align:center; font-size:13px; }
+  tbody td{ text-align:center; }
+  .gallery{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:18px 0; }
+  .fig{ margin:0; background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
+  .fig img{ width:100%; height:auto; border-radius:4px; background:#fff; }
+  .fig.pass{ border-color:#bfe6cb; } .fig.fail{ border-color:#f3c2bd; }
+  figcaption{ font-size:13px; margin-top:8px; }
+  ol.q{ margin:8px 0; padding-left:22px; } ol.q li{ margin:8px 0; }
+  .legend{ font-size:13px; color:var(--muted); margin-top:6px; }
+  .footer{ border-top:1px solid var(--line); margin-top:30px; padding-top:16px; font-size:13px; color:var(--muted); }
+  @media(max-width:620px){ .gallery{ grid-template-columns:1fr; } main,header{ padding-left:22px; padding-right:22px; } }
+</style></head>
+<body><div class="wrap">
+<header>
+  <h1>Drawing Congressional Districts from 1-Square-Mile Squares</h1>
+  <p>Where the idea stands after testing it on four very different states &mdash; and the one decision left to make.</p>
+</header>
+<main>
+
+  <h2>The idea, in one paragraph</h2>
+  <p class="lead">Lay a grid of one-square-mile blocks (640 acres each) over a state. Starting in the
+  middle, add blocks outward &mdash; up, down, left, right &mdash; until that district holds its fair
+  share of the population. Then start the next district, and the next, using the <b>exact same process
+  for every state</b>. The goal: as many clean, square-ish districts as possible, with only a couple of
+  odd-shaped leftovers.</p>
+
+  <div class="callout good">
+    <b>It works.</b> Using real 2020 U.S. Census data (down to the city-block level), the engine builds
+    districts that are within a fraction of a percent of perfectly equal population, all fully connected,
+    by an identical, repeatable, tamper-proof process. On Colorado, the biggest district is off from a
+    perfectly equal share by about <b>172 people out of 721,714</b>.
+  </div>
+
+  <h2>Your idea, across four very different states</h2>
+  <p>We deliberately picked four hard-in-different-ways states. Each picture is the <b>real computed
+  result</b> &mdash; every colored region is one congressional district built from square-mile blocks,
+  starting from the middle and growing out.</p>
+  <div class="gallery">
+    
+  <figure class="fig pass">
+    <img src="data:image/png;base64,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" alt="Colorado &mdash; PASS" />
+    <figcaption><b>Colorado &mdash; PASS</b><br><span class="muted">8 districts, off by only 0.02%. an easy near-rectangle.</span></figcaption>
+  </figure>
+    
+  <figure class="fig pass">
+    <img src="data:image/png;base64,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" alt="Maryland &mdash; PASS" />
+    <figcaption><b>Maryland &mdash; PASS</b><br><span class="muted">8 districts, off by 0.08%. a bay-carved concave coast.</span></figcaption>
+  </figure>
+    
+  <figure class="fig pass">
+    <img src="data:image/png;base64,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" alt="New York &mdash; PASS*" />
+    <figcaption><b>New York &mdash; PASS*</b><br><span class="muted">26 districts, off by 3.42%. a dense megacity plus islands.</span></figcaption>
+  </figure>
+    
+  <figure class="fig fail">
+    <img src="data:image/png;base64,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" alt="Florida &mdash; the problem" />
+    <figcaption><b>Florida &mdash; the problem</b><br><span class="muted">28 districts, off by 37.05%. a long panhandle plus island keys.</span></figcaption>
+  </figure>
+  </div>
+  <p class="legend">Notice Florida: one district (the leftover) gets smeared across the whole state.
+  That single picture <em>is</em> the open problem &mdash; explained below.</p>
+
+  <h2>The options we compared</h2>
+  <p>Five approaches were put through a blind, structured evaluation and then tested on the four states.
+  Each district must come out equal-population, fully connected, and identical on a re-run; they're then
+  ranked by how few <b>odd-shaped</b> (non-square) districts they produce.</p>
+
+  <table>
+    <thead><tr>
+      <th style="text-align:left;width:32%">Approach</th>
+      <th>Colorado<br><span class="muted" style="font-weight:400">8 seats &middot; gate 1%</span></th><th>Maryland<br><span class="muted" style="font-weight:400">8 seats &middot; gate 2%</span></th><th>Florida<br><span class="muted" style="font-weight:400">28 seats &middot; gate 2%</span></th><th>New York<br><span class="muted" style="font-weight:400">26 seats &middot; gate flagged*</span></th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <th style="text-align:left">
+        <div style="font-weight:700">Center-out squares <span class="tag">your idea</span></div>
+        <div class="muted" style="font-size:12px">Start in the middle of the state, grow square blocks outward.</div>
+      </th>
+      <td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.02%</div>
+      <div style="font-size:11px;opacity:.7">2 odd-shaped</div></td><td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.08%</div>
+      <div style="font-size:11px;opacity:.7">6 odd-shaped</div></td><td style="background:#fdeaea;color:#b42318">
+      <div style="font-weight:700">FAILS</div>
+      <div style="font-size:12px;opacity:.85">off by 37.05%</div>
+      <div style="font-size:11px;opacity:.7">19 odd-shaped</div></td><td style="background:#fdf3df;color:#9a6700">
+      <div style="font-weight:700">PASS *</div>
+      <div style="font-size:12px;opacity:.85">off by 3.42%</div>
+      <div style="font-size:11px;opacity:.7">14 odd-shaped</div></td>
+    </tr>
+    <tr>
+      <th style="text-align:left">
+        <div style="font-weight:700">Edge-start squares</div>
+        <div class="muted" style="font-size:12px">Same square growth, but starting from the west edge instead of the middle.</div>
+      </th>
+      <td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.02%</div>
+      <div style="font-size:11px;opacity:.7">1 odd-shaped</div></td><td style="background:#fdeaea;color:#b42318">
+      <div style="font-weight:700">FAILS</div>
+      <div style="font-size:12px;opacity:.85">off by 2.04%</div>
+      <div style="font-size:11px;opacity:.7">4 odd-shaped</div></td><td style="background:#fdeaea;color:#b42318">
+      <div style="font-weight:700">FAILS</div>
+      <div style="font-size:12px;opacity:.85">off by 7.95%</div>
+      <div style="font-size:11px;opacity:.7">18 odd-shaped</div></td><td style="background:#fdf3df;color:#9a6700">
+      <div style="font-weight:700">PASS *</div>
+      <div style="font-size:12px;opacity:.85">off by 6.28%</div>
+      <div style="font-size:11px;opacity:.7">17 odd-shaped</div></td>
+    </tr>
+    <tr>
+      <th style="text-align:left">
+        <div style="font-weight:700">Shortest-line baseline</div>
+        <div class="muted" style="font-size:12px">The textbook method: keep cutting the state with the shortest fair line. Not our idea — the bar to beat.</div>
+      </th>
+      <td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.02%</div>
+      <div style="font-size:11px;opacity:.7">5 odd-shaped</div></td><td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.28%</div>
+      <div style="font-size:11px;opacity:.7">8 odd-shaped</div></td><td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.85%</div>
+      <div style="font-size:11px;opacity:.7">25 odd-shaped</div></td><td style="background:#fdf3df;color:#9a6700">
+      <div style="font-weight:700">PASS *</div>
+      <div style="font-size:12px;opacity:.85">off by 4.08%</div>
+      <div style="font-size:11px;opacity:.7">20 odd-shaped</div></td>
+    </tr>
+    <tr>
+      <th style="text-align:left">
+        <div style="font-weight:700">Curve method <span class="tag">backup</span></div>
+        <div class="muted" style="font-size:12px">A space-filling-curve ordering, kept only as a fallback. Eliminated by the results.</div>
+      </th>
+      <td style="background:#e7f6ec;color:#1a7f37">
+      <div style="font-weight:700">PASS</div>
+      <div style="font-size:12px;opacity:.85">off by 0.00%</div>
+      <div style="font-size:11px;opacity:.7">5 odd-shaped</div></td><td style="background:#fdeaea;color:#b42318">
+      <div style="font-weight:700">FAILS</div>
+      <div style="font-size:12px;opacity:.85">off by 31.78%</div>
+      <div style="font-size:11px;opacity:.7">8 odd-shaped</div></td><td style="background:#fdeaea;color:#b42318">
+      <div style="font-weight:700">FAILS</div>
+      <div style="font-size:12px;opacity:.85">off by 10.38%</div>
+      <div style="font-size:11px;opacity:.7">25 odd-shaped</div></td><td style="background:#fdf3df;color:#9a6700">
+      <div style="font-weight:700">PASS *</div>
+      <div style="font-size:12px;opacity:.85">off by 8.51%</div>
+      <div style="font-size:11px;opacity:.7">18 odd-shaped</div></td>
+    </tr></tbody>
+  </table>
+  <p class="legend">"Off by" = how far the worst district is from a perfectly equal population share.
+  "Odd-shaped" = districts that came out non-square. <b>*New York</b> is one of four big-city states
+  where a single ultra-dense square can be larger than a whole district's quota, so its small percentage
+  gap is expected and flagged rather than failed.</p>
+
+  <div class="callout">
+    <b>The headline.</b> Your center-out, squares-first idea (top row) is the best squares-based method
+    and passes Colorado, Maryland, and New York cleanly. It fails <b>only Florida</b>. The plain
+    "shortest-line" textbook method passes everywhere &mdash; but it produces the most odd-shaped
+    districts and contains none of the center-out, square-block idea. So the real choice is between
+    <b>finishing your idea</b> and <b>settling for the textbook baseline</b>.
+  </div>
+
+  <h2>Why Florida &mdash; and only Florida &mdash; breaks</h2>
+  <p>It's a single, well-understood issue we call the <b>leftover problem</b>. As districts grow outward
+  and claim their share, the <em>last</em> district has to absorb whatever land is still unclaimed. In
+  Florida that leftover isn't in one place &mdash; it's the panhandle <em>and</em> the Keys <em>and</em>
+  bits of coast all at once, so the final district ends up as a thin shape stretched across the state
+  (the gray-ish smear in the Florida picture). Colorado, Maryland, and New York don't have that
+  scattered-leftover geography, which is why they pass. <b>This is a fixable mechanics problem, not a
+  flaw in the idea.</b></p>
+
+  <h2>What makes your idea worth finishing</h2>
+  <p>Compare the same state two ways. Left is your center-out square method; right is the textbook
+  baseline that currently passes everywhere. Both are perfectly legal and equal-population &mdash; but
+  one looks like the idea you described, and one doesn't.</p>
+  <div class="gallery">
+    
+  <figure class="fig pass">
+    <img src="data:image/png;base64,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" alt="Your idea (Colorado)" />
+    <figcaption><b>Your idea (Colorado)</b><br><span class="muted">Compact, square-ish districts radiating from the center.</span></figcaption>
+  </figure>
+    
+  <figure class="fig ">
+    <img src="data:image/png;base64,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" alt="Textbook baseline (Colorado)" />
+    <figcaption><b>Textbook baseline (Colorado)</b><br><span class="muted">Legal and equal, but wedge-shaped slices — not the square-block vision.</span></figcaption>
+  </figure>
+  </div>
+
+  <h2>Recommendation</h2>
+  <div class="callout good">
+    <b>Finish the idea with a "hybrid ending."</b> Keep your center-out square growth for all but the
+    last couple of districts, then draw <em>those</em> final leftover seats with the textbook
+    shortest-line method &mdash; which happens to be excellent at exactly the scattered-leftover case
+    your method struggles with. It's a small, surgical change that targets the only failure (Florida)
+    without touching the three states that already pass. The likely result: your idea becomes the
+    winner everywhere, as both the squares-first <em>and</em> the center-out choice.
+  </div>
+  <p><b>The alternatives, honestly:</b></p>
+  <ul>
+    <li><b>Ship the textbook baseline now.</b> It scales to all 50 states today &mdash; but it throws
+      away the entire center-out, square-block concept.</li>
+    <li><b>Best method per state.</b> Rejected: it breaks the core promise that the <em>same process</em>
+      runs on every state.</li>
+  </ul>
+
+  <h2>For us to discuss</h2>
+  <ol class="q">
+    <li>Do we invest in the "hybrid ending" to make the center-out idea win everywhere, or is the
+      textbook baseline good enough to move forward now?</li>
+    <li>How square is square <em>enough</em>? We currently flag a district as "odd-shaped" on a fixed
+      rule &mdash; is that the right bar for what we're trying to show?</li>
+    <li>For the big-city states (New York, California, Illinois, New Jersey), are we comfortable with the
+      "flagged" treatment, or do we want the finer half-mile refinement for dense areas?</li>
+    <li>What's the goal of the finished piece &mdash; a proof-of-concept on a handful of states, or the
+      full 50-state run?</li>
+  </ol>
+
+  <div class="footer">
+    Built from real 2020 U.S. Census block data. Every number and map in this document is generated
+    directly from the computed results &mdash; nothing is hand-drawn or estimated. Each state's districts
+    are equal-population, fully connected, and reproduced identically on every run.
+  </div>
+</main>
+</div></body></html>

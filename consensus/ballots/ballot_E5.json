@@ -1,0 +1,58 @@
+{
+  "evaluator_id": "E5",
+  "lens": "50-state scale behavior: how each rule behaves under ONE identical, untuned process applied across MD concavity / FL panhandle+Keys / NY hot-cells+islands and 44 other geographies — Colorado being the easy near-rectangle. The decisive question is whether a mechanism self-adapts to arbitrary state shapes or degenerates the moment it leaves the easy case.",
+  "disqualified": [],
+  "scores": {
+    "S1": {
+      "squareness_outcome": 2,
+      "repair_burden": 1,
+      "geography_robustness": 1,
+      "vision_center_outward": 5,
+      "vision_squares_first": 2,
+      "notes": "The only literal center-outward grower (full marks on criterion 4). But under my lens it is the worst scaler: fixed run-length spiral already runs off CO's mild 1.4:1 rectangle; on MD concavity, FL disjoint Keys, and NY islands it repeatedly crosses masked cells, producing long skipped runs and fragmented concentric outer rings. HIGH repair means the shipped map is NOT the appealing center-outward picture — repair redraws the rings. District 1 is square-ish; districts 2..n are arcs."
+    },
+    "S2": {
+      "squareness_outcome": 1,
+      "repair_burden": 4,
+      "geography_robustness": 3,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Scale virtue is uniform PREDICTABILITY — same boustrophedon everywhere — and LOW repair means what ships matches the walk. But the walk produces full-width bands (aspect ~10 on CO, worse on wide states). Robust only in the sense that it fails the same way on all 50 states. Zero squareness, zero center-outward. Honest but vision-empty."
+    },
+    "S3": {
+      "squareness_outcome": 4,
+      "repair_burden": 3,
+      "geography_robustness": 4,
+      "vision_center_outward": 2,
+      "vision_squares_first": 5,
+      "notes": "Strongest under my lens. The bbox-max-side growth penalty is a genuine squareness OBJECTIVE in the mechanism (criterion 5 = 5), and k0 auto-scales from each state's own density — the only self-adapting parameter, exactly what untuned 50-state uniformity demands. Grown regions contiguous by construction; only sealed regions + final remainder lean on repair (LOW-MEDIUM). On MD/FL/NY the bbox penalty still pursues squares and sealing absorbs disconnected pieces gracefully. West-edge seed = no center-outward, but re-seedable from centroid."
+    },
+    "S4": {
+      "squareness_outcome": 3,
+      "repair_burden": 3,
+      "geography_robustness": 5,
+      "vision_center_outward": 1,
+      "vision_squares_first": 2,
+      "notes": "The packet's explicit robustness fallback, and my lens confirms it: curve locality holds regardless of state shape, so MD/FL/NY degrade gracefully — only mask-crossing jumps cost repair (MEDIUM). Best pure geography_robustness. But blobs are compact-not-square and there is no center-outward and no squares-first OBJECTIVE — locality is a proxy, not the user's goal. The insurance pick, not the vision pick."
+    },
+    "S5": {
+      "squareness_outcome": 3,
+      "repair_burden": 4,
+      "geography_robustness": 4,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Reference baseline. Best population balance, LOW repair, robust via prefix-sum half-planes that work on any region. Generalizes cleanly across 50 states — but answers a different question: no square-mile walk, no center-outward, no squares-first objective. Strong engineering, near-zero vision fidelity. Concave regions occasionally need repair on disconnected halves."
+    }
+  },
+  "ranking": [
+    "S3",
+    "S4",
+    "S1",
+    "S5",
+    "S2"
+  ],
+  "first_choice": "S3",
+  "steelman_against_first_choice": "S3's entire case is that its bbox-side penalty delivers squares and generalizes — but that case rests on grown regions, while its contiguity guarantee is explicitly PARTIAL (sealed regions + final remainder rely on repair). On the hard geographies my own lens prioritizes — MD's long thin concave shape, FL's panhandle-to-Keys, NY's islands — the west-edge boustrophedon sweep will hit dead frontiers and SEAL EARLY repeatedly, and each early seal dumps an irregular leftover onto the repair pass. If sealing cascades on hard states, repair load spikes precisely where I claim S3 scales, and the bbox squareness advantage (its whole reason to win) erodes exactly off the easy case. S4's locality, by contrast, carries a SHAPE-INDEPENDENT guarantee — it cannot cascade-seal because it never seals. So under a strict reading of my own robustness lens, S4 is the safer 50-state bet and my squareness preference may be over-indexed on Colorado, the easy case I was told to discount.",
+  "fatal_flaws": [],
+  "confidence": 0.66
+}

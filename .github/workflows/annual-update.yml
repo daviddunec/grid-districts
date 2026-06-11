@@ -1,0 +1,46 @@
+name: Annual data update & determinism regression
+
+on:
+  schedule:
+    # Once a year, April 15 06:00 UTC (post-Census spring release windows)
+    - cron: '0 6 15 4 *'
+  workflow_dispatch: {}
+
+jobs:
+  annual-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci || npm install
+      - name: Run annual update (vintage probe, source liveness, determinism regression, artifact rebuild)
+        id: update
+        run: |
+          UPDATE_STAMP=$(date +%Y) node scripts/annual-update.js
+        continue-on-error: true
+      - name: Open issue if a new decennial vintage was detected or checks failed
+        if: ${{ steps.update.outcome == 'failure' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const dir = 'data/update_reports';
+            const files = fs.existsSync(dir) ? fs.readdirSync(dir).sort() : [];
+            const body = files.length ? fs.readFileSync(`${dir}/${files[files.length-1]}`, 'utf8') : 'No report file produced.';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Annual update needs attention (${new Date().getFullYear()})`,
+              body: '```\n' + body.slice(0, 6000) + '\n```\nExit code 10 = a NEW DECENNIAL VINTAGE is live: run the new cycle.',
+            });
+      - name: Upload regenerated artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: regenerated-artifacts
+          path: |
+            redistricting-national-summary.html
+            data/update_reports/
+          if-no-files-found: ignore

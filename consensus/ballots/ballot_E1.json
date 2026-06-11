@@ -1,0 +1,64 @@
+{
+  "evaluator_id": "E1",
+  "lens": "Determinism and edge-case robustness — where each rule breaks on real geography: state-boundary concavities (MD Chesapeake), skipped/masked cell runs (FL panhandle+Keys), empty frontiers (S3 sealing), and mask-crossing jumps (S4). I weight contiguity-after-repair behavior and the gap between the nominal walk and the shipped (post-repair) map most heavily, while scoring all five criteria.",
+  "disqualified": [],
+  "scores": {
+    "S1": {
+      "squareness_outcome": 1,
+      "repair_burden": 1,
+      "geography_robustness": 1,
+      "vision_center_outward": 5,
+      "vision_squares_first": 2,
+      "notes": "Only strategy that literally grows center-outward in all four directions (vision_center_outward 5). But from my robustness lens it is the worst: the fixed-run-length square spiral assumes an unbounded plane. On CO's ~1.4:1 rectangle the spiral arms exceed the short N-S dimension, so N/S legs become long runs of skipped out-of-state cells while productive cells survive only on E-W legs — producing concentric rings/arcs. Districts 2..n are predicted annular, plausibly 7 of 8 irregular, a wide-margin breach of the 2-4 budget (fatal candidate). On MD concavity / FL panhandle+Keys the spiral crosses masked voids mid-ring, scattering one district across disconnected arcs = heavy orphan load. Repair effectively redraws the outer map, so the appealing center-outward story is not what ships. Deterministic (fixed origin + turn order), so not DQ'd."
+    },
+    "S2": {
+      "squareness_outcome": 1,
+      "repair_burden": 5,
+      "geography_robustness": 5,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Most robust strategy under my lens. Boustrophedon rows have no frontier, no seal, no spiral-edge pathology. Concavities (MD) merely split a row into segments; within a segment adjacency holds. Mask gaps (Keys) cause a gap then clean re-entry; worst case a thin orphan. NY hot cells produce population deviation, not contiguity failure. Lowest repair (walk ships nearly unchanged) and fully deterministic. But outcome is ~10:1 full-width bands — maximally non-square, zero center-outward semantics. Robust but serves none of the user's vision."
+    },
+    "S3": {
+      "squareness_outcome": 4,
+      "repair_burden": 4,
+      "geography_robustness": 3,
+      "vision_center_outward": 3,
+      "vision_squares_first": 5,
+      "notes": "My first choice. The only mechanism that directly optimizes the user's #1 goal: the bbox-max-side growth penalty targets square regions (vision_squares_first 5). Crucially for my lens, its edge cases are handled deterministically and boundedly: 'empty frontier -> close early (sealed)' is an explicit, terminating handler, and frontier-based growth is inherently contiguity-preserving for grown regions (unlike S1's blind visit order). Repair LOW-MEDIUM (sealed regions + final remainder only). geography_robustness 3 not higher: behavior on MD wrap-around-void sealing is the least-tested seam — a band can enclose a void and seal early, pushing fragmentation into the remainder. Seeds sweep from west edge so center-outward is absent AS SPECIFIED, but trivially re-seedable from the centroid, so partial credit 3 per the criterion text. Best alignment of robust-deterministic edge handling with the squares-first vision."
+    },
+    "S4": {
+      "squareness_outcome": 2,
+      "repair_burden": 3,
+      "geography_robustness": 4,
+      "vision_center_outward": 1,
+      "vision_squares_first": 2,
+      "notes": "The advertised robustness fallback. Hilbert locality bounds jump distance, so it degrades gracefully on pathological shapes (geography_robustness 4). But packet-described behavior is less clean than its reputation: most of the 512x512 curve is out-of-state, so the in-state subsequence jumps at every mask crossing = MEDIUM repair, comparable to other cell-walks. Deterministic (canonical d2xy). Blobs are compact but not square and not center-outward. Solid middle on robustness, weak on vision and squareness."
+    },
+    "S5": {
+      "squareness_outcome": 3,
+      "repair_burden": 4,
+      "geography_robustness": 4,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Reference baseline, not a cell-walk. Best population balance pre-repair and lowest geometric repair on near-rectangular CO; the one geography break is concave regions producing disconnected halves, which is rarer than S4's per-mask-crossing jumps, so I rank it slightly above S4 on robustness. Fully deterministic (V<H<D1<D2 tie cascade). Rectangle-ish wedges give moderate squareness (3) but embody NONE of the user's vision: no square-mile walk, no squares-first objective, no center-outward growth."
+    }
+  },
+  "ranking": [
+    "S3",
+    "S2",
+    "S5",
+    "S4",
+    "S1"
+  ],
+  "first_choice": "S3",
+  "steelman_against_first_choice": "S3's squareness guarantee is only partial, and the partiality lands exactly where my lens is most worried. The bbox-side penalty makes grown regions square, but the early-sealed regions and the final remainder ARE the irregular districts — and their shapes are decided by the repair pass, not the bbox rule. On concave geography (MD Chesapeake), a band can grow around a void and seal prematurely; if that cascades across several bands, the remainder fragments and the repair pass redraws a meaningful fraction of the map. In that scenario the very property that justifies ranking S3 #1 (mechanism-level squareness) is eroded by repair, and S3's robustness edge over S2 narrows — while S2's bands, ugly as they are, survive repair essentially intact and never breach contiguity. If MD/FL A/B testing shows sealing cascades, S2's predictability could beat S3's aspirational squareness.",
+  "fatal_flaws": [
+    {
+      "strategy": "S1",
+      "flaw": "Predicted concentric-ring districts mean districts 2..n are annular; on Colorado this plausibly yields ~7 of 8 irregularly shaped districts, breaching the user's <=2-4 irregular budget by a wide margin (an enumerated eligibility gate). Marked major rather than fatal because it is a packet PREDICTION, not an executed outcome, and re-seeding/repair could partially mitigate.",
+      "severity": "major"
+    }
+  ],
+  "confidence": 0.68
+}

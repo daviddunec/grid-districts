@@ -1,0 +1,74 @@
+{
+  "evaluator_id": "E2",
+  "lens": "Shape quality — squareness vs. mere compactness. The decisive test is which mechanism's objective function actually targets square/regular geometry, not low-perimeter roundness. Compactness optimizers (Hilbert blobs, splitline wedges) reward roundness, which is at odds with squareness; a circle is maximally compact and minimally square. Only a bounding-box-side penalty mechanizes squareness directly.",
+  "disqualified": [],
+  "scores": {
+    "S1": {
+      "squareness_outcome": 2,
+      "repair_burden": 2,
+      "geography_robustness": 2,
+      "vision_center_outward": 5,
+      "vision_squares_first": 2,
+      "notes": "Only strategy with true center-outward growth (District 1 square-ish), but districts 2..n are concentric rings/arcs — high perimeter, the antithesis of square. Ring fragmentation on CO's 1.4:1 rectangle drives HIGH repair, so the shipped map diverges far from the appealing nominal walk. Spiral is a traversal objective, not a squareness objective."
+    },
+    "S2": {
+      "squareness_outcome": 1,
+      "repair_burden": 5,
+      "geography_robustness": 3,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Full-width ~10:1 aspect bands are maximally non-square — effectively all 8 CO districts irregular by squareness, blowing the 2-4 budget by a wide margin. Nominal walk survives repair nearly unchanged (only saving grace) and bands are geographically simple, but it embodies neither vision clause. Worst on the lens that matters here."
+    },
+    "S3": {
+      "squareness_outcome": 4,
+      "repair_burden": 4,
+      "geography_robustness": 3,
+      "vision_center_outward": 2,
+      "vision_squares_first": 5,
+      "notes": "The ONLY mechanism whose objective (minimize resulting region bbox max side) directly optimizes square regions — exactly the user's #1 goal mechanized. Grown regions contiguous by construction; only early-sealed regions + final remainder lean on repair (LOW-MEDIUM). Docked on squareness_outcome because those sealed/remainder regions are precisely where squareness breaks. Center-outward fidelity is weak (west-edge seed) — partial credit only as it is re-seedable from center."
+    },
+    "S4": {
+      "squareness_outcome": 2,
+      "repair_burden": 3,
+      "geography_robustness": 4,
+      "vision_center_outward": 1,
+      "vision_squares_first": 1,
+      "notes": "Curve locality yields compact blobs — packet states explicitly 'compact but not square.' Compactness is not squareness; through this lens that's a low shape score. Strongest geography_robustness (named the fallback candidate, degrades gracefully). Mask-crossing jumps give MEDIUM repair. No center-outward, no squares-first objective."
+    },
+    "S5": {
+      "squareness_outcome": 3,
+      "repair_burden": 4,
+      "geography_robustness": 3,
+      "vision_center_outward": 1,
+      "vision_squares_first": 2,
+      "notes": "Rectangle-ish wedges are more regular than blobs/bands/rings and ship with the best population balance and LOW repair. But diagonal cut families produce non-square wedges and there is no squares-first objective — squareness is incidental. Embodies none of the user's vision clauses. Better shape than S4 (rectangles > blobs for squareness) but far behind S3's direct mechanism."
+    }
+  },
+  "ranking": [
+    "S3",
+    "S5",
+    "S4",
+    "S1",
+    "S2"
+  ],
+  "first_choice": "S3",
+  "steelman_against_first_choice": "The user's most emphatic and repeated clause concerns WHERE the process begins — \"should it be literally right in the middle of the state\" — and S3 as specified seeds from the west edge with explicitly \"no center-outward semantics,\" directly contradicting the one thing the user asked about most. Worse, S3's squareness guarantee is partial: the bbox penalty only governs grown interior regions, while early-sealed regions and the final remainder — exactly where shapes turn irregular — are handed to the repair pass, which redraws them. So the \"directly optimizes square\" claim holds for the interior but not the whole shipped map, and the obvious fix (re-seed from center) is a hybrid that is not a votable option on this ballot.",
+  "fatal_flaws": [
+    {
+      "strategy": "S2",
+      "flaw": "Eight full-width ~10:1 aspect bands mean effectively zero square districts and all ~8 irregular by squareness — violates the <=2-4 irregular-district budget by a wide margin (the irregular-budget eligibility gate).",
+      "severity": "fatal"
+    },
+    {
+      "strategy": "S1",
+      "flaw": "Ring/arc fragmentation of outer districts at CO's north/south edges produces multiple irregular outer districts, plausibly pushing past the 2-4 irregular budget; less certain than S2 since District 1 and inner rings may pass.",
+      "severity": "major"
+    },
+    {
+      "strategy": "S3",
+      "flaw": "Squareness 'by construction' guarantee is partial — early-sealed regions and final remainder depend on repair, so some irregular shapes are inevitable; bounded within budget but not eliminated.",
+      "severity": "minor"
+    }
+  ],
+  "confidence": 0.82
+}

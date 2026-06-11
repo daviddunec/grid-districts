@@ -1,0 +1,16 @@
+{
+  "name": "redistricting",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic grid-walk congressional redistricting engine — 1-mi2 cells, 2020 census blocks, identical process per state",
+  "scripts": {
+    "probe": "node scripts/verify/probe-tabblock.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "proj4": "^2.15.0",
+    "shapefile": "^0.6.6",
+    "@turf/boolean-point-in-polygon": "^7.2.0"
+  }
+}

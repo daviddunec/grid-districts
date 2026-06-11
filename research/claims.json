@@ -1,0 +1,298 @@
+[
+  {
+    "id": "tabblock20-dir-exists",
+    "kind": "url",
+    "claim": "The TIGER2020 TABBLOCK20 directory at https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/ exists and is publicly accessible on the Census FTP mirror.",
+    "value": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/",
+    "source_url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/",
+    "quote": "Index of /geo/tiger/TIGER2020/TABBLOCK20 - Census.gov"
+  },
+  {
+    "id": "tabblock20-filename-pattern",
+    "kind": "url",
+    "claim": "Per-state TABBLOCK20 download files follow the naming pattern tl_2020_<2-digit-FIPS>_tabblock20.zip, e.g. tl_2020_25_tabblock20.zip for Massachusetts (FIPS 25).",
+    "value": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_<2-digit-state-FIPS>_tabblock20.zip",
+    "source_url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_25_tabblock20.zip",
+    "quote": "Census — https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_25_tabblock20.zip"
+  },
+  {
+    "id": "field-geoid20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field GEOID20, defined as the Census block identifier — a concatenation of the 2020 Census state FIPS code, county FIPS code, census tract code, and census block number.",
+    "value": "GEOID20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "GEOID20 (15 characters, String) - Census block identifier; a concatenation of 2020 Census state FIPS code, 2020 Census county FIPS code, 2020 Census tract code, and 2020 Census block number"
+  },
+  {
+    "id": "field-pop20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field POP20, representing the 2020 Census population count for the census block.",
+    "value": "POP20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "field-housing20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field HOUSING20, representing the 2020 Census housing unit count for the census block.",
+    "value": "HOUSING20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "field-aland20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field ALAND20, representing the 2020 Census land area (in square meters) of the census block.",
+    "value": "ALAND20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "field-awater20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field AWATER20, representing the 2020 Census water area (in square meters) of the census block.",
+    "value": "AWATER20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "field-intptlat20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field INTPTLAT20, storing the latitude of the internal point of the census block as a signed decimal-degree string.",
+    "value": "INTPTLAT20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "field-intptlon20",
+    "kind": "field",
+    "claim": "The TABBLOCK20 DBF record layout contains the field INTPTLON20, storing the longitude of the internal point of the census block as a signed decimal-degree string.",
+    "value": "INTPTLON20",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "cb2020-state-500k-url",
+    "kind": "url",
+    "claim": "The 2020 cartographic state boundary file (1:500,000 scale) is located at https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip.",
+    "value": "https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip",
+    "source_url": "https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "intptlat20-intptlon20-decimal-string",
+    "kind": "field",
+    "claim": "INTPTLAT20 and INTPTLON20 store the internal point coordinates as signed decimal-degree character strings (not numeric), with a leading sign character for direction.",
+    "value": "signed decimal-degree strings",
+    "source_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "total-seats-435",
+    "kind": "number",
+    "claim": "The U.S. House of Representatives has a fixed total of 435 seats apportioned among the 50 states following the 2020 Census.",
+    "value": "435",
+    "source_url": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
+    "quote": "Apportionment is the process of dividing the 435 memberships, or seats, in the U.S. House of Representatives among the 50 states."
+  },
+  {
+    "id": "colorado-seats-8",
+    "kind": "number",
+    "claim": "Colorado gained one seat in the 2020 Census apportionment, bringing its total to 8 House seats effective for the 2022–2030 elections.",
+    "value": "8",
+    "source_url": "https://www.census.gov/newsroom/press-releases/2021/2020-census-apportionment-results.html",
+    "quote": "Texas will gain two seats in the House of Representatives, five states will gain one seat each (Colorado, Florida, Montana, North Carolina, and Oregon)"
+  },
+  {
+    "id": "new-york-seats-26",
+    "kind": "number",
+    "claim": "New York lost one seat in the 2020 Census apportionment, bringing its total to 26 House seats effective for the 2022–2030 elections.",
+    "value": "26",
+    "source_url": "https://www.census.gov/newsroom/press-releases/2021/2020-census-apportionment-results.html",
+    "quote": "seven states will lose one seat each (California, Illinois, Michigan, New York, Ohio, Pennsylvania, and West Virginia)"
+  },
+  {
+    "id": "montana-seats-2",
+    "kind": "number",
+    "claim": "Montana gained one seat in the 2020 Census apportionment, regaining its second House seat and bringing its total to 2, effective for the 2022–2030 elections.",
+    "value": "2",
+    "source_url": "https://www.census.gov/newsroom/press-releases/2021/2020-census-apportionment-results.html",
+    "quote": "five states will gain one seat each (Colorado, Florida, Montana, North Carolina, and Oregon)"
+  },
+  {
+    "id": "at-large-states-six",
+    "kind": "number",
+    "claim": "Exactly six states have a single at-large House district following 2020 apportionment: Alaska, Delaware, North Dakota, South Dakota, Vermont, and Wyoming.",
+    "value": "AK, DE, ND, SD, VT, WY",
+    "source_url": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
+    "quote": "Each of the 50 states is entitled to a minimum of one seat in the U.S. House of Representatives."
+  },
+  {
+    "id": "full-50-state-seat-table",
+    "kind": "field",
+    "claim": "The complete 2020 Census apportionment allocates 435 House seats across all 50 states as shown in the compact JSON value.",
+    "value": "{\"AL\":7,\"AK\":1,\"AZ\":9,\"AR\":4,\"CA\":52,\"CO\":8,\"CT\":5,\"DE\":1,\"FL\":28,\"GA\":14,\"HI\":2,\"ID\":2,\"IL\":17,\"IN\":9,\"IA\":4,\"KS\":4,\"KY\":6,\"LA\":6,\"ME\":2,\"MD\":8,\"MA\":9,\"MI\":13,\"MN\":8,\"MS\":4,\"MO\":8,\"MT\":2,\"NE\":3,\"NV\":4,\"NH\":2,\"NJ\":12,\"NM\":3,\"NY\":26,\"NC\":14,\"ND\":1,\"OH\":15,\"OK\":5,\"OR\":6,\"PA\":17,\"RI\":2,\"SC\":7,\"SD\":1,\"TN\":9,\"TX\":38,\"UT\":4,\"VT\":1,\"VA\":11,\"WA\":10,\"WV\":2,\"WI\":8,\"WY\":1}",
+    "source_url": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "co-resident-population-2020",
+    "kind": "number",
+    "claim": "Colorado's 2020 Census resident population (PL 94-171 block-sum count, 50 states + DC + PR table) is 5,773,714.",
+    "value": "5773714",
+    "source_url": "https://www.census.gov/library/stories/state-by-state/colorado.html",
+    "quote": "The Centennial State's population was 5,773,714 in 2020, making it one of 13 states and the District of Columbia that grew by 10.0% or more from 2010 to 2020."
+  },
+  {
+    "id": "co-apportionment-population-2020",
+    "kind": "number",
+    "claim": "Colorado's 2020 Census apportionment population (resident population plus overseas federal military/civilian personnel allocable to Colorado) is 5,782,171.",
+    "value": "5782171",
+    "source_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableA.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "co-fips-code",
+    "kind": "number",
+    "claim": "Colorado's state FIPS code is 08.",
+    "value": "08",
+    "source_url": "https://www2.census.gov/geo/maps/DC2020/GARM20/GARM2020_ST08_CO.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "co-land-area-sqmi",
+    "kind": "number",
+    "claim": "Colorado's total land area is approximately 103,642 square miles per the 2020 Census.",
+    "value": "103642",
+    "source_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/population-density-data-table.pdf",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "ny-resident-population-2020",
+    "kind": "number",
+    "claim": "New York's 2020 Census resident population (PL 94-171 block-sum count) is 20,201,249.",
+    "value": "20201249",
+    "source_url": "https://www.census.gov/library/stories/2021/04/2020-census-data-release.html",
+    "quote": "NO QUOTE FOUND"
+  },
+  {
+    "id": "apportionment-vs-resident-distinction",
+    "kind": "field",
+    "claim": "The 2020 Census apportionment population equals the resident population plus overseas U.S. military and federal civilian employees (and their dependents) allocable to a home state; this overseas add-on is never used for census-block sum checks.",
+    "value": "Apportionment Population = Resident Population + Overseas Population",
+    "source_url": "https://www.census.gov/library/stories/2021/04/2020-census-data-release.html",
+    "quote": "The population counts used for apportionment include the total resident population for each of the 50 states, plus a count of U.S. military and federal civilian employees living overseas (and their dependents living with them) who could be allocated to a home state."
+  },
+  {
+    "id": "shapefile-opendbf-standalone",
+    "kind": "package",
+    "claim": "The npm package 'shapefile' (mbostock/mapbox) exposes openDbf() for reading .dbf attribute tables standalone, separate from the shapefile, and accepts a file path string, ArrayBuffer/Uint8Array buffer, or a Node/WhatWG readable stream.",
+    "value": "shapefile.openDbf(dbf[, options])",
+    "source_url": "https://github.com/mbostock/shapefile/blob/master/README.md",
+    "quote": "shapefile.openDbf(dbf[, options]) Returns a promise that yields a GeoJSON properties object source. Unlike shapefile.open, this only reads the dBASE file, and never the associated shapefile."
+  },
+  {
+    "id": "shapefile-opendbf-path-input",
+    "kind": "package",
+    "claim": "shapefile.openDbf() accepts a file path string as its first argument to open a .dbf file from disk.",
+    "value": "string file path",
+    "source_url": "https://github.com/mbostock/shapefile/blob/master/README.md",
+    "quote": "If typeof dbf is \"string\", opens the dBASE at the specified dbf path."
+  },
+  {
+    "id": "shapefile-opendbf-buffer-input",
+    "kind": "package",
+    "claim": "shapefile.openDbf() accepts an ArrayBuffer or Uint8Array as its first argument to read an in-memory .dbf.",
+    "value": "ArrayBuffer or Uint8Array",
+    "source_url": "https://github.com/mbostock/shapefile/blob/master/README.md",
+    "quote": "If dbf instanceof ArrayBuffer or dbf instanceof Uint8Array, reads the specified in-memory shapefile."
+  },
+  {
+    "id": "shapefile-opendbf-stream-input",
+    "kind": "package",
+    "claim": "shapefile.openDbf() accepts a Node readable stream or a WhatWG standard readable stream as its first argument.",
+    "value": "Node readable stream / WhatWG readable stream",
+    "source_url": "https://github.com/mbostock/shapefile/blob/master/README.md",
+    "quote": "Otherwise, dbf must be a Node readable stream in Node or a WhatWG standard readable stream in browsers."
+  },
+  {
+    "id": "proj4-no-epsg5070-builtin",
+    "kind": "package",
+    "claim": "The npm package 'proj4' does NOT ship EPSG:5070 (NAD83/Conus Albers) as a built-in named definition; only a limited set of EPSG codes are included by default.",
+    "value": "EPSG:5070 not built-in",
+    "source_url": "https://raw.githubusercontent.com/proj4js/proj4js/master/README.md",
+    "quote": "EPSG:4326, which has the following alias 'WGS84' ... EPSG:4269 ... EPSG:3857 ... EPSG:32601 to EPSG:32660 ... EPSG:32701 to EPSG:32760 ... EPSG:5041 ... EPSG:5042"
+  },
+  {
+    "id": "proj4-no-epsg3338-builtin",
+    "kind": "package",
+    "claim": "The npm package 'proj4' does NOT ship EPSG:3338 (NAD83/Alaska Albers) as a built-in named definition.",
+    "value": "EPSG:3338 not built-in",
+    "source_url": "https://raw.githubusercontent.com/proj4js/proj4js/master/README.md",
+    "quote": "EPSG:4326, which has the following alias 'WGS84' ... EPSG:4269 ... EPSG:3857 ... EPSG:32601 to EPSG:32660 ... EPSG:32701 to EPSG:32760 ... EPSG:5041 ... EPSG:5042"
+  },
+  {
+    "id": "proj4-defs-custom-registration",
+    "kind": "package",
+    "claim": "Custom projections not built into proj4 must be registered at runtime via proj4.defs(), which accepts a name and a projection string.",
+    "value": "proj4.defs(name, projectionString)",
+    "source_url": "https://raw.githubusercontent.com/proj4js/proj4js/master/README.md",
+    "quote": "proj4.defs method which can be called 2 ways, with a name and projection"
+  },
+  {
+    "id": "proj4-epsg5070-proj-string",
+    "kind": "package",
+    "claim": "The authoritative PROJ.4 string for EPSG:5070 (NAD83/Conus Albers) from epsg.io is '+proj=aea +lat_0=23 +lon_0=-96 +lat_1=29.5 +lat_2=45.5 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs'; the claimed string '+datum=NAD83' differs from the canonical epsg.io form which uses '+ellps=GRS80 +towgs84=0,0,0,0,0,0,0'.",
+    "value": "+proj=aea +lat_0=23 +lon_0=-96 +lat_1=29.5 +lat_2=45.5 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs",
+    "source_url": "https://epsg.io/5070",
+    "quote": "+proj=aea +lat_0=23 +lon_0=-96 +lat_1=29.5 +lat_2=45.5 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"
+  },
+  {
+    "id": "adm-zip-pure-js",
+    "kind": "package",
+    "claim": "The npm package 'adm-zip' is a pure JavaScript implementation for zip data compression for Node.js with no native dependencies.",
+    "value": "pure JavaScript, no native dependencies",
+    "source_url": "https://raw.githubusercontent.com/cthackers/adm-zip/master/README.md",
+    "quote": "ADM-ZIP is a pure JavaScript implementation for zip data compression for NodeJS"
+  },
+  {
+    "id": "adm-zip-no-native-deps",
+    "kind": "package",
+    "claim": "adm-zip has no other Node.js library dependencies.",
+    "value": "zero external dependencies",
+    "source_url": "https://raw.githubusercontent.com/cthackers/adm-zip/master/README.md",
+    "quote": "There are no other nodeJS libraries that ADM-ZIP is dependent of"
+  },
+  {
+    "id": "adm-zip-extract-entry-to-disk",
+    "kind": "package",
+    "claim": "adm-zip can extract an individual named entry from a zip archive to a target path on disk via zip.extractEntryTo().",
+    "value": "zip.extractEntryTo(entryName, targetPath, maintainEntryPath, overwrite)",
+    "source_url": "https://raw.githubusercontent.com/cthackers/adm-zip/master/README.md",
+    "quote": "zip.extractEntryTo(/*entry name*/ \"some_folder/my_file.txt\", /*target path*/ \"/home/me/tempfolder\", /*maintainEntryPath*/ false, /*overwrite*/ true)"
+  },
+  {
+    "id": "turf-bpip-standalone-install",
+    "kind": "package",
+    "claim": "The package '@turf/boolean-point-in-polygon' is installable as a standalone npm package independent of the full @turf/turf bundle.",
+    "value": "npm install @turf/boolean-point-in-polygon",
+    "source_url": "https://raw.githubusercontent.com/Turfjs/turf/master/packages/turf-boolean-point-in-polygon/README.md",
+    "quote": "Install this single module individually: $ npm install @turf/boolean-point-in-polygon"
+  },
+  {
+    "id": "turf-bpip-polygon-multipolygon",
+    "kind": "package",
+    "claim": "@turf/boolean-point-in-polygon tests a point against both Polygon and MultiPolygon GeoJSON geometry types.",
+    "value": "Feature<(Polygon | MultiPolygon)>",
+    "source_url": "https://raw.githubusercontent.com/Turfjs/turf/master/packages/turf-boolean-point-in-polygon/README.md",
+    "quote": "Takes a Point and a Polygon or MultiPolygon and determines if the point resides inside"
+  },
+  {
+    "id": "turf-bpip-convex-concave",
+    "kind": "package",
+    "claim": "@turf/boolean-point-in-polygon works for both convex and concave polygons.",
+    "value": "convex or concave polygon",
+    "source_url": "https://raw.githubusercontent.com/Turfjs/turf/master/packages/turf-boolean-point-in-polygon/README.md",
+    "quote": "determines if the point resides inside the polygon. The polygon can be convex or concave."
+  }
+]

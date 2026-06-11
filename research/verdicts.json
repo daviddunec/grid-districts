@@ -1,0 +1,275 @@
+[
+  {
+    "claim_id": "tabblock20-dir-exists",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/tiger/TIGER2020/",
+    "evidence_quote": "The parent directory at https://www2.census.gov/geo/tiger/TIGER2020/ was fetched successfully and lists TABBLOCK20 as one of its subdirectories. Additionally, fetching https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_01_tabblock20.zip (Alabama) returned HTTP 200 with binary content exceeding the 10 MB fetch limit, confirming live files in that path.",
+    "what_was_checked": "Fetched the parent TIGER2020 directory listing, which explicitly lists TABBLOCK20 as a subdirectory; also confirmed individual state zip files in that directory return HTTP 200 (content-limit exceeded, not 404)."
+  },
+  {
+    "claim_id": "tabblock20-filename-pattern",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "File Name: tl_YYYY_<state FIPS>_tabblock20.shp",
+    "what_was_checked": "Ran pdftotext on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for tabblock20. The Appendix G-2 section states the file name pattern as 'tl_YYYY_<state FIPS>_tabblock20.shp'. Fetching https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_25_tabblock20.zip returned HTTP 200 (content exceeded limit), confirming the Massachusetts (FIPS 25) file exists."
+  },
+  {
+    "claim_id": "field-geoid20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "GEOID20 15 String\nCensus block identifier; a concatenation of 2020\nCensus state FIPS code, 2020 Census county FIPS\ncode, 2020 Census tract code, and 2020 Census\nblock number",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for BLOCKCE20/GEOID20 in the Appendix G-2 (2020 Block State-based Shapefile) section. The field definition matches the claim exactly."
+  },
+  {
+    "claim_id": "field-pop20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "POP20 12 Number 2020 Census Population count",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for the TABBLOCK20 record layout (Appendix G-2). The field POP20 is listed with type Number and described as '2020 Census Population count'."
+  },
+  {
+    "claim_id": "field-housing20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "HOUSING20 12 Number 2020 Census Housing Unit count",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for the TABBLOCK20 record layout (Appendix G-2). The field HOUSING20 is listed with type Number and described as '2020 Census Housing Unit count'."
+  },
+  {
+    "claim_id": "field-aland20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "ALAND20 14 Number 2020 Census land area",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for the TABBLOCK20 record layout (Appendix G-2). The field ALAND20 is listed with type Number and described as '2020 Census land area'. The tech doc does not specify units (square meters) explicitly in the field description, but the claim is directionally confirmed: field exists, type Number, is land area."
+  },
+  {
+    "claim_id": "field-awater20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "AWATER20 14 Number 2020 Census water area",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for the TABBLOCK20 record layout (Appendix G-2). The field AWATER20 is listed with type Number and described as '2020 Census water area'."
+  },
+  {
+    "claim_id": "field-intptlat20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "INTPTLAT20 11 String 2020 Census latitude of the internal point",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for the TABBLOCK20 record layout (Appendix G-2). INTPTLAT20 is listed with type String and described as '2020 Census latitude of the internal point'."
+  },
+  {
+    "claim_id": "field-intptlon20",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "INTPTLON20 12 String 2020 Census longitude of the internal point",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and grep'd for the TABBLOCK20 record layout (Appendix G-2). INTPTLON20 is listed with type String and described as '2020 Census longitude of the internal point'."
+  },
+  {
+    "claim_id": "cb2020-state-500k-url",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip",
+    "evidence_quote": "Fetching the URL returned binary ZIP content (application/zip, 3.4MB) — the file is live and downloadable.",
+    "what_was_checked": "WebFetch of the exact URL returned HTTP 200 with a 3.4 MB ZIP file (binary content saved locally), confirming the file exists and is publicly accessible."
+  },
+  {
+    "claim_id": "intptlat20-intptlon20-decimal-string",
+    "verdict": "UNCONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2020/TGRSHP2020_TechDoc.pdf",
+    "evidence_quote": "INTPTLAT20 11 String 2020 Census latitude of the internal point\nINTPTLON20 12 String 2020 Census longitude of the internal point",
+    "what_was_checked": "Ran pdftotext -raw on the downloaded TGRSHP2020_TechDoc.pdf and searched for any description of INTPTLAT20/INTPTLON20 as 'signed', 'decimal-degree', or 'leading sign character'. The tech doc confirms both fields are type String, but contains no text describing them as 'signed decimal-degree character strings' or mentioning a 'leading sign character for direction'. The specific framing in the claim is not directly confirmed."
+  },
+  {
+    "claim_id": "total-seats-435",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
+    "evidence_quote": "Apportionment is the process of dividing the 435 memberships, or seats, in the U.S. House of Representatives among the 50 states.",
+    "what_was_checked": "WebFetch of the Census apportionment data page retrieved the exact quote confirming 435 total seats apportioned among the 50 states."
+  },
+  {
+    "claim_id": "colorado-seats-8",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableC1.xlsx",
+    "evidence_quote": "Table C1. Number of Seats in U.S. House of Representatives by State: 1910 to 2020 — Colorado: 8 (2020 column)",
+    "what_was_checked": "Downloaded and parsed the official Census Table C1 xlsx. Row A10='Colorado', B10='8' for the 2020 column. The press release also states Colorado gained one seat, and the prior apportionment (2010) showed CO with 7 seats, so 7+1=8."
+  },
+  {
+    "claim_id": "new-york-seats-26",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableC1.xlsx",
+    "evidence_quote": "Table C1. Number of Seats in U.S. House of Representatives by State: 1910 to 2020 — New York: 26 (2020 column)",
+    "what_was_checked": "Downloaded and parsed the official Census Table C1 xlsx. Row A36='New York', B36='26' for the 2020 column."
+  },
+  {
+    "claim_id": "montana-seats-2",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableC1.xlsx",
+    "evidence_quote": "Table C1. Number of Seats in U.S. House of Representatives by State: 1910 to 2020 — Montana: 2 (2020 column)",
+    "what_was_checked": "Downloaded and parsed the official Census Table C1 xlsx. Row A30='Montana', B30='2' for the 2020 column."
+  },
+  {
+    "claim_id": "at-large-states-six",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableC1.xlsx",
+    "evidence_quote": "Table C1 2020 column: Alaska=1, Delaware=1, North Dakota=1, South Dakota=1, Vermont=1, Wyoming=1. No other state has exactly 1 seat.",
+    "what_was_checked": "Downloaded and parsed the Census Table C1 xlsx for all 50 states' 2020 seat counts. Exactly six states have 1 seat: AK, DE, ND, SD, VT, WY — matching the claim. All other 44 states have 2 or more seats."
+  },
+  {
+    "claim_id": "full-50-state-seat-table",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableC1.xlsx",
+    "evidence_quote": "Table C1 2020 column parsed: AL=7, AK=1, AZ=9, AR=4, CA=52, CO=8, CT=5, DE=1, FL=28, GA=14, HI=2, ID=2, IL=17, IN=9, IA=4, KS=4, KY=6, LA=6, ME=2, MD=8, MA=9, MI=13, MN=8, MS=4, MO=8, MT=2, NE=3, NV=4, NH=2, NJ=12, NM=3, NY=26, NC=14, ND=1, OH=15, OK=5, OR=6, PA=17, RI=2, SC=7, SD=1, TN=9, TX=38, UT=4, VT=1, VA=11, WA=10, WV=2, WI=8, WY=1. Total=435.",
+    "what_was_checked": "Downloaded and parsed the Census Table C1 xlsx, extracting the 2020 seat count for all 50 states. Every value matches the claimed JSON exactly. Total sums to 435."
+  },
+  {
+    "claim_id": "co-resident-population-2020",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www.census.gov/library/stories/state-by-state/colorado.html",
+    "evidence_quote": "The Centennial State's population was 5,773,714 in 2020, making it one of 13 states and the District of Columbia that grew by 10.0% or more from 2010 to 2020.",
+    "what_was_checked": "WebFetch of the Census state-by-state Colorado story page returned the exact population figure 5,773,714 for the 2020 Census."
+  },
+  {
+    "claim_id": "co-apportionment-population-2020",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-tableA.pdf",
+    "evidence_quote": "Colorado row in Table A xlsx (apportionment-2020-tableA.xlsx): 2020 Census Apportionment Population = 5,782,171; 2020 Census Resident Population = 5,773,714; 2020 Census Overseas Population = 8,457.",
+    "what_was_checked": "Downloaded and parsed the Census apportionment Table A xlsx (equivalent source to the PDF). Row 11 (Colorado) shows apportionment population B11=5782171, resident population C11=5773714. The Excel file is from the same Census Bureau apportionment data page."
+  },
+  {
+    "claim_id": "co-fips-code",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/geo/docs/reference/state.txt",
+    "evidence_quote": "Colorado | 08",
+    "what_was_checked": "WebFetch of the Census Bureau state FIPS reference file returned a complete listing. Colorado's FIPS code is confirmed as 08."
+  },
+  {
+    "claim_id": "co-land-area-sqmi",
+    "verdict": "UNCONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/population-density-data-table.pdf",
+    "evidence_quote": "Colorado 5,773,714 55.7 39 (2020 resident population and population density per sq mi; land area column not separately extractable as text from this PDF)",
+    "what_was_checked": "Downloaded the cited population-density-data-table.pdf and ran pdftotext. The PDF lists Colorado's 2020 population as 5,773,714 and density as 55.7/sq mi, implying ~103,657 sq mi — close to but not exactly 103,642. The exact value 103,642 does not appear as readable text in the density table PDF, and could not be directly confirmed from the cited source."
+  },
+  {
+    "claim_id": "ny-resident-population-2020",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www.census.gov/library/stories/state-by-state/new-york.html",
+    "evidence_quote": "The population of the Empire State, the nation's fourth most populous state, grew 4.2% to 20,201,249 from 2010 to 2020.",
+    "what_was_checked": "WebFetch of the Census state-by-state New York story page returned the exact population figure 20,201,249 for the 2020 Census."
+  },
+  {
+    "claim_id": "apportionment-vs-resident-distinction",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www.census.gov/library/stories/2021/04/2020-census-data-release.html",
+    "evidence_quote": "The population counts used for apportionment include the total resident population for each of the 50 states, plus a count of U.S. military and federal civilian employees living overseas (and their dependents living with them) who could be allocated to a home state.",
+    "what_was_checked": "WebFetch of the 2020 census data release page confirmed that apportionment population = resident population + overseas U.S. military/civilian personnel allocable to a home state, and that this overseas component is not used for census-block counts."
+  },
+  {
+    "claim_id": "shapefile-opendbf-standalone",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/mbostock/shapefile/master/README.md",
+    "evidence_quote": "shapefile.openDbf(dbf[, options]) Returns a promise that yields a GeoJSON properties object source. Unlike shapefile.open, this only reads the dBASE file, and never the associated shapefile.",
+    "what_was_checked": "WebFetch of the shapefile GitHub README confirmed that openDbf() exists as a standalone function that reads only the dBASE file without the shapefile."
+  },
+  {
+    "claim_id": "shapefile-opendbf-path-input",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/mbostock/shapefile/master/README.md",
+    "evidence_quote": "If typeof dbf is \"string\", opens the dBASE at the specified dbf path.",
+    "what_was_checked": "WebFetch of the shapefile GitHub README confirmed that a string path is accepted as input to openDbf()."
+  },
+  {
+    "claim_id": "shapefile-opendbf-buffer-input",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/mbostock/shapefile/master/README.md",
+    "evidence_quote": "If dbf instanceof ArrayBuffer or dbf instanceof Uint8Array, reads the specified in-memory shapefile.",
+    "what_was_checked": "WebFetch of the shapefile GitHub README confirmed that ArrayBuffer and Uint8Array inputs are accepted by openDbf()."
+  },
+  {
+    "claim_id": "shapefile-opendbf-stream-input",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/mbostock/shapefile/master/README.md",
+    "evidence_quote": "Otherwise, dbf must be a Node readable stream in Node or a WhatWG standard readable stream in browsers.",
+    "what_was_checked": "WebFetch of the shapefile GitHub README confirmed that Node readable streams and WhatWG standard readable streams are accepted by openDbf()."
+  },
+  {
+    "claim_id": "proj4-no-epsg5070-builtin",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/proj4js/proj4js/master/README.md",
+    "evidence_quote": "Built-in named projections listed: EPSG:4326 (WGS84), EPSG:4269, EPSG:3857 (and aliases), EPSG:32601-32660, EPSG:32701-32760, EPSG:5041, EPSG:5042. EPSG:5070 is not listed.",
+    "what_was_checked": "WebFetch of the proj4js GitHub README retrieved the complete list of built-in EPSG definitions. EPSG:5070 does not appear in the list."
+  },
+  {
+    "claim_id": "proj4-no-epsg3338-builtin",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/proj4js/proj4js/master/README.md",
+    "evidence_quote": "Built-in named projections listed: EPSG:4326 (WGS84), EPSG:4269, EPSG:3857 (and aliases), EPSG:32601-32660, EPSG:32701-32760, EPSG:5041, EPSG:5042. EPSG:3338 is not listed.",
+    "what_was_checked": "WebFetch of the proj4js GitHub README retrieved the complete list of built-in EPSG definitions. EPSG:3338 does not appear in the list."
+  },
+  {
+    "claim_id": "proj4-defs-custom-registration",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/proj4js/proj4js/master/README.md",
+    "evidence_quote": "proj4.defs method which can be called 2 ways, with a name and projection",
+    "what_was_checked": "WebFetch of the proj4js GitHub README confirmed that proj4.defs() accepts a name and projection string for custom registration of projections."
+  },
+  {
+    "claim_id": "proj4-epsg5070-proj-string",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://epsg.io/5070",
+    "evidence_quote": "+proj=aea +lat_0=23 +lon_0=-96 +lat_1=29.5 +lat_2=45.5 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs",
+    "what_was_checked": "WebFetch of epsg.io/5070 returned the authoritative PROJ.4 string for EPSG:5070, which uses +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 — matching the claim that the canonical form differs from +datum=NAD83."
+  },
+  {
+    "claim_id": "adm-zip-pure-js",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/cthackers/adm-zip/master/README.md",
+    "evidence_quote": "ADM-ZIP is a pure JavaScript implementation for zip data compression for NodeJS",
+    "what_was_checked": "WebFetch of the adm-zip GitHub README confirmed the exact quote describing adm-zip as a pure JavaScript implementation."
+  },
+  {
+    "claim_id": "adm-zip-no-native-deps",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/cthackers/adm-zip/master/README.md",
+    "evidence_quote": "There are no other nodeJS libraries that ADM-ZIP is dependent of",
+    "what_was_checked": "WebFetch of the adm-zip GitHub README confirmed the exact quote stating no external Node.js library dependencies."
+  },
+  {
+    "claim_id": "adm-zip-extract-entry-to-disk",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/cthackers/adm-zip/master/README.md",
+    "evidence_quote": "zip.extractEntryTo(/*entry name*/ \"some_folder/my_file.txt\", /*target path*/ \"/home/me/tempfolder\", /*maintainEntryPath*/ false, /*overwrite*/ true)",
+    "what_was_checked": "WebFetch of the adm-zip GitHub README confirmed that extractEntryTo() exists and accepts entry name, target path, maintainEntryPath, and overwrite parameters."
+  },
+  {
+    "claim_id": "turf-bpip-standalone-install",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/Turfjs/turf/master/packages/turf-boolean-point-in-polygon/README.md",
+    "evidence_quote": "Install this single module individually: $ npm install @turf/boolean-point-in-polygon",
+    "what_was_checked": "WebFetch of the @turf/boolean-point-in-polygon GitHub README confirmed standalone installation instructions."
+  },
+  {
+    "claim_id": "turf-bpip-polygon-multipolygon",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/Turfjs/turf/master/packages/turf-boolean-point-in-polygon/README.md",
+    "evidence_quote": "Takes a Point and a Polygon or MultiPolygon and determines if the point resides inside",
+    "what_was_checked": "WebFetch of the @turf/boolean-point-in-polygon GitHub README confirmed that both Polygon and MultiPolygon geometry types are supported."
+  },
+  {
+    "claim_id": "turf-bpip-convex-concave",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://raw.githubusercontent.com/Turfjs/turf/master/packages/turf-boolean-point-in-polygon/README.md",
+    "evidence_quote": "The polygon can be convex or concave.",
+    "what_was_checked": "WebFetch of the @turf/boolean-point-in-polygon GitHub README confirmed that both convex and concave polygons are supported."
+  },
+  {
+    "claim_id": "md-resident-population-2020",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-table02.xlsx",
+    "evidence_quote": "Table 2. RESIDENT POPULATION FOR THE 50 STATES, THE DISTRICT OF COLUMBIA, AND PUERTO RICO: 2020 CENSUS — Maryland: 6177224",
+    "what_was_checked": "Downloaded and parsed the official Census Bureau Table 2 xlsx (apportionment-2020-table02.xlsx). Unzipped the xlsx and read the sheet1.xml directly. SharedStrings index 26 = 'Maryland'; row 25 cell B25 = 6177224. The Maryland story page at https://www.census.gov/library/stories/state-by-state/maryland.html also states 'Maryland's Population Grew 7% to 6,177,224 Last Decade.' Both sources confirm 6,177,224."
+  },
+  {
+    "claim_id": "fl-resident-population-2020",
+    "verdict": "CONFIRMED",
+    "evidence_url": "https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-table02.xlsx",
+    "evidence_quote": "Table 2. RESIDENT POPULATION FOR THE 50 STATES, THE DISTRICT OF COLUMBIA, AND PUERTO RICO: 2020 CENSUS — Florida: 21538187",
+    "what_was_checked": "Downloaded and parsed the official Census Bureau Table 2 xlsx (apportionment-2020-table02.xlsx). Unzipped the xlsx and read the sheet1.xml directly. SharedStrings index 15 = 'Florida'; row 14 cell B14 = 21538187. The believed value of 21,538,187 is correct."
+  }
+]
